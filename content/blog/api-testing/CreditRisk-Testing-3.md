@@ -4,7 +4,6 @@ date: 2019-04-28 23:58:45
 tags: ["api-teting","ep","english"]
 ---
 
-# Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI
 
 Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the 
 daily productivities. 

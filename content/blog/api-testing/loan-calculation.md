@@ -1,5 +1,5 @@
 ---
-title: jLoan Calculation 
+title: Loan Calculation Testing
 date: 2018-08-13 22:35:32
 tags: ["english","api-testing"]
 ---

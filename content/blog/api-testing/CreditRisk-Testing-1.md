@@ -4,7 +4,6 @@ date: 2019-04-23 23:58:45
 tags: ["api-teting","ep","english"]
 ---
 
-# Rule Based Risk Engine Testing Part 1- Background 
 
 This article introduces a real world case for testing a rule based risk engine. Let me separate it into several parts:
 

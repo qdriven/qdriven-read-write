@@ -6,7 +6,6 @@ tags: ["api-teting"]
 date: 2016-04-12T13:26:07.000Z
 ---
 
-# REST API
 
 REST: Representational State Transfer REST 提倡无需Session，每次请求都带上身份认证，同样 REST基于HTTP的也是无状态的.不过REST API的安全性都需要自己实现.REST WEB SERVICE 的核心是RESOURCE(资源).资源可以使用URI来表示，一般REST风格的请求对应关系如下：
 

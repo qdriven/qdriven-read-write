@@ -4,7 +4,6 @@ date: 2019-04-25 23:58:45
 tags: ["api-teting","ep","english"]
 ---
 
-# Rule Based Risk Engine Part 2 - Write Code to Test
 
 What to do is quite obvious:
 
