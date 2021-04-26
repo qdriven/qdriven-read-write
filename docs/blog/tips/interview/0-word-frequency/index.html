@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Word Frequency - Use JDK Methods | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Word Frequency - Use JDK Methods"/>
+<meta name="twitter:description" content="What is the problem Be confidence to the JDK, in most case, it is enough to solve problem."/>
+
+	<meta property="og:title" content="Word Frequency - Use JDK Methods" />
+<meta property="og:description" content="What is the problem Be confidence to the JDK, in most case, it is enough to solve problem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tips/interview/0-word-frequency/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-06-08T01:50:03&#43;00:00" />
+<meta property="article:modified_time" content="2018-06-08T01:50:03&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Jun 8, 2018
+                                    <i class="far fa-clock clock"></i>
+                                    3 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Word Frequency - Use JDK Methods</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="what-is-the-problem">What is the problem</h2>
+<p>Be confidence to the JDK, in most case, it is enough to solve problem. Here is a case, an issue to solve:</p>
+<ul>
+<li>There are over 10000 files in a dir</li>
+<li>Try to find out the top 100 most frequency words in these files, estimate 10 millions words out there</li>
+<li>Try to use</li>
+</ul>
+<p>I didn&rsquo;t sovle it in 40 mintues, the failure part is just think too much about the data structure and algorithm. I just did some investigation then, and find out actually JDK methods are enough.</p>
+<p>Here is my thought, and I think need to implement my own algorithm to solve, actually I am wrong, JDK is enough</p>
+<ul>
+<li>Read the files</li>
+<li>Put word and count to a concurrent map</li>
+<li>get the top 100 from the map</li>
+</ul>
+<p>Because I am a fraid the memory and other resource issue, but later I had my try, it looks like worked if only use JDK methods. Here comes my solution.</p>
+<h2 id="solution">Solution</h2>
+<p>First of all, I try to create 10000 files with some random string(word),all strings are less than 18 characters, the codes are :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">getSaltString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    String SALTCHARS <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890&#34;</span><span style="color:#f92672">;</span>
+    StringBuilder salt <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
+    Random rnd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random<span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">int</span> strLength <span style="color:#f92672">=</span> rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextInt</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>strLength<span style="color:#f92672">&lt;=</span>2<span style="color:#f92672">){</span>
+      strLength <span style="color:#f92672">=</span>3<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>salt<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">()</span> <span style="color:#f92672">&lt;</span> strLength<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// length of the random string.
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> index <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span> <span style="color:#f92672">(</span>rnd<span style="color:#f92672">.</span><span style="color:#a6e22e">nextFloat</span><span style="color:#f92672">()</span> <span style="color:#f92672">*</span> SALTCHARS<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">());</span>
+      salt<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>SALTCHARS<span style="color:#f92672">.</span><span style="color:#a6e22e">charAt</span><span style="color:#f92672">(</span>index<span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+    String saltStr <span style="color:#f92672">=</span> salt<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">return</span> saltStr<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+  
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">createRandomFile</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> 1000<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> listString <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+      <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> j <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> j <span style="color:#f92672">&lt;</span> 50<span style="color:#f92672">;</span> j<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+
+        listString<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>getSaltString<span style="color:#f92672">());</span>
+      <span style="color:#f92672">}</span>
+      StringBuilder sb <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> StringBuilder<span style="color:#f92672">();</span>
+      <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String s <span style="color:#f92672">:</span> listString<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        sb<span style="color:#f92672">.</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">append</span><span style="color:#f92672">(</span>s<span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
+      result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>sb<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createFile</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> values<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+    Files<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tmp/&#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">),</span> values<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">createFiles</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> fileNum<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> fileNum<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      createFile<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> createRandomFile<span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div><p>then I tried use to read files and put words into frequency map,and here multiple threads are used</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">readAndPutTo</span><span style="color:#f92672">(</span>Path path<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+
+    List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> lines <span style="color:#f92672">=</span> Files<span style="color:#f92672">.</span><span style="color:#a6e22e">readAllLines</span><span style="color:#f92672">(</span>path<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String line <span style="color:#f92672">:</span> lines<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      String<span style="color:#f92672">[]</span> words <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\\s+&#34;</span><span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String word <span style="color:#f92672">:</span> words<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        frenquncyMap<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>word<span style="color:#f92672">,</span> frenquncyMap<span style="color:#f92672">.</span><span style="color:#a6e22e">getOrDefault</span><span style="color:#f92672">(</span>word<span style="color:#f92672">,</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>args<span style="color:#f92672">[]){</span>
+ExecutorService es <span style="color:#f92672">=</span> Executors<span style="color:#f92672">.</span><span style="color:#a6e22e">newFixedThreadPool</span><span style="color:#f92672">(</span>30<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>Files<span style="color:#f92672">.</span><span style="color:#a6e22e">list</span><span style="color:#f92672">(</span>Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tmp&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">count</span><span style="color:#f92672">());</span>
+    Files<span style="color:#f92672">.</span><span style="color:#a6e22e">list</span><span style="color:#f92672">(</span>Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tmp&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">forEach</span><span style="color:#f92672">(</span>
+        path <span style="color:#f92672">-&gt;</span> <span style="color:#f92672">{</span>
+          count<span style="color:#f92672">.</span><span style="color:#a6e22e">getAndIncrement</span><span style="color:#f92672">();</span>
+          <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+            readAndPutTo<span style="color:#f92672">(</span>path<span style="color:#f92672">);</span>
+          <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            e<span style="color:#f92672">.</span><span style="color:#a6e22e">printStackTrace</span><span style="color:#f92672">();</span>
+          <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;completed tasks: &#34;</span><span style="color:#f92672">+</span>count<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">long</span> end <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>end <span style="color:#f92672">-</span> start<span style="color:#f92672">);</span>
+    es<span style="color:#f92672">.</span><span style="color:#a6e22e">shutdown</span><span style="color:#f92672">();</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>es<span style="color:#f92672">.</span><span style="color:#a6e22e">awaitTermination</span><span style="color:#f92672">(</span>120<span style="color:#f92672">,</span> TimeUnit<span style="color:#f92672">.</span><span style="color:#a6e22e">SECONDS</span><span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> start<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Use shutdown() to make sure every tasks are completed, and print the task count to check if all tasks had be invoked.</p>
+<p>At last use stream api to list top 100 work frequency.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    List result <span style="color:#f92672">=</span> frenquncyMap<span style="color:#f92672">.</span><span style="color:#a6e22e">entrySet</span><span style="color:#f92672">().</span><span style="color:#a6e22e">stream</span><span style="color:#f92672">()</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">sorted</span><span style="color:#f92672">(</span>Map<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span><span style="color:#f92672">.</span><span style="color:#a6e22e">comparingByValue</span><span style="color:#f92672">())</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">limit</span><span style="color:#f92672">(</span>100<span style="color:#f92672">).</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> start<span style="color:#f92672">);</span>
+
+    Files<span style="color:#f92672">.</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tmp/&#34;</span><span style="color:#f92672">));</span>
+    Files<span style="color:#f92672">.</span><span style="color:#a6e22e">createDirectories</span><span style="color:#f92672">(</span>Paths<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tmp/&#34;</span><span style="color:#f92672">));</span>
+
+</code></pre></div><p>That&rsquo;s it, let&rsquo;s run and see what happened:</p>
+<pre><code>
+</code></pre><p>Later I willl jump into JDK, to understand what the algorithm used in JDK.</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/interview">interview</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/english">english</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/ansible/1-ansible-in-10-minutes/"> &laquo; ansible In 30 Minutes</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/python/2016-05-11-pythonic/">Pythonic,What is it &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

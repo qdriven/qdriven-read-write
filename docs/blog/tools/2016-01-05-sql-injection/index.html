@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>sql injection, sql 注入 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="sql injection, sql 注入"/>
+<meta name="twitter:description" content="SQL注入的问题由来以久,主要是针对于一些系统时通过拼接SQL的方式来处理程序.以下是关于JAVA WEB的一些SQL注入的介绍.
+来源OWASP
+什么是SQL注入 SQL injection vulnerabilities allow an attacker to inject (or execute) SQL commands within an application."/>
+
+	<meta property="og:title" content="sql injection, sql 注入" />
+<meta property="og:description" content="SQL注入的问题由来以久,主要是针对于一些系统时通过拼接SQL的方式来处理程序.以下是关于JAVA WEB的一些SQL注入的介绍.
+来源OWASP
+什么是SQL注入 SQL injection vulnerabilities allow an attacker to inject (or execute) SQL commands within an application." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-01-05T23:37:49&#43;00:00" />
+<meta property="article:modified_time" content="2016-01-05T23:37:49&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Jan 5, 2016
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">sql injection, sql 注入</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>SQL注入的问题由来以久,主要是针对于一些系统时通过拼接SQL的方式来处理程序.以下是关于JAVA WEB的一些SQL注入的介绍.</p>
+<p><a href="https://www.owasp.org/index.php/Preventing_SQL_Injection_in_Java">来源OWASP</a></p>
+<h2 id="什么是sql注入">什么是SQL注入</h2>
+<p>SQL injection vulnerabilities allow an attacker to inject (or execute) SQL commands within an application.
+大意就是攻击者可以通过修改页面请求来执行sql达到自己的目的，比如拉数据，或者恶意的修改数据等等.</p>
+<h2 id="sql-注入例子">SQL 注入例子</h2>
+<p>一下例子是有SQL注入漏洞的一段程序：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA">conn <span style="color:#f92672">=</span> pool<span style="color:#f92672">.</span><span style="color:#a6e22e">getConnection</span><span style="color:#f92672">(</span> <span style="color:#f92672">);</span>
+String sql <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;select * from user where username=&#39;&#34;</span> <span style="color:#f92672">+</span> username <span style="color:#f92672">+</span><span style="color:#e6db74">&#34;&#39; and password=&#39;&#34;</span> <span style="color:#f92672">+</span> password <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;&#34;</span><span style="color:#f92672">;</span>
+stmt <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span><span style="color:#a6e22e">createStatement</span><span style="color:#f92672">();</span>
+rs <span style="color:#f92672">=</span> stmt<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">(</span>sql<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>rs<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+loggedIn <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+	out<span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Successfully logged in&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+	out<span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Username and/or password not recognized&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>由于SQL是拼接的，所有如果用户直接食用username，或者password中 使用了如:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA">admin<span style="color:#960050;background-color:#1e0010">&#39;</span> OR <span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">&#39;</span>1
+</code></pre></div><p>最后执行的SQL就是：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA">select <span style="color:#f92672">*</span> from user where username<span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">&#39;</span>admin<span style="color:#960050;background-color:#1e0010">&#39;</span> OR <span style="color:#e6db74">&#39;1&#39;</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;1&#39;</span> and password<span style="color:#f92672">=</span><span style="color:#e6db74">&#39; &#39;</span>
+</code></pre></div><p>明显，这样就会把所有的用户信息拿到了</p>
+<h2 id="防范措施-defense-strategy">防范措施 Defense Strategy</h2>
+<p>prevent SQL injection:</p>
+<ul>
+<li>All queries should be parametrized.</li>
+<li>All dynamic data should be explicitly bound to parametrized queries.</li>
+<li>String concatenation should never be used to create dynamic SQL.</li>
+</ul>
+<h2 id="parameterized-queriesstored-procedures">Parameterized Queries／Stored Procedures</h2>
+<p>参数化SQL，使用prepareStatement</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JAVA" data-lang="JAVA">String selectStatement <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SELECT * FROM User WHERE userId = ? &#34;</span><span style="color:#f92672">;</span>
+PreparedStatement prepStmt <span style="color:#f92672">=</span> con<span style="color:#f92672">.</span><span style="color:#a6e22e">prepareStatement</span><span style="color:#f92672">(</span>selectStatement<span style="color:#f92672">);</span>
+prepStmt<span style="color:#f92672">.</span><span style="color:#a6e22e">setString</span><span style="color:#f92672">(</span>1<span style="color:#f92672">,</span> userId<span style="color:#f92672">);</span>
+ResultSet rs <span style="color:#f92672">=</span> prepStmt<span style="color:#f92672">.</span><span style="color:#a6e22e">executeQuery</span><span style="color:#f92672">();</span>
+</code></pre></div><p>存储过程基本上能够防止SQL注入</p>
+<h2 id="hibernatemybatis">Hibernate/MyBatis</h2>
+<p>不要以为使用了ORM框架就没有SQL注入，其实不当使用也会有的.比如:</p>
+<ul>
+<li>Hibernate native SQL</li>
+<li>order by 没法使用绑定变量</li>
+<li>动态表名也无法使用</li>
+</ul>
+<h2 id="owasp-java-project">OWASP JAVA Project</h2>
+<p><a href="https://www.owasp.org/index.php/Category:OWASP_Java_Project#tab=Project_and_OWASP_Resources">OWASP_Java_Project</a></p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/tooling">tooling</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/automation/2016-01-10-why_how_automation/"> &laquo; 为什么自动化，如何自动化</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/tools/2016-01-05-static-code-analysis/">静态代码检查 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

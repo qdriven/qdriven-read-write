@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tooling on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/tooling/</link>
+    <description>Recent content in tooling on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Tue, 05 Jan 2016 23:37:49 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/tooling/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sql injection, sql 注入</title>
+      <link>https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/</link>
+      <pubDate>Tue, 05 Jan 2016 23:37:49 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/</guid>
+      <description>SQL注入的问题由来以久,主要是针对于一些系统时通过拼接SQL的方式来处理程序.以下是关于JAVA WEB的一些SQL注入的介绍.
+来源OWASP
+什么是SQL注入 SQL injection vulnerabilities allow an attacker to inject (or execute) SQL commands within an application.</description>
+    </item>
+    
+    <item>
+      <title>静态代码检查</title>
+      <link>https://qdriven.github.io/blog/tools/2016-01-05-static-code-analysis/</link>
+      <pubDate>Tue, 05 Jan 2016 23:00:55 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2016-01-05-static-code-analysis/</guid>
+      <description>静态代码检查有利于提高代码质量，同时也可以快速的发现一些问题. 常用的静态代码检查有一下几种， checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检查，所以收集了一下关于这三个工具使用的介绍</description>
+    </item>
+    
+    <item>
+      <title>收集性能测试需求</title>
+      <link>https://qdriven.github.io/blog/tools/2015-12-08-collect-performance-requirement/</link>
+      <pubDate>Tue, 08 Dec 2015 13:36:27 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2015-12-08-collect-performance-requirement/</guid>
+      <description>很多时候遇到一些关于性能测试的需求的时候，需求方实际上是给不出任何具体的需求，更多的是一下如下的抱怨:
+ 速度慢(具体哪个操作慢又很难给出) 经常会出现系统过载(一般也不会自己看看监控的) 反正就是慢，我也不知道哪里慢 有一天突然系统响应时间慢，监控报警了  遇到这样的问题时,突然发现测试其实挺悲惨的,因为和这样的同事打交道其实压力挺大了.</description>
+    </item>
+    
+    <item>
+      <title>软件容错</title>
+      <link>https://qdriven.github.io/blog/tools/2015-11-16-error_toleration/</link>
+      <pubDate>Mon, 16 Nov 2015 23:24:33 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2015-11-16-error_toleration/</guid>
+      <description>软件的世界已经变的及其复杂，在互联网的世界中一个个知道不知道的API将世界连接起来，如蜘蛛网一般,一个看的到的功能可能依赖了好几个看不到的API,所以中间出点错误实在不能说是个意外了。但是出错归出错，出错了软件也是一样要处理这些问题，下面就讲讲我学到遇到的一点容错的小知识。
+容错的目标 降低或者最小化对系统可用性，可靠性的影响，举个例子来说就是单点故障，如果一个地方出现错误 而把整个系统网络都拖垮了，这个显然是不能接受的。可以用一下几个来形容错误：
+ fault(缺陷) 一些bug error(错误) 一些业务无法正常执行 failure(故障) 业务较长时间无法正常执行  容错的方法  硬件容错：多备份,系统冗余，主备 软件容错：避免严重业务错误，降级，异常处理,侦测，监控，重启&amp;hellip;&amp;hellip; 系统容错  常见机遇鲁棒性  Process Pairs Graceful Degradation:降级 Selective Retry state handling Linking Process Rejuvenation: 不可重现问题 Checkpoint update lost application state scrubbing process pools recovery block micro reboot state correction  </description>
+    </item>
+    
+  </channel>
+</rss>

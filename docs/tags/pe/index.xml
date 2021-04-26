@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PE on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/pe/</link>
+    <description>Recent content in PE on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 07 Aug 2019 21:34:04 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/pe/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xmind,Test Cases,and Allure templates for TDD</title>
+      <link>https://qdriven.github.io/blog/pattern/1-junit5casetesttemplate/</link>
+      <pubDate>Wed, 07 Aug 2019 21:34:04 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/1-junit5casetesttemplate/</guid>
+      <description>Xmind,TestCases and JUnit5 Allure Template Learn from the requirements and write test cases are the common daily work of a tester.</description>
+    </item>
+    
+  </channel>
+</rss>

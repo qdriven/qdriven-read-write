@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>测试陷阱3-自动化测试就是测试的技术 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://qdriven.github.io/blog/qa-traps/3-tech-is-all/cover.jpeg"/>
+<meta name="twitter:title" content="测试陷阱3-自动化测试就是测试的技术"/>
+<meta name="twitter:description" content="随着自动化测试的风靡，测试同学们越来越觉得自动化就是全部，自动化就是自己的方向。 这些本身没有太大问题，但是如果认为自动化测试就是终极技术，那么我觉得这是一个很大的陷阱。 为什么？个人觉得大部分的测试把自动化和技术都定义的太狭小了,技术和自动化都是非常宽泛的定义,下面是我自己问自己的两个问题:
+ 什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 什么是技术？技术难道就是写代码吗？把测试用例代码化吗？  什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 为什么先问这个问题，因为很多同学一开始没有接触过自动化，后来写了一些自动化用例之后，要么觉得高人一等，要么觉得一会就觉得没意思了，原因何在？因为写过自动化测试用例之后，要么觉得我技术很厉害了，基本可以把所有问题都解决了；要么马上一个疑问是这有技术含量吗？ 大量重复的代码，差不多的验证点，没有比设计测试用例和执行用例高级到多少,然后就有一种深深的幻灭的感觉？路在何方的问题又来了."/>
+
+	<meta property="og:title" content="测试陷阱3-自动化测试就是测试的技术" />
+<meta property="og:description" content="随着自动化测试的风靡，测试同学们越来越觉得自动化就是全部，自动化就是自己的方向。 这些本身没有太大问题，但是如果认为自动化测试就是终极技术，那么我觉得这是一个很大的陷阱。 为什么？个人觉得大部分的测试把自动化和技术都定义的太狭小了,技术和自动化都是非常宽泛的定义,下面是我自己问自己的两个问题:
+ 什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 什么是技术？技术难道就是写代码吗？把测试用例代码化吗？  什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 为什么先问这个问题，因为很多同学一开始没有接触过自动化，后来写了一些自动化用例之后，要么觉得高人一等，要么觉得一会就觉得没意思了，原因何在？因为写过自动化测试用例之后，要么觉得我技术很厉害了，基本可以把所有问题都解决了；要么马上一个疑问是这有技术含量吗？ 大量重复的代码，差不多的验证点，没有比设计测试用例和执行用例高级到多少,然后就有一种深深的幻灭的感觉？路在何方的问题又来了." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/qa-traps/3-tech-is-all/" /><meta property="og:image" content="https://qdriven.github.io/blog/qa-traps/3-tech-is-all/cover.jpeg"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-10-07T11:40:11&#43;02:00" />
+<meta property="article:modified_time" content="2020-11-27T23:49:47&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 7, 2020
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">测试陷阱3-自动化测试就是测试的技术</h1> 
+                    </div>
+
+                    
+                    
+                    
+                        <img class="featured-image img-fluid" src="https://qdriven.github.io/blog/qa-traps/3-tech-is-all/cover.jpeg" alt="thumbnail for this post">
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>随着自动化测试的风靡，测试同学们越来越觉得自动化就是全部，自动化就是自己的方向。
+这些本身没有太大问题，但是如果认为自动化测试就是终极技术，那么我觉得这是一个很大的陷阱。
+为什么？个人觉得大部分的测试把自动化和技术都定义的太狭小了,技术和自动化都是非常宽泛的定义,下面是我自己问自己的两个问题:</p>
+<ul>
+<li>什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？</li>
+<li>什么是技术？技术难道就是写代码吗？把测试用例代码化吗？</li>
+</ul>
+<h2 id="什么是自动化测试讨论的自动化难道就是接口自动化ui自动化测试吗">什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？</h2>
+<p>为什么先问这个问题，因为很多同学一开始没有接触过自动化，后来写了一些自动化用例之后，要么觉得高人一等，要么觉得一会就觉得没意思了，原因何在？因为写过自动化测试用例之后，要么觉得我技术很厉害了，基本可以把所有问题都解决了；要么马上一个疑问是这有技术含量吗？ 大量重复的代码，差不多的验证点，没有比设计测试用例和执行用例高级到多少,然后就有一种深深的幻灭的感觉？路在何方的问题又来了.</p>
+<p>其实什么都可以是自动化,把原来重复做的事情用代码实现是自动化的一种；把类似的事情用代码实现也是自动化的一种；把
+日常工作用代码实现也是自动化；这些自动化都是在做了一次之后再用代码去实现，如果用时髦一点的时候machine learning/ai去把
+没做过的事情自动实现了,也是自动化. 我甚至可以说，社会生产力的进步都是每一个自动化的结果。
+如果从这个角度看的，那么自动化能做的事情太多了，自动化测试也好，测试自动化也好，你可以做的事情有很多很多，多到你无法想像，问题是你有
+能力做吗？ 那些写接口自动化，web ui自动化的技能足够你去做更多的自动化吗？</p>
+<p>自动化的目的大致就是为了不让人去做差不多的事情，减少重复劳动。用一样的方法做一样的事情是重复劳动，用不一样的方法重新再做一遍一样的事情也是重复劳动；如果目标是减少重复劳动，那么自动化测试就不能停在把测试自动化这一步，还有很多很多的事情可以做。但是坦白说，有哪些事情，我也说不出来，但是我觉得用代码再去实现一遍测试过用例，也是一种重复劳动，只是还没有能力把这件事情不重复做，但是相信一定有一些办法，有一些方面是可以解决的。</p>
+<p>如果从上面的角度说，自动化的范围太广了，能做的事情太多了，会了接口自动化，UI自动化算什么呢？</p>
+<h2 id="什么是技术技术难道就是写代码吗把测试用例代码化吗">什么是技术？技术难道就是写代码吗？把测试用例代码化吗？</h2>
+<p>个人觉得技术包括的范围也很广，不止是写代码，不仅仅是测试用例代码化，这些都只是技术的一块。讨论起代码来兴致很高，觉得技术含量很高，讨论起业务来，没有一点情绪。但是如果仔细想想，像一个会计问题，一个交易问题，一个合规问题，这些是业务，但是不也是技术吗？这些只要是专业问题，这些就也是技术的一种，就像你专业写代码，这些不能理解为计算机科学的业务吗？如果是这样的话，那有什么非要区分业务和技术的？放在现实中来说，业务就是处理实际问题的技术，代码就是解决计算机如何运行的技术，不是吗？既然是这样的化，那么问问自己业务了解的透彻了，各个流程节点了解透彻了吗？技术实现和业务的匹配对应关系了解透彻了？代码说到底只是一个产品成功的一部分，还有很多很多其他问题需要解决,如果非要说代码能占到产品上线或者成功的多少比例？或许50%都不到. 代码本身不是目的，实际业务问题才是。不用非要拘泥与代码，各种方式解决了业务问题，也是很有技术含量的。</p>
+<h2 id="自动化测试就是测试的技术">自动化测试就是测试的技术？</h2>
+<p>自动化测试只是测试的一种技术, 决定你有没有价值的不是你用了什么技术手段，是你解决了什么问题。代码，自动化测试也只是测试的一个侧面，想想日常工作中有多少事情要处理，如果眼里只有自动化测试，那么是不是失去了很多其他方面的锻炼和成长。问问自己把问题说清楚了吗，问问自己
+做到了有效沟通吗，问问自己了解业务吗，问问自己能快速了解需求吗？自动化测试只是那么一小块，需要做的事情还有很多。</p>
+<p>不过自动化测试如果你完全不会，那么现在的行情你肯定是不容易拿到高工资的；但是如果认为只有自动化测试，那么天花板也放在那边,也算给自己的一个提醒吧。</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/qa-thoughts">qa-thoughts</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/qatrap">QATrap</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/qa-traps/4-comfortable-zone/"> &laquo; 测试陷阱4-跳出舒适区</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/qa-traps/2-things-matter/">测试陷阱2-永远都在忙碌重要紧急的事情 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

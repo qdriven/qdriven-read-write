@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Shell Learning - Concept | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell Learning - Concept"/>
+<meta name="twitter:description" content="摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html
+标准IO 文件描述符 0 标准输入 默认键盘 1 标准输出 默认终端 2 标准错误 默认终端  重定向 &gt; 输出重定向 &gt;&gt; 追加到输出重定向 &lt; 输入重定向 &lt;&lt; 追加到输入重定向 ls -l &gt; /tmp/a cmd &gt;/dev/null #输出到垃圾桶  dev是设备(device)的英文缩写。/dev这个目录对所有的用户都十分重要。因为在这个目录中包含了所有Linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序，这一点和windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。"/>
+
+	<meta property="og:title" content="Shell Learning - Concept" />
+<meta property="og:description" content="摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html
+标准IO 文件描述符 0 标准输入 默认键盘 1 标准输出 默认终端 2 标准错误 默认终端  重定向 &gt; 输出重定向 &gt;&gt; 追加到输出重定向 &lt; 输入重定向 &lt;&lt; 追加到输入重定向 ls -l &gt; /tmp/a cmd &gt;/dev/null #输出到垃圾桶  dev是设备(device)的英文缩写。/dev这个目录对所有的用户都十分重要。因为在这个目录中包含了所有Linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序，这一点和windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/shell/2014-08-24-shell_101_concept/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-08-24T10:31:11&#43;08:00" />
+<meta property="article:modified_time" content="2014-08-24T10:31:11&#43;08:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Aug 24, 2014
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Shell Learning - Concept</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>摘自：<a href="http://wklken.me/posts/2014/01/12/shell-script-base.html">http://wklken.me/posts/2014/01/12/shell-script-base.html</a></p>
+<h3 id="标准io">标准IO</h3>
+<pre><code>文件描述符
+0 标准输入 默认键盘
+1 标准输出 默认终端
+2 标准错误 默认终端
+</code></pre>
+<h3 id="重定向">重定向</h3>
+<pre><code>&gt; 输出重定向
+&gt;&gt; 追加到输出重定向
+&lt; 输入重定向
+&lt;&lt; 追加到输入重定向
+
+ls -l &gt; /tmp/a
+
+cmd &gt;/dev/null #输出到垃圾桶
+</code></pre>
+<p>dev是设备(device)的英文缩写。/dev这个目录对所有的用户都十分重要。因为在这个目录中包含了所有Linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序，这一点和windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。</p>
+<p>/dev/null 它是空设备，也称为位桶（bit bucket）或者黑洞(black hole)。你可以向它输入任何数据，但任何写入它的数据都会被抛弃。通常用于处理不需要的输出流。（当然，它也可以作为空的输入流</p>
+<p>dev/zero 该设备无穷尽地提供空字符（ASCII NUL, 0x00），可以使用任何你需要的数目。它通常用于向设备或文件写入字符串0，用于初始化数据存储。（当然，也可作为输出流的接受容器）</p>
+<h3 id="管道">管道</h3>
+<p>前后连接两个命令</p>
+<pre><code>ls -l | grep test
+</code></pre>
+<h3 id="引号">引号</h3>
+<pre><code>双引号：可以除了字符$`\外地任何字符或字符串
+单引号：忽略任何引用值，将引号里的所有字符作为一个字符串 $var 不能被解析
+反引号：设置系统命令输出到变量
+</code></pre>
+<h3 id="命令执行">命令执行</h3>
+<p>shell脚本识别三种基本命令：内建命令，shell函数和外部命令</p>
+<p>基本的命令查找:shell会沿着查找路径$PATH来寻找命令</p>
+<pre><code>echo $PATH
+</code></pre>
+<p>可以在.profile文件中修改</p>
+<pre><code>export PATH=$PATH:$HOME/bin
+</code></pre>
+<p>and/or</p>
+<pre><code>expression1 &amp;&amp; expression2 &amp;&amp; expression3
+只有前面一条命令执行成功，才执行下一条
+expression1执行成功，才执行expression2
+串联的
+
+expression1 || expression2 || expression3
+执行命令，直到有一条成功为止
+</code></pre>
+<h1 id="linux运维常用工具">Linux运维常用工具</h1>
+<ul>
+<li>Cobbler</li>
+<li>sshd</li>
+<li>iptables</li>
+<li>sysctl</li>
+<li>puppet agent</li>
+<li>limits</li>
+<li>ntp</li>
+<li>Ganglia</li>
+<li>Cacti</li>
+<li>Nagios</li>
+<li>Zabbix</li>
+<li>PlayBanch Watch</li>
+<li>Scribe Hadoop</li>
+<li>ScatterQ</li>
+<li>Yum Repository</li>
+<li>package</li>
+<li>Configuration/Change/Service/Custom</li>
+</ul>
+<h2 id="puppet中服务配置">Puppet中服务配置</h2>
+<ul>
+<li>Systemg</li>
+<li>sshd</li>
+<li>iptables</li>
+<li>sysctrl</li>
+<li>ntp</li>
+<li>nginx</li>
+<li>zabbix</li>
+<li>scribe</li>
+</ul>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/shell">shell</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/test-ops/6.nginx-one-page/"> &laquo; Nginx Commands</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/shell/2014-08-24-shell_101_controll_flow/">Shell Learning - Control Flow &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

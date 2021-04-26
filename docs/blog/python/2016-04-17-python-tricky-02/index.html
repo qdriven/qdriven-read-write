@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Python Tricky-02 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Tricky-02"/>
+<meta name="twitter:description" content="Python Tricky-2 max split &#34;&#34;&#34;split a string max times&#34;&#34;&#34; string = &#34;a_b_c_d_e&#34; print(string."/>
+
+	<meta property="og:title" content="Python Tricky-02" />
+<meta property="og:description" content="Python Tricky-2 max split &#34;&#34;&#34;split a string max times&#34;&#34;&#34; string = &#34;a_b_c_d_e&#34; print(string." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/python/2016-04-17-python-tricky-02/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-04-17T10:41:15&#43;00:00" />
+<meta property="article:modified_time" content="2016-04-17T10:41:15&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Apr 17, 2016
+                                    <i class="far fa-clock clock"></i>
+                                    4 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Python Tricky-02</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h1 id="python-tricky-2">Python Tricky-2</h1>
+<h2 id="max-split">max split</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;split a string max times&#34;&#34;&#34;</span>
+string <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;a_b_c_d_e&#34;</span>
+<span style="color:#66d9ef">print</span>(string<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#ae81ff">2</span>))
+<span style="color:#e6db74">&#34;&#34;&#34;use maxsplit with  arbitrary whitespace&#34;&#34;&#34;</span>
+
+s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;foo    bar        foobar foo&#34;</span>
+
+<span style="color:#66d9ef">print</span>(s<span style="color:#f92672">.</span>split(None, maxsplit<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>))
+</code></pre></div><h2 id="min-and-max-index">min and max index</h2>
+<p>获取最大值，最小值的index</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">Find Index of Min/Max Element.
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+lst <span style="color:#f92672">=</span> [<span style="color:#ae81ff">40</span>, <span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">20</span>, <span style="color:#ae81ff">30</span>]
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">minIndex</span>(lst):
+    <span style="color:#66d9ef">return</span> min(range(len(lst)), key<span style="color:#f92672">=</span>lst<span style="color:#f92672">.</span>__getitem__)  <span style="color:#75715e"># use xrange if &lt; 2.7</span>
+
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">maxIndex</span>(lst):
+    <span style="color:#66d9ef">return</span> max(range(len(lst)), key<span style="color:#f92672">=</span>lst<span style="color:#f92672">.</span>__getitem__)  <span style="color:#75715e"># use xrange if &lt; 2.7</span>
+<span style="color:#66d9ef">print</span>(minIndex(lst))
+<span style="color:#66d9ef">print</span>(maxIndex(lst))
+</code></pre></div><h2 id="nested-function">nested function</h2>
+<p>python 支持函数作为参数传递：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;nested functions&#34;&#34;&#34;</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">addBy</span>(val):
+    <span style="color:#66d9ef">print</span>(val)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">func</span>(inc):
+        <span style="color:#66d9ef">print</span>(inc)
+        <span style="color:#66d9ef">return</span> val <span style="color:#f92672">+</span> inc
+    <span style="color:#66d9ef">return</span> func
+
+addFive <span style="color:#f92672">=</span> addBy(<span style="color:#ae81ff">5</span>)
+<span style="color:#66d9ef">print</span>(addFive(<span style="color:#ae81ff">4</span>))
+
+addThree <span style="color:#f92672">=</span> addBy(<span style="color:#ae81ff">3</span>)
+<span style="color:#66d9ef">print</span>(addThree(<span style="color:#ae81ff">7</span>))
+</code></pre></div><h2 id="obj-get-attribute">obj get attribute</h2>
+<p>通过getattr获取python的属性，可以是类级别的，也可以实例级别的，但是如果属性没有实例级别是先通过<code>__getattribute__</code>获取</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">obj</span>():
+    attr <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+
+    <span style="color:#66d9ef">def</span> __getattribute__(self, item):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;get attribute&#39;</span>)
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;123&#34;</span>
+
+    <span style="color:#66d9ef">def</span> __get__(self, instance, owner):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;get&#34;</span>)
+
+    <span style="color:#66d9ef">def</span> __getattr__(self, item):
+        <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;get attribute1&#34;</span>)
+
+
+foo <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;attr&#34;</span>
+a <span style="color:#f92672">=</span> obj()
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>test)
+<span style="color:#66d9ef">print</span>(getattr(obj, foo))
+<span style="color:#66d9ef">print</span>(getattr(a, <span style="color:#e6db74">&#34;attr1&#34;</span>))
+</code></pre></div><h2 id="remove-duplicated-values">remove duplicated values</h2>
+<p>这里面需要理解清楚的是：</p>
+<ul>
+<li>list，可以重复</li>
+<li>set,没有重复</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;remove duplicate items from list. note: does not preserve the original list order&#34;&#34;&#34;</span>
+
+items <span style="color:#f92672">=</span> [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>]
+
+newitems2 <span style="color:#f92672">=</span> list(set(items))
+<span style="color:#66d9ef">print</span>(newitems2)
+
+<span style="color:#e6db74">&#34;&#34;&#34;remove dups and keep order&#34;&#34;&#34;</span>
+
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> OrderedDict
+
+items <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>, <span style="color:#e6db74">&#34;foo&#34;</span>]
+
+<span style="color:#66d9ef">print</span>(list(OrderedDict<span style="color:#f92672">.</span>fromkeys(items)<span style="color:#f92672">.</span>keys()))
+</code></pre></div><h2 id="reverse-liststring">reverse list/string</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;reversing list with special case of slice step param&#34;&#34;&#34;</span>
+a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>]
+<span style="color:#66d9ef">print</span>(a[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+
+<span style="color:#e6db74">&#34;&#34;&#34;iterating over list contents in reverse efficiently.&#34;&#34;&#34;</span>
+<span style="color:#66d9ef">for</span> ele <span style="color:#f92672">in</span> reversed(a):
+    <span style="color:#66d9ef">print</span>(ele)
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;reversing string with special case of slice step param&#34;&#34;&#34;</span>
+
+a <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;abcdefghijklmnopqrstuvwxyz&#39;</span>
+<span style="color:#66d9ef">print</span>(a[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
+
+
+<span style="color:#e6db74">&#34;&#34;&#34;iterating over string contents in reverse efficiently.&#34;&#34;&#34;</span>
+
+<span style="color:#66d9ef">for</span> char <span style="color:#f92672">in</span> reversed(a):
+    <span style="color:#66d9ef">print</span>(char)
+
+<span style="color:#e6db74">&#34;&#34;&#34;reversing an integer through type conversion and slicing.&#34;&#34;&#34;</span>
+
+num <span style="color:#f92672">=</span> <span style="color:#ae81ff">123456789</span>
+<span style="color:#66d9ef">print</span>(int(str(num)[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]))
+</code></pre></div><h2 id="set-operators-集合操作">set operators 集合操作</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;Python provides usual set operator&#34;&#34;&#34;</span>
+a <span style="color:#f92672">=</span> set([<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>])
+b <span style="color:#f92672">=</span> set([<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>])
+c <span style="color:#f92672">=</span> set([<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>])
+
+<span style="color:#75715e"># Intersection</span>
+<span style="color:#66d9ef">print</span>(a <span style="color:#f92672">&amp;</span> b)
+
+<span style="color:#75715e"># Subset</span>
+<span style="color:#66d9ef">print</span>(c <span style="color:#f92672">&lt;</span> a)
+
+<span style="color:#75715e"># Difference</span>
+<span style="color:#66d9ef">print</span>(a <span style="color:#f92672">-</span> b)
+
+<span style="color:#75715e"># Symmetric Difference</span>
+<span style="color:#66d9ef">print</span>(a <span style="color:#f92672">^</span> b)
+
+<span style="color:#75715e"># Union</span>
+<span style="color:#66d9ef">print</span>(a <span style="color:#f92672">|</span> b)
+
+<span style="color:#e6db74">&#34;&#34;&#34;using methods instead of operators which take any iterable as a second arg&#34;&#34;&#34;</span>
+
+a <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>}
+b <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>, <span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>}
+c <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>}
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>intersection([<span style="color:#e6db74">&#34;b&#34;</span>]))
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>difference([<span style="color:#e6db74">&#34;foo&#34;</span>]))
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>symmetric_difference([<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;e&#34;</span>]))
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>issuperset([<span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>]))
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>issubset([<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;b&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;d&#34;</span>, <span style="color:#e6db74">&#34;e&#34;</span>, <span style="color:#e6db74">&#34;f&#34;</span>]))
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>isdisjoint([<span style="color:#e6db74">&#34;y&#34;</span>, <span style="color:#e6db74">&#39;z&#39;</span>]))
+
+<span style="color:#66d9ef">print</span>(a<span style="color:#f92672">.</span>union([<span style="color:#e6db74">&#34;foo&#34;</span>, <span style="color:#e6db74">&#34;bar&#34;</span>]))
+
+a<span style="color:#f92672">.</span>intersection_update([<span style="color:#e6db74">&#34;a&#34;</span>, <span style="color:#e6db74">&#34;c&#34;</span>, <span style="color:#e6db74">&#34;z&#34;</span>])
+<span style="color:#66d9ef">print</span>(a)
+</code></pre></div><h2 id="set-global-variables">set global variables</h2>
+<p>python 的全局变量也可以更新：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;set global variables from dict&#34;&#34;&#34;</span>
+
+d <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;a&#39;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;b&#39;</span>: <span style="color:#e6db74">&#39;var2&#39;</span>, <span style="color:#e6db74">&#39;c&#39;</span>: [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]}
+globals()<span style="color:#f92672">.</span>update(d)
+<span style="color:#66d9ef">print</span>(globals())
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;a&#39;</span> <span style="color:#f92672">in</span> globals()<span style="color:#f92672">.</span>keys())
+</code></pre></div><h2 id="socket-msg-handling">socket msg handling</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#f92672">import</span> socket
+<span style="color:#f92672">import</span> functools
+
+s <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM)
+conn <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>connect((<span style="color:#e6db74">&#39;localhost&#39;</span>, <span style="color:#ae81ff">1080</span>))
+msgs <span style="color:#f92672">=</span> []
+
+<span style="color:#75715e"># normal way</span>
+<span style="color:#75715e"># while True:</span>
+<span style="color:#75715e">#    msg = coon.recv(1024)</span>
+<span style="color:#75715e">#    if recv:</span>
+<span style="color:#75715e">#        msgs.append(msg)</span>
+<span style="color:#75715e"># else:  # when no msg come, break</span>
+<span style="color:#75715e">#         break</span>
+
+<span style="color:#75715e"># hack way with iter and functools.partial</span>
+<span style="color:#75715e"># this circle will auto break when msg is empty &#39;&#39;</span>
+<span style="color:#66d9ef">for</span> msg <span style="color:#f92672">in</span> iter(functools<span style="color:#f92672">.</span>partial(conn<span style="color:#f92672">.</span>recv, <span style="color:#ae81ff">1024</span>), <span style="color:#e6db74">b</span><span style="color:#e6db74">&#39;&#39;</span>):
+    msgs<span style="color:#f92672">.</span>append(msg)
+</code></pre></div><h2 id="sort-list-keeping-indices">sort list keeping indices</h2>
+<ul>
+<li>enumerate 使用</li>
+<li>zip 使用</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#e6db74">&#34;&#34;&#34;Sort a list and store previous indices of values&#34;&#34;&#34;</span>
+
+<span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74"># enumerate is a great but little-known tool for writing nice code
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+l <span style="color:#f92672">=</span> [<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;original list: &#34;</span>, l)
+
+values, indices <span style="color:#f92672">=</span> zip(<span style="color:#f92672">*</span>sorted((a, b) <span style="color:#66d9ef">for</span> (b, a) <span style="color:#f92672">in</span> enumerate(l)))
+
+<span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74"># now values contains the sorted list and indices contains
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"># the indices of the corresponding value in the original list
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;sorted list: &#34;</span>, values) <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;original indices: &#34;</span>, indices)
+
+<span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74"># note that this returns tuples, but if necessary they can
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74"># be converted to lists using list()
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+</code></pre></div><h2 id="step-slice">step slice</h2>
+<p>python stepwise slicing of arrays</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;stepwise slicing of arrays&#34;&#34;&#34;</span>
+a <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">10</span>]
+<span style="color:#66d9ef">print</span>(a[::<span style="color:#ae81ff">3</span>])
+</code></pre></div><h2 id="swap-keys-and-values">swap keys and values</h2>
+<p>key,value 交换，只要是通过 <code>v：k for k,v in dict.items()｝</code> 这个方式就可以了</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;Swaps keys and values in a dict&#34;&#34;&#34;</span>
+
+_dict <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#34;one&#34;</span>: <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#34;two&#34;</span>: <span style="color:#ae81ff">2</span>}
+<span style="color:#75715e"># make sure all of dict&#39;s values are unique</span>
+<span style="color:#66d9ef">assert</span> len(_dict) <span style="color:#f92672">==</span> len(set(_dict<span style="color:#f92672">.</span>values()))
+reversed_dict <span style="color:#f92672">=</span> {v: k <span style="color:#66d9ef">for</span> k, v <span style="color:#f92672">in</span> _dict<span style="color:#f92672">.</span>items()}
+<span style="color:#66d9ef">print</span>(reversed_dict)
+</code></pre></div><h2 id="zip-使用">zip 使用</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#e6db74">&#34;&#34;&#34;transpose 2d array [[a,b], [c,d], [e,f]] -&gt; [[a,c,e], [b,d,f]]&#34;&#34;&#34;</span>
+
+original <span style="color:#f92672">=</span> [[<span style="color:#e6db74">&#39;a&#39;</span>, <span style="color:#e6db74">&#39;b&#39;</span>], [<span style="color:#e6db74">&#39;c&#39;</span>, <span style="color:#e6db74">&#39;d&#39;</span>], [<span style="color:#e6db74">&#39;e&#39;</span>, <span style="color:#e6db74">&#39;f&#39;</span>]]
+transposed <span style="color:#f92672">=</span> zip(<span style="color:#f92672">*</span>original)
+<span style="color:#66d9ef">print</span>(list(transposed))
+</code></pre></div><h2 id="tree-使用">tree 使用</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">See description here
+</span><span style="color:#e6db74">https://gist.github.com/hrldcpr/2012250
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+<span style="color:#f92672">from</span> collections <span style="color:#f92672">import</span> defaultdict
+
+tree <span style="color:#f92672">=</span> <span style="color:#66d9ef">lambda</span>: defaultdict(tree)
+
+
+users <span style="color:#f92672">=</span> tree()
+users[<span style="color:#e6db74">&#39;harold&#39;</span>][<span style="color:#e6db74">&#39;username&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;chopper&#39;</span>
+users[<span style="color:#e6db74">&#39;matt&#39;</span>][<span style="color:#e6db74">&#39;password&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hunter2&#39;</span>
+</code></pre></div><h2 id="try-else">try else</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34; You can have an &#39;else&#39; clause with try/except.
+</span><span style="color:#e6db74">    It gets excecuted if no exception is raised.
+</span><span style="color:#e6db74">    This allows you to put less happy-path code in the &#39;try&#39; block so you can be
+</span><span style="color:#e6db74">    more sure of where a caught exception came from.&#34;&#34;&#34;</span>
+
+<span style="color:#66d9ef">try</span>:
+    <span style="color:#ae81ff">1</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">except</span> <span style="color:#a6e22e">TypeError</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Oh no! An exception was raised.&#34;</span>)
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Oh good, no exceptions were raised.&#34;</span>)
+</code></pre></div><p>also while else:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+
+<span style="color:#66d9ef">while</span> i <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Whil-ing away!&#34;</span>)
+    i <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">3</span>:
+        <span style="color:#66d9ef">break</span>
+<span style="color:#66d9ef">else</span>:
+    <span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;Finished up!&#34;</span>)
+</code></pre></div><h2 id="unique-by-attr">unique by attr</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    If we have some sequence of objects and want to remove items with the same attribute value
+</span><span style="color:#e6db74">    Python creates a dict, where keys are value if attribute (bar in our case), values are object of the sequence.
+</span><span style="color:#e6db74">    After that the dict is transformed back to list
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Note: in result we save the last from repeating elements (item2 in our case)!
+</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Foo</span>:
+    <span style="color:#66d9ef">def</span> __init__(self, value):
+        self<span style="color:#f92672">.</span>bar <span style="color:#f92672">=</span> value
+
+item1 <span style="color:#f92672">=</span> Foo(<span style="color:#ae81ff">15</span>)
+item2 <span style="color:#f92672">=</span> Foo(<span style="color:#ae81ff">15</span>)
+item3 <span style="color:#f92672">=</span> Foo(<span style="color:#ae81ff">5</span>)
+
+lst <span style="color:#f92672">=</span> [item1, item2, item3]
+
+unique_lst <span style="color:#f92672">=</span> list({getattr(obj, <span style="color:#e6db74">&#39;bar&#39;</span>): obj <span style="color:#66d9ef">for</span> obj <span style="color:#f92672">in</span> lst}<span style="color:#f92672">.</span>values())
+
+<span style="color:#66d9ef">print</span>(unique_lst)  <span style="color:#75715e"># [item2, item3]</span>
+</code></pre></div>
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/python">python</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/python/2016-04-17-python-tricky-01/"> &laquo; Python Tricky-01</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/api-testing/rest-api_security/">Rest API Security &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

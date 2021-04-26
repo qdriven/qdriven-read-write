@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ep on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/ep/</link>
+    <description>Recent content in ep on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Sun, 28 Jul 2019 23:58:45 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/ep/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Implement A Integration Testing Libs in two days</title>
+      <link>https://qdriven.github.io/blog/api-testing/0-start-from-the-end/</link>
+      <pubDate>Sun, 28 Jul 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/0-start-from-the-end/</guid>
+      <description>There is a question over my head several times.</description>
+    </item>
+    
+    <item>
+      <title>Integration-Runner Test Case Demo</title>
+      <link>https://qdriven.github.io/blog/api-testing/1-demo-testcase/</link>
+      <pubDate>Sun, 28 Jul 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/1-demo-testcase/</guid>
+      <description>Last chapter introduce how to build a test framework in two days, In this chapter, let&amp;rsquo;s do demos:</description>
+    </item>
+    
+    <item>
+      <title>The Easiest Mock, The highest ROI</title>
+      <link>https://qdriven.github.io/blog/api-testing/4-productivity-simplemock/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/4-productivity-simplemock/</guid>
+      <description>Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the daily productivities.</description>
+    </item>
+    
+    <item>
+      <title>Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI</title>
+      <link>https://qdriven.github.io/blog/api-testing/creditrisk-testing-3/</link>
+      <pubDate>Sun, 28 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/creditrisk-testing-3/</guid>
+      <description>Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the daily productivities.</description>
+    </item>
+    
+    <item>
+      <title>Rule Based Risk Engine Part 2 - Write Code to Test</title>
+      <link>https://qdriven.github.io/blog/api-testing/creditrisk-testing-2/</link>
+      <pubDate>Thu, 25 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/creditrisk-testing-2/</guid>
+      <description>Rule Based Risk Engine Part 2 - Write Code to Test What to do is quite obvious:</description>
+    </item>
+    
+    <item>
+      <title>Rule Based Risk Engine Testing Part 1- Background</title>
+      <link>https://qdriven.github.io/blog/api-testing/creditrisk-testing-1/</link>
+      <pubDate>Tue, 23 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/creditrisk-testing-1/</guid>
+      <description>Rule Based Risk Engine Testing Part 1- Background This article introduces a real world case for testing a rule based risk engine.</description>
+    </item>
+    
+    <item>
+      <title>Build API Testing Framework-1 - Learn Http Api</title>
+      <link>https://qdriven.github.io/blog/api-testing/apitesting-intro/</link>
+      <pubDate>Sat, 20 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/apitesting-intro/</guid>
+      <description>Build API Testing Framework-1 - Learn Http Api API now, in most cases, it is a HTTP API which over http protocol.</description>
+    </item>
+    
+  </channel>
+</rss>

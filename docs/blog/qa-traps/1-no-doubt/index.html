@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>测试陷阱1 - 放弃怀疑 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://qdriven.github.io/blog/qa-traps/1-no-doubt/cover.jpg"/>
+<meta name="twitter:title" content="测试陷阱1 - 放弃怀疑"/>
+<meta name="twitter:description" content="对于大部分的初级测试人员来说，有时放弃怀疑可能在工作中陷入一些被动，甚至让自己的生活有时也会搞得一团乱. 下面我从一个加班事件说起，看看我们如果应对一些突发的情况.
+从一个加班事件说起 事情的由来是这样的,由于某种原因，一个功能只能在生产环境测试，于是测试同学自己觉得这个功能简单，就预估半天时间就可以测试完成。结果呢？由于各种配置问题，上了生产主流程都不通，然后一通检查，最后从上午一直到到晚上10点的时候发现需要的一个第三方账户权限设置错误，造成功能不同，然后在配置修改完了之后，再进行测试，结果弄到凌晨结束。从这个事情来看，完全从功能角度看，其实可能确实只要半天时间，但是这个功能又有很多依赖关系，而这些依赖关系确花了比实际测试更长的时间，而真正造成这些时间的问题确从来没有去怀疑过。于是班加了，结果其实还不太好，对外看来为什么会到最后才发现这些问题？为什么事前没有计划，为什么到最后主流程还不通？为什么从来没有人提出过这个里面可能的风险？
+怀疑不等于不相信，怀疑是想确认 我事后分析了一下，有一点就是测试同学早早的放弃了怀疑，放弃怀疑了两个地方:"/>
+
+	<meta property="og:title" content="测试陷阱1 - 放弃怀疑" />
+<meta property="og:description" content="对于大部分的初级测试人员来说，有时放弃怀疑可能在工作中陷入一些被动，甚至让自己的生活有时也会搞得一团乱. 下面我从一个加班事件说起，看看我们如果应对一些突发的情况.
+从一个加班事件说起 事情的由来是这样的,由于某种原因，一个功能只能在生产环境测试，于是测试同学自己觉得这个功能简单，就预估半天时间就可以测试完成。结果呢？由于各种配置问题，上了生产主流程都不通，然后一通检查，最后从上午一直到到晚上10点的时候发现需要的一个第三方账户权限设置错误，造成功能不同，然后在配置修改完了之后，再进行测试，结果弄到凌晨结束。从这个事情来看，完全从功能角度看，其实可能确实只要半天时间，但是这个功能又有很多依赖关系，而这些依赖关系确花了比实际测试更长的时间，而真正造成这些时间的问题确从来没有去怀疑过。于是班加了，结果其实还不太好，对外看来为什么会到最后才发现这些问题？为什么事前没有计划，为什么到最后主流程还不通？为什么从来没有人提出过这个里面可能的风险？
+怀疑不等于不相信，怀疑是想确认 我事后分析了一下，有一点就是测试同学早早的放弃了怀疑，放弃怀疑了两个地方:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/qa-traps/1-no-doubt/" /><meta property="og:image" content="https://qdriven.github.io/blog/qa-traps/1-no-doubt/cover.jpg"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-10-07T11:40:11&#43;02:00" />
+<meta property="article:modified_time" content="2020-10-29T20:43:24&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+        <div class="sep">
+        </div>				
+        <ul>
+            <li> 
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 7, 2020
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">测试陷阱1 - 放弃怀疑</h1> 
+                    </div>
+
+                    
+                    
+                    
+                        <img class="featured-image img-fluid" src="https://qdriven.github.io/blog/qa-traps/1-no-doubt/cover.jpg" alt="thumbnail for this post">
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>对于大部分的初级测试人员来说，有时放弃怀疑可能在工作中陷入一些被动，甚至让自己的生活有时也会搞得一团乱. 下面我从一个加班事件说起，看看我们如果应对一些突发的情况.</p>
+<h2 id="从一个加班事件说起">从一个加班事件说起</h2>
+<p>事情的由来是这样的,由于某种原因，一个功能只能在生产环境测试，于是测试同学自己觉得这个功能简单，就预估半天时间就可以测试完成。结果呢？由于各种配置问题，上了生产主流程都不通，然后一通检查，最后从上午一直到到晚上10点的时候发现需要的一个第三方账户权限设置错误，造成功能不同，然后在配置修改完了之后，再进行测试，结果弄到凌晨结束。从这个事情来看，完全从功能角度看，其实可能确实只要半天时间，但是这个功能又有很多依赖关系，而这些依赖关系确花了比实际测试更长的时间，而真正造成这些时间的问题确从来没有去怀疑过。于是班加了，结果其实还不太好，对外看来为什么会到最后才发现这些问题？为什么事前没有计划，为什么到最后主流程还不通？为什么从来没有人提出过这个里面可能的风险？</p>
+<h2 id="怀疑不等于不相信怀疑是想确认">怀疑不等于不相信，怀疑是想确认</h2>
+<p>我事后分析了一下，有一点就是测试同学早早的放弃了怀疑，放弃怀疑了两个地方:</p>
+<ul>
+<li>这些配置问题在开发过程中就会被发现？ 因为开发承诺会测试</li>
+<li>这些功能很简单，就没有去深究这里面的依赖关系，这些总会有人去搞定的</li>
+</ul>
+<p>首先我想明确的一点是，怀疑不等于不相信，这个共识是需要团队达成的.
+怀疑是想对事情本身的确认，而不是对开发人员的怀疑，有了这个基本共识，我觉得测试人员就应该多提问题，多怀疑，把怀疑的点变成实际放生的事实，把要做确没有做的事情落实，这样才能减少突发情况，才可以少加点班。遗憾的事，即使发生了这样的事情，大多数的测试人员还是会轻而易举的接受这样的事实，听开发人员一解释说是运营人没有告诉他账户设置，造成了此次问题，这样就过去了，我想这样的事情以后还是会发生。因为再一次的放弃了怀疑，根据发生的事情，一定程度上是可以推导将来发生的事情的，比如很明显，这么一件事情看出来:</p>
+<ul>
+<li>开发没有做任何自测，因为如果自测，那么一定可以老早就发现这个问题了</li>
+<li>开发喜欢推卸了一定的责任，这个事情的关键点不是谁没有把账号告诉别人，而是为什么这样的事情到最后才发现</li>
+<li>事实上做这个功能基本上没有做任何的调研，如果做了调研就一定会知道需要什么账户的，不是吗？那以后怎么做调研？</li>
+<li>真的只能生产了才可以测试吗？实际情况不是多申请一个第三方账户就可以在测试环境测试了吗？如果测试了不是应该老早就发现账户配置的问题了吗？就算只有一个账户，产生的测试数据可以删除吗？</li>
+</ul>
+<p>如果测试不通过事实去怀疑一些，有了怀疑又去确认一些事情，那么处在开发环节的最下游，太多的不确定性都变成自己来承担，种种压力，种种加班就会都来；到最后没有太多人会帮到你，因为到了最后一旦出了点问题，就可能变成了大问题，就可能被老板追责了。</p>
+<h2 id="事后还是要把怀疑的点落实">事后还是要把怀疑的点落实</h2>
+<p>事情既然已经发生了，还好没有出现延期之类的事情，但是如果就这么过了，可能以后还是一样会发生这样的情况。
+所以测试人员还应该把你认为出现这次情况的怀疑点提炼出来，比如：</p>
+<ul>
+<li>开发你自测了？是一个人没有自测还是所有人没有自测？</li>
+<li>为什么只能在生产环境测试？这个调研工作真的做的彻底了吗？</li>
+<li>为什么一开始不知道会是账号的问题？为什么定位这个问题要这么就？调研工作做的彻底了吗？</li>
+<li>下次调研要这么做呢？调研了什么东西，什么结论要让相关人员知道吗？</li>
+<li>测试估算时间的时候，真的了解了这些功能的依赖了吗？真的知道如果才能在生产环境把功能全部跑通的所有条件了吗？</li>
+</ul>
+<p>这些问题什么时候解决呢？会解决吗？如果没有解决是不是后面我可以直接想老板反馈呢？这些都是合理的怀疑，不是去怀疑个人，而是有了事实之后，测试要去确认的点，过程是很辛苦，但是如果真能做到，那么这个测试在团队里面不会变得可有可无；你做的事情变成了对完全对发布负责，那么你有理由获得更多的信任。但是如果你就让这样的事情轻易通过，那么后面会有更多离奇事发生。</p>
+<h2 id="行千里路半900">行千里路，半900</h2>
+<p>行千里路，半900；所以如果没有把很多的事情落实，没有去怀疑去确认实际落实的情况，那么预估的时间往往都过于乐观了。过于乐观的估计，往往造成时间紧张，时间紧张又意味出现容易出错。所以不妨把事情放到台面说</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/qatrap">QATrap</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/qa-traps/2-things-matter/"> &laquo; 测试陷阱2-永远都在忙碌重要紧急的事情</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/qa-thoughts/1-tdd-way/">QE-Meetup： TDD 小结 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+<div class="container">
+    <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">              
+                           
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

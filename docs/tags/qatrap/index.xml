@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>QATrap on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/qatrap/</link>
+    <description>Recent content in QATrap on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Sun, 10 Jan 2021 20:43:24 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/qatrap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试陷阱5 - 测试就是找Bug</title>
+      <link>https://qdriven.github.io/blog/qa-traps/5-qa-bugs/</link>
+      <pubDate>Sun, 10 Jan 2021 20:43:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/5-qa-bugs/</guid>
+      <description>在我工作过的公司中，大部分的开发和测试工程师对于测试工程师的定位就是找Bug的人.这个认识我觉得没有什么问题，因为确实测试功能师大部分的工作就是找Bug. 一开始我自己也从来没有怀疑过，感觉这个定义偏差不是太大，但是随着工作年限的增加，我觉得这个定位越来越不那么正确了.
+为什么这样子说呢？我分两个方面来说明：
+ 测试的目的只是保证质量吗？ 测试过程中发现的Bug到底能代表什么？  测试的目的只是保证质量吗？ 测试的目的只是保证质量吗？我觉得说是，没有什么问题的；但是保证质量了它又是为了什么呢？为了让产品更有竞争力！ 所以测试的最根本的目的是为了产品更有竞争力！有了这一个目的，作为测试人员也许需要把眼界放的更开阔一些，需要更多平衡的思维.</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱4-跳出舒适区</title>
+      <link>https://qdriven.github.io/blog/qa-traps/4-comfortable-zone/</link>
+      <pubDate>Thu, 07 Jan 2021 11:40:11 +0200</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/4-comfortable-zone/</guid>
+      <description>最近几年陆陆续续也面试了不少测试的同学，好多同学也都提到了跳出舒适区的概念，好多人因为觉得需要跳出舒适区所以觉得需要换一个工作环境； 就测试而言好多同学都是觉得一直在做类似的事情，没有外部刺激，没有提高；同时又相信没有实际的项目锻炼，技能很难得到提高；甚至有些同学很明显 在自己公司做的还是不错的，升职也有，加薪也有，可是就是觉得自己在舒适区里面，觉得一定要跳出来才能很快提高。大体上套用美国总统的话就是keep me great.</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱3-自动化测试就是测试的技术</title>
+      <link>https://qdriven.github.io/blog/qa-traps/3-tech-is-all/</link>
+      <pubDate>Fri, 27 Nov 2020 23:49:47 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/3-tech-is-all/</guid>
+      <description>随着自动化测试的风靡，测试同学们越来越觉得自动化就是全部，自动化就是自己的方向。 这些本身没有太大问题，但是如果认为自动化测试就是终极技术，那么我觉得这是一个很大的陷阱。 为什么？个人觉得大部分的测试把自动化和技术都定义的太狭小了,技术和自动化都是非常宽泛的定义,下面是我自己问自己的两个问题:
+ 什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 什么是技术？技术难道就是写代码吗？把测试用例代码化吗？  什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 为什么先问这个问题，因为很多同学一开始没有接触过自动化，后来写了一些自动化用例之后，要么觉得高人一等，要么觉得一会就觉得没意思了，原因何在？因为写过自动化测试用例之后，要么觉得我技术很厉害了，基本可以把所有问题都解决了；要么马上一个疑问是这有技术含量吗？ 大量重复的代码，差不多的验证点，没有比设计测试用例和执行用例高级到多少,然后就有一种深深的幻灭的感觉？路在何方的问题又来了.</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱2-永远都在忙碌重要紧急的事情</title>
+      <link>https://qdriven.github.io/blog/qa-traps/2-things-matter/</link>
+      <pubDate>Sat, 31 Oct 2020 13:22:54 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/2-things-matter/</guid>
+      <description>测试永远都很忙，忙着回归测试，忙着各种各样的测试，各种各样的交付，但是这样忙碌了3年左右之后， 你发现你在确实是进步了，进步的主要方面我想大部分就是以下几个方面:
+ 沟通能力增强了 业务熟悉了非常多，开发测试流程熟悉了很多 处理紧急事情能力提高了很多  这已经很不错，可能有些测试同样的过了三年这些进步都没有，更多的在听指令，别人说测试就是做测试。</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱1 - 放弃怀疑</title>
+      <link>https://qdriven.github.io/blog/qa-traps/1-no-doubt/</link>
+      <pubDate>Thu, 29 Oct 2020 20:43:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/1-no-doubt/</guid>
+      <description>对于大部分的初级测试人员来说，有时放弃怀疑可能在工作中陷入一些被动，甚至让自己的生活有时也会搞得一团乱. 下面我从一个加班事件说起，看看我们如果应对一些突发的情况.
+从一个加班事件说起 事情的由来是这样的,由于某种原因，一个功能只能在生产环境测试，于是测试同学自己觉得这个功能简单，就预估半天时间就可以测试完成。结果呢？由于各种配置问题，上了生产主流程都不通，然后一通检查，最后从上午一直到到晚上10点的时候发现需要的一个第三方账户权限设置错误，造成功能不同，然后在配置修改完了之后，再进行测试，结果弄到凌晨结束。从这个事情来看，完全从功能角度看，其实可能确实只要半天时间，但是这个功能又有很多依赖关系，而这些依赖关系确花了比实际测试更长的时间，而真正造成这些时间的问题确从来没有去怀疑过。于是班加了，结果其实还不太好，对外看来为什么会到最后才发现这些问题？为什么事前没有计划，为什么到最后主流程还不通？为什么从来没有人提出过这个里面可能的风险？
+怀疑不等于不相信，怀疑是想确认 我事后分析了一下，有一点就是测试同学早早的放弃了怀疑，放弃怀疑了两个地方:</description>
+    </item>
+    
+  </channel>
+</rss>

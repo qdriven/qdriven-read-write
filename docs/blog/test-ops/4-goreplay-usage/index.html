@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>goreplay 流量回放小尝试 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="goreplay 流量回放小尝试"/>
+<meta name="twitter:description" content="Gorelapy简介 goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。
+GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址 最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的."/>
+
+	<meta property="og:title" content="goreplay 流量回放小尝试" />
+<meta property="og:description" content="Gorelapy简介 goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。
+GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址 最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/test-ops/4-goreplay-usage/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-10-09T10:06:26&#43;00:00" />
+<meta property="article:modified_time" content="2019-10-09T10:06:26&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 9, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">goreplay 流量回放小尝试</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="gorelapy简介">Gorelapy简介</h2>
+<p>goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。</p>
+<p>GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址
+<img src="https://camo.githubusercontent.com/1c65a684aeb1d16343d59c3ab6d3f9d41c77c36f/68747470733a2f2f692e696d6775722e636f6d2f494e327866446d2e706e67" alt="img"></p>
+<p>最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的.</p>
+<h2 id="环境准备">环境准备</h2>
+<ul>
+<li>
+<p>1、安装kafka
+启动zookeeper 和kafka server，并创建一个topic
+温馨提示：server.properties中的PLAINTEX后面需要把ip加上，否则其他服务器上的消息接收不到</p>
+</li>
+<li>
+<p>2、安装mysql
+创建db和表,用来保存请求数据</p>
+</li>
+</ul>
+<h2 id="监听消息发送到kafaka">监听消息发送到kafaka</h2>
+<ul>
+<li>1、在目标服务器上安装gorepay
+<ul>
+<li>a、源码：https://github.com/buger/goreplay</li>
+<li>b、二进制包：百度或者找我要吧。如果你的服务器是centos7以上，可以直接解压使用。建议使用这种方式</li>
+</ul>
+</li>
+<li>2、监听并往kafka发消息</li>
+</ul>
+<ul>
+<li>使用HTTP 请求输出到kafka - HTTP原始信息</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo ./goreplay --input-raw :8179--output-kafka-host <span style="color:#e6db74">&#39;10.8.1.43:9092&#39;</span> --output-kafka-topic <span style="color:#e6db74">&#39;test&#39;</span>
+</code></pre></div><ul>
+<li>使用HTTP 请求输出到kafka - JSON格式</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo ./goreplay --input-raw :8080 --input-raw-track-response --output-kafka-host <span style="color:#e6db74">&#39;10.8.1.43:9092&#39;</span> --output-kafka-topic <span style="color:#e6db74">&#39;test&#39;</span> --output-kafka-json-format
+</code></pre></div><ul>
+<li>查看监听消息
+在kafka所在的服务器上启一个consumer，查看这个topic中的消息，可以看到监听端口的流量了
+bin/kafka-console-consumer.sh &ndash;bootstrap-server 10.8.1.43:9092 &ndash;topic test</li>
+</ul>
+<h2 id="解析kafka的消息并保存到mysql">解析kafka的消息并保存到mysql</h2>
+<ul>
+<li>安装依赖库：confluent-kafka、records、PyMySQL</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pip install confluent-kafka
+pip install records
+pip install PyMySQL
+</code></pre></div><ul>
+<li>Confluent-kafka是一款高效、稳定的kafka的python客户端
+<a href="https://github.com/confluentinc/confluent-kafka-python">https://github.com/confluentinc/confluent-kafka-python</a></li>
+<li>records一个非常简单但功能强大的库，用于对大多数关系数据库进行原始SQL查询</li>
+<li>PyMySQL是从Python连接到MySQL数据库服务器的接口</li>
+<li>编写解析kafka消息的python代码，进行解析并且保存落库</li>
+</ul>
+<h2 id="常用命令">常用命令</h2>
+<p>基本命令：</p>
+<ul>
+<li>1、获取经过本地8080端口的请求流量，然后打印出来</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo ./goreplay --input-raw :8080 --output-stdout
+</code></pre></div><ul>
+<li>2、获取经过本地8080端口的请求流量，然后保存在.gor文件中</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo ./goreplay --input-raw :8080 --output-file<span style="color:#f92672">=</span>request.gor
+</code></pre></div><ul>
+<li>3、从保存下来的流量文件中提取流量并向某的地址的某个端口输出</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo ./goreplay --input-file<span style="color:#f92672">=</span>request.gor --output-http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://localhost:8000&#34;</span>
+</code></pre></div><ul>
+<li>4、转发</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo ./goreplay --input-raw :8080 --output-http<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;http://localhost:8000&#34;</span>
+</code></pre></div><ul>
+<li>5.请求过滤</li>
+</ul>
+<p>例如只收集 /api 下的请求</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./gor --input-raw :8080 --output-http staging.com --http-allow-url /api
+</code></pre></div><p>例如只收集请求头中符合 api-version 为 1.0x 的请求</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./gor --input-raw :8080 --output-http staging.com --http-allow-header api-version:^1<span style="color:#ae81ff">\.</span>0<span style="color:#ae81ff">\d</span>
+</code></pre></div>
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/test-ops">test-ops</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/python/read_excel_yml/"> &laquo; 数据驱动测试- 测试用例加载</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/bugs/lagou-search-bug/">lagou PC版搜索选项工作经验选择应届后，取消应届后，不能返回原来的工作经验选项 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

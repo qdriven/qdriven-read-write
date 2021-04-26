@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>软件质量文化建设 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="软件质量文化建设"/>
+<meta name="twitter:description" content="什么是质量文化 测试/QA质量文化建设  内建质量 质量外延    测试过程中的常见问题 这些都是测试过程中的常见问题，但是其实都不容易解决."/>
+
+	<meta property="og:title" content="软件质量文化建设" />
+<meta property="og:description" content="什么是质量文化 测试/QA质量文化建设  内建质量 质量外延    测试过程中的常见问题 这些都是测试过程中的常见问题，但是其实都不容易解决." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/qa-thoughts/0-build-in-q/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-10-07T11:40:11&#43;02:00" />
+<meta property="article:modified_time" content="2019-10-07T11:40:11&#43;02:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 7, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">软件质量文化建设</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <ul>
+<li>什么是质量文化</li>
+<li>测试/QA质量文化建设
+<ul>
+<li>内建质量</li>
+<li>质量外延</li>
+</ul>
+</li>
+</ul>
+<h2 id="测试过程中的常见问题">测试过程中的常见问题</h2>
+<p><img src="https://codimd.s3.shivering-isles.com/demo/uploads/upload_9fc76e742af689ba58919495f2caa0ed.png" alt=""></p>
+<p>这些都是测试过程中的常见问题，但是其实都不容易解决.为什么不容易解决，主要问题：</p>
+<ol>
+<li>测试中发现的问题往往比较零散,不容易总结</li>
+<li>这些问题的解决往往短期内看不到直接效果，是一个系统工程</li>
+<li>项目可能都是短期的，谁会在意长期的事情？</li>
+<li>出现问题方可以把所有的问题都指向测试，而自身的压力会不自觉的减轻，但是无论如何转移责任并不会解决问题</li>
+<li>测试压力很大，但是有时问题大到测试没有能力解决了</li>
+</ol>
+<p>关于质量的建设有以下几个需要事先了解的:</p>
+<ol>
+<li>没有数据根本无从说起</li>
+<li>没有对比就没有改进</li>
+<li>质量是个长期工作,长期艰苦枯燥的工作</li>
+<li>没太多人愿意做长期枯燥的工作，但是公司实际上是需要的</li>
+<li>质量是系统工程，需要系统参与不是只有QA一个部门</li>
+<li>质量不止靠 QA 角色兜底的意识/工作方式，只靠测试QA是可以转移责任，但是不能解决问题</li>
+<li>发现问题同样重要，QA虽然不能直接解决问题，但是他能让更高层对于工程能力,产品能力有更全面的认识；只听到好话的公司，也是危险的，更高层如果只听到好话，并且真的认为很好，那会造成很多的误判，是不负责任的轻信</li>
+<li>没有经过验证的进度，可能都是虚假的进度，会造成资源的错误估计</li>
+</ol>
+<h2 id="内建质量">内建质量</h2>
+<p>研发，产品，QA，设计，数据分析师,市场每个角色都会对最终产品形态有直接影响。</p>
+<p><img src="https://codimd.s3.shivering-isles.com/demo/uploads/upload_0d265c3e938d9fa0b8be8bacf99ab9a8.png" alt=""></p>
+<p>流程:
+<img src="https://codimd.s3.shivering-isles.com/demo/uploads/upload_31a48e0a7edc255803e6d33da16f69ca.png" alt=""></p>
+<p>没有检查点的内建质量流程都是虚假的:</p>
+<p>软件开发中的检查点:</p>
+<ol>
+<li>编译通过打包，静态代码扫等基准能力</li>
+<li>单元测试通过</li>
+<li>单元测试覆盖率通过</li>
+<li>功能测试通过</li>
+<li>需求验收通过(UAT通过)</li>
+</ol>
+<p>软件开发总体的评估：</p>
+<ol>
+<li>线上问题故障</li>
+<li>线上问题解决时间SLA</li>
+<li>提测准入测试通过率</li>
+<li>提测后严重Bug比例</li>
+<li>工程能力评估: 环境构建能力/CI/CD能力</li>
+<li>工程能力评估: Bug重复修复比例</li>
+<li>UAT测试通过率</li>
+</ol>
+<h2 id="质量外延">质量外延</h2>
+<p>质量的外延是指不是专职质量团队对于产品问题，体验的参与. 这部分包括:</p>
+<ol>
+<li>外部提出的产品问题是否有闭环来追踪？</li>
+<li>是否会灰度发布环境a/b testing</li>
+<li>用户问题解决是否有闭环来追踪？</li>
+</ol>
+<h2 id="质量平台建设">质量平台建设</h2>
+<p>质量对于一个公司来说自然是很重要的，但是公司的资源，所处的阶段有不同，对于质量的要求也会不一样，对于质量平台建设自己肤浅的认识主要方向有以下几点:</p>
+<ol>
+<li>数字化质量，数字化开发过程</li>
+<li>让上下游工作的团队对于要求和质量有一个一致的信息</li>
+<li>让很多零散的事情聚合在一起，从全局角度看质量问题</li>
+<li>发现问题，给问题找到如何闭环的路径</li>
+<li>统一质量数据，集成常用采集数据的工具，又能对于特殊采集质量数据的方法开放</li>
+<li>尊重不同领域的差异，提供其他领域的经验和建议</li>
+</ol>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/qa-thoughts">qa-thoughts</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/bugs/lagou-search-bug/"> &laquo; lagou PC版搜索选项工作经验选择应届后，取消应届后，不能返回原来的工作经验选项</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/pattern/1-junit5casetesttemplate/">Xmind,Test Cases,and Allure templates for TDD &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

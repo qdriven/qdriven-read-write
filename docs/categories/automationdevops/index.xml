@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation，devops on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/categories/automationdevops/</link>
+    <description>Recent content in automation，devops on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 11 Mar 2020 08:50:24 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/categories/automationdevops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>devops nginx 使用tips</title>
+      <link>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</link>
+      <pubDate>Wed, 11 Mar 2020 08:50:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</guid>
+      <description>为什么使用nginx 使用nginx来进行web服务的反向代理，举个例子来说，目前有两个vue的前端项目，使用同一个nginx，通过路径或者端口的不同访问不同的项目入口. 先从nginx安装开始吧：
+ MAC 安装Nginx:  brew install nginx  启动Nginx  brew services start nginx  nginx 配置目录说明:  ## nginx安装文件目录 /usr/local/Cellar/nginx ## nginx配置文件目录 /usr/local/etc/nginx ## config文件目录 /usr/local/etc/nginx/nginx.</description>
+    </item>
+    
+  </channel>
+</rss>

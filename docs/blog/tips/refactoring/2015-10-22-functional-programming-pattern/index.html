@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Functional Patterns | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Functional Patterns"/>
+<meta name="twitter:description" content="Functional patterns  Core Principles of FP design  Functions Types Composition   Functions as parameters  Abstraction,Dependency injection Partial application, Continuations,Folds   Chaining Functions  Error handling, Async Monads   Dealing with wrapped data  Lifting,Functors Validation with applicatives   Aggregating data and operations  Monoids    Functional programming is scary  Functors applicatives currying catamorphism Monad Monoid chainable aggregatable mappable  Object oriented programming is scary  Generic Polymorphism Interface Inheritance SOLID: SRP,OCP,LSP,ISP,DIP,&hellip;&hellip; Covariance IOC,DI,MVC  OO Patterns VS FP Patterns   OO pattern/principle • Single Responsibility Principle • Open/Closed principle • Dependency Inversion Principle • Interface Segregation Principle • Factory pattern • Strategy pattern • Decorator pattern • Visitor pattern"/>
+
+	<meta property="og:title" content="Functional Patterns" />
+<meta property="og:description" content="Functional patterns  Core Principles of FP design  Functions Types Composition   Functions as parameters  Abstraction,Dependency injection Partial application, Continuations,Folds   Chaining Functions  Error handling, Async Monads   Dealing with wrapped data  Lifting,Functors Validation with applicatives   Aggregating data and operations  Monoids    Functional programming is scary  Functors applicatives currying catamorphism Monad Monoid chainable aggregatable mappable  Object oriented programming is scary  Generic Polymorphism Interface Inheritance SOLID: SRP,OCP,LSP,ISP,DIP,&hellip;&hellip; Covariance IOC,DI,MVC  OO Patterns VS FP Patterns   OO pattern/principle • Single Responsibility Principle • Open/Closed principle • Dependency Inversion Principle • Interface Segregation Principle • Factory pattern • Strategy pattern • Decorator pattern • Visitor pattern" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tips/refactoring/2015-10-22-functional-programming-pattern/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-10-23T10:31:11&#43;08:00" />
+<meta property="article:modified_time" content="2015-10-23T10:31:11&#43;08:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 23, 2015
+                                    <i class="far fa-clock clock"></i>
+                                    2 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Functional Patterns</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="functional-patterns">Functional patterns</h2>
+<ul>
+<li>Core Principles of FP design
+<ul>
+<li>Functions</li>
+<li>Types</li>
+<li>Composition</li>
+</ul>
+</li>
+<li>Functions as parameters
+<ul>
+<li>Abstraction,Dependency injection</li>
+<li>Partial application, Continuations,Folds</li>
+</ul>
+</li>
+<li>Chaining Functions
+<ul>
+<li>Error handling, Async</li>
+<li>Monads</li>
+</ul>
+</li>
+<li>Dealing with wrapped data
+<ul>
+<li>Lifting,Functors</li>
+<li>Validation with applicatives</li>
+</ul>
+</li>
+<li>Aggregating data and operations
+<ul>
+<li>Monoids</li>
+</ul>
+</li>
+</ul>
+<h2 id="functional-programming-is-scary">Functional programming is scary</h2>
+<ul>
+<li>Functors</li>
+<li>applicatives</li>
+<li>currying</li>
+<li>catamorphism</li>
+<li>Monad</li>
+<li>Monoid</li>
+<li>chainable</li>
+<li>aggregatable</li>
+<li>mappable</li>
+</ul>
+<h2 id="object-oriented-programming-is-scary">Object oriented programming is scary</h2>
+<ul>
+<li>Generic</li>
+<li>Polymorphism</li>
+<li>Interface</li>
+<li>Inheritance</li>
+<li>SOLID: SRP,OCP,LSP,ISP,DIP,&hellip;&hellip;</li>
+<li>Covariance</li>
+<li>IOC,DI,MVC</li>
+</ul>
+<h2 id="oo-patterns-vs-fp-patterns">OO Patterns VS FP Patterns</h2>
+<ul>
+<li>
+<p>OO pattern/principle
+• Single Responsibility Principle
+• Open/Closed principle
+• Dependency Inversion Principle
+• Interface Segregation Principle
+• Factory pattern
+• Strategy pattern
+• Decorator pattern
+• Visitor pattern</p>
+</li>
+<li>
+<p>FP pattern/principle
+• Functions
+• Functions
+• Functions, also
+• Functions
+• Yes, functions
+• Oh my, functions again! • Functions
+• Functions</p>
+</li>
+</ul>
+<p>:)</p>
+<h2 id="functional-programming">Functional programming</h2>
+<p>Haskell,OCaml, etc</p>
+<h2 id="core-principles-of-fp-design">Core Principles of FP Design</h2>
+<ul>
+<li>Steal from mathematics</li>
+<li>Types are not classes</li>
+<li>Functions are things</li>
+<li>Composition everytwhere</li>
+</ul>
+<h3 id="mathematics-functions">Mathematics functions</h3>
+<p>• Input and output values already exist
+• A function is not a calculation, just a mapping
+• Input and output values are unchanged (immutable)</p>
+<pre><code>let add1 x = x+1
+va1 add1: int-&gt;int
+</code></pre><h3 id="guideline-strive-for-purity">Guideline: Strive for purity</h3>
+<pre><code>￼let x = doSomething()
+let y = doSomethingElse(x)
+return y + 1
+</code></pre><pre><code>let helper() =
+￼   let x = doSomething()
+   let y = doSomethingElse(x)
+   return y
+return helper() + 1
+</code></pre><ul>
+<li>Laziness: only evaluate when I need output</li>
+<li>Cacheable results
+same answer every time – &ldquo;memoization&rdquo;</li>
+<li>No order dependencies</li>
+<li>Parallelizable</li>
+<li>No Side Effects</li>
+<li>Immutable data</li>
+</ul>
+<p>Haskell/Clojure</p>
+<h3 id="types-are-not-classes">Types are not classes</h3>
+<p>set of valid inputs and sets of valid output</p>
+<p>Data Behavior Data</p>
+<h3 id="functions-are-things">Functions are things</h3>
+<p>A function is a standalone thing, not attached to a class.
+Functions as inputs and outputs</p>
+<h3 id="composition-everywhere">Composition everywhere</h3>
+<p>Types can be composed too
+“algebraic types&quot;</p>
+<ul>
+<li>Product type: *
+set of people * set of dates</li>
+<li>Sum type: +
+set of cash value + set of cheque value+ set of credit card value</li>
+</ul>
+<h3 id="ddd--domain-modeling">DDD &amp; DOMAIN MODELING</h3>
+<p>to be continue &hellip;&hellip;&hellip;.</p>
+<p>发现函数式编程其实挺有意思的，函数式我觉的可以比面向对象更为抽象，所以他的代码少
+是有道理的。</p>
+<p>￼</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/designpattern">designpattern</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/true_stories/2015-10-24-interesting-methods/"> &laquo; True Stories: 有趣的函数</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/tips/interview/2015-10-22-python_interview_questions/">Python 面试题 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>test-ops on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/test-ops/</link>
+    <description>Recent content in test-ops on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Tue, 01 Sep 2020 21:49:22 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/test-ops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git in One Page</title>
+      <link>https://qdriven.github.io/blog/test-ops/6-one-page-git/</link>
+      <pubDate>Tue, 01 Sep 2020 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/6-one-page-git/</guid>
+      <description>索引  配置 配置文件 创建 本地修改 搜索 提交历史 分支与标签 更新与发布 合并与重置 撤销 Git Flow   配置 列出当前配置： $ git config --list 列出repository配置： $ git config --local --list 列出全局配置： $ git config --global --list 列出系统配置： $ git config --system --list 设置用户名： $ git config --global user.</description>
+    </item>
+    
+    <item>
+      <title>Docker in One Page</title>
+      <link>https://qdriven.github.io/blog/test-ops/5-docker-onepage/</link>
+      <pubDate>Fri, 28 Aug 2020 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/5-docker-onepage/</guid>
+      <description>Docker In One Page(30 minutes)  Docker Overview Docker Process Docker image Docker Components  5.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-5 前端部署 NGINX Conf文件自动配置</title>
+      <link>https://qdriven.github.io/blog/tools/nginx-runner/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/nginx-runner/</guid>
+      <description>前端部署 NGINX Conf文件自动配置 新部署了一个服务，测试环境NGINX帮忙配置一下；这周老鸟被这些事情忙的不亦乐乎，一会nginx加一个环境配置， 一会部署一个测试环境前端,一会重启一些nginx,一周很快就过去了，老鸟感觉一周测试的事情做的很少，倒是做了很多nginx运维的事情. 按照现在流行的说法叫test-ops，不知道哪个天才创造了这个职位名称，但是很遗憾，老鸟不能再招人了，公司HC已经冻结了，但是如果一直这样也不是个事情呀.</description>
+    </item>
+    
+    <item>
+      <title>devops nginx 使用tips</title>
+      <link>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</link>
+      <pubDate>Wed, 11 Mar 2020 08:50:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</guid>
+      <description>为什么使用nginx 使用nginx来进行web服务的反向代理，举个例子来说，目前有两个vue的前端项目，使用同一个nginx，通过路径或者端口的不同访问不同的项目入口. 先从nginx安装开始吧：
+ MAC 安装Nginx:  brew install nginx  启动Nginx  brew services start nginx  nginx 配置目录说明:  ## nginx安装文件目录 /usr/local/Cellar/nginx ## nginx配置文件目录 /usr/local/etc/nginx ## config文件目录 /usr/local/etc/nginx/nginx.</description>
+    </item>
+    
+    <item>
+      <title>goreplay 流量回放小尝试</title>
+      <link>https://qdriven.github.io/blog/test-ops/4-goreplay-usage/</link>
+      <pubDate>Wed, 09 Oct 2019 10:06:26 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/4-goreplay-usage/</guid>
+      <description>Gorelapy简介 goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。
+GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址 最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的.</description>
+    </item>
+    
+    <item>
+      <title>01-微服务框架－Springboot/Flask,Hello World</title>
+      <link>https://qdriven.github.io/blog/test-ops/2016-02-01-microservice-try/</link>
+      <pubDate>Mon, 01 Feb 2016 23:57:29 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2016-02-01-microservice-try/</guid>
+      <description>现在有很多的微服务框架，这里试用一下Java Springboot和Python的Flask. 本文分别试用SpringBoot和Flask完成了一个简单的Hello World服务来展示如何使用Springboot和Flask构建 一个简单的服务. 同时用AB进行了一个简单的压力测试。</description>
+    </item>
+    
+    <item>
+      <title>docker usage: container</title>
+      <link>https://qdriven.github.io/blog/test-ops/2015-12-28-docker-usage-container/</link>
+      <pubDate>Mon, 28 Dec 2015 22:08:39 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2015-12-28-docker-usage-container/</guid>
+      <description>Docker container 的常用命令。
+Docker information docker info 如果docker没有安装，则下载docker tools,如果权限不过就使用如下方法：</description>
+    </item>
+    
+    <item>
+      <title>docker usage: images</title>
+      <link>https://qdriven.github.io/blog/test-ops/2015-12-28-docker_usage/</link>
+      <pubDate>Mon, 28 Dec 2015 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2015-12-28-docker_usage/</guid>
+      <description>Some Basic Command usage for docker</description>
+    </item>
+    
+    <item>
+      <title>DNS Tips</title>
+      <link>https://qdriven.github.io/blog/test-ops/1-dns/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/1-dns/</guid>
+      <description>DNS 使用Tips  dig 工具使用  dig www.</description>
+    </item>
+    
+    <item>
+      <title>Nginx Commands</title>
+      <link>https://qdriven.github.io/blog/test-ops/6.nginx-one-page/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/6.nginx-one-page/</guid>
+      <description>Nginx Commands file:
+/etc/nginx/nginx.conf  work_processor  ps aux | grep nginx  worker_cpu_affinity gzip  http { gzip on; gzip_comp_level 3; gzip_types application/javascript application/xml; gzip_static on; }  IPVS: Internet Protocol Virtual Server Weighted Least Connection Worker Server ipvsadmin sysctl  sysctl -p  route  Destination Gateway Flags Metric Ref use Iface    route add default gw 192.</description>
+    </item>
+    
+    <item>
+      <title>Install Python3.7 in Centos</title>
+      <link>https://qdriven.github.io/blog/test-ops/1-install-python3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/1-install-python3/</guid>
+      <description>Centos安装Python3.7需要通过自己编译安装进行，中间是不是会遇到一些问题，以下是一些安装步骤和一些问题：
+ 下载Python3.7文件 解压Pyton3.7文件 设置config make install  下载Python3.</description>
+    </item>
+    
+    <item>
+      <title>Linux 命令基础</title>
+      <link>https://qdriven.github.io/blog/test-ops/2-linux-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2-linux-commands/</guid>
+      <description>查询用户和密码 less /etc/passwd awk -F: &amp;#39;{ print $1}&amp;#39; /etc/passwd cut -d: -f1 /etc/passwd getent passwd | awk -F: &amp;#39;{ print $1}&amp;#39; getent passwd getent passwd | grep sonar grep -E &amp;#39;^UID_MIN|^UID_MAX&amp;#39; /etc/login.</description>
+    </item>
+    
+    <item>
+      <title>SONAR环境建立</title>
+      <link>https://qdriven.github.io/blog/test-ops/3-sonar-installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/3-sonar-installation/</guid>
+      <description>postgresql 初始化 sudo rpm -Uvh https://download.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,8 +1,7 @@
 ---
 title: lagou PC版搜索选项工作经验选择应届后，取消应届后，不能返回原来的工作经验选项
 date: 2019-10-07 21:32:43
-tags:
-    - real-bug
+tags: ["real-bug"]
 ---
 
 ## Bug 描述

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>HBase 介绍 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HBase 介绍"/>
+<meta name="twitter:description" content="What is HBASE  NoSQL: Not Only SQL Column-Oriented Database Based on Google BigTable HDFS as Storage TB/PB data and Random Access 解决10条记录和1000千万记录同样的读写性能问题  RDBMS 问题 HBASE VS MYSQL Google Big Table A Bigtable is a sparse, distributed, persistent multidimensional sorted map."/>
+
+	<meta property="og:title" content="HBase 介绍" />
+<meta property="og:description" content="What is HBASE  NoSQL: Not Only SQL Column-Oriented Database Based on Google BigTable HDFS as Storage TB/PB data and Random Access 解决10条记录和1000千万记录同样的读写性能问题  RDBMS 问题 HBASE VS MYSQL Google Big Table A Bigtable is a sparse, distributed, persistent multidimensional sorted map." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tips/hbase-intro/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2018-11-21T23:11:47&#43;00:00" />
+<meta property="article:modified_time" content="2018-11-21T23:11:47&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Nov 21, 2018
+                                    <i class="far fa-clock clock"></i>
+                                    2 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">HBase 介绍</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="what-is-hbase">What is HBASE</h2>
+<ul>
+<li>NoSQL: Not Only SQL</li>
+<li>Column-Oriented Database</li>
+<li>Based on Google BigTable</li>
+<li>HDFS as Storage</li>
+<li>TB/PB data and Random Access</li>
+<li>解决10条记录和1000千万记录同样的读写性能问题</li>
+</ul>
+<h2 id="rdbms-问题">RDBMS 问题</h2>
+<p><img src="/images/db-e.jpg" alt="img"></p>
+<h2 id="hbase-vs-mysql">HBASE VS MYSQL</h2>
+<p><img src="/images/habseVSmysql.jpg" alt="img"></p>
+<h2 id="google-big-table">Google Big Table</h2>
+<pre><code>A Bigtable is a sparse, distributed, persistent multidimensional sorted map.
+The map is indexed by a row key, column key, and a timestamp; each value in the map is an uninterpreted array of bytes.
+</code></pre><ul>
+<li>map: bigtable 的核心就是一个Map，key-value</li>
+<li>persistent： 持久化和其他没有任何区别</li>
+<li>distributed： 分布式文件系统(HDFS/S3/GFS)/多副本(replication)</li>
+<li>sorted: key是排序的</li>
+<li>multidimensional： 和columns有对应关系, 第一层key-value,可以认为是个row, A,B 可以认为是Column Families</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;1&#34;</span> : {
+    <span style="color:#f92672">&#34;A&#34;</span> : <span style="color:#e6db74">&#34;x&#34;</span>,
+    <span style="color:#f92672">&#34;B&#34;</span> : <span style="color:#e6db74">&#34;z&#34;</span>
+  },
+  <span style="color:#f92672">&#34;aaaaa&#34;</span> : {
+    <span style="color:#f92672">&#34;A&#34;</span> : <span style="color:#e6db74">&#34;y&#34;</span>,
+    <span style="color:#f92672">&#34;B&#34;</span> : <span style="color:#e6db74">&#34;w&#34;</span>
+  }
+  }
+</code></pre></div><ul>
+<li>sparse: 稀疏，字段不固定,null值不占空间</li>
+</ul>
+<h2 id="tablesrowscolumns-and-cells">Tables,Rows,Columns and Cells</h2>
+<p><img src="/images/table_row_col.jpg" alt="img"></p>
+<h2 id="region">Region</h2>
+<p>map: key-value, 根据key可以直接找到对应值,o(1),但是内存不可能无限大,怎么办?
+<img src="/images/regions.jpg" alt="img"></p>
+<h2 id="region-server">Region Server</h2>
+<p><img src="/images/regserver.jpg" alt="img"></p>
+<h2 id="regionregion-server">Region,Region Server</h2>
+<ul>
+<li>Region 根据不同表来切分</li>
+<li>Region 放到不同的Region Server</li>
+</ul>
+<h2 id="hbase-column-family">HBASE Column Family</h2>
+<p><img src="/images/Hbase_CF.jpg" alt="img"></p>
+<h2 id="hbase-column-family-1">HBASE column family</h2>
+<ul>
+<li>每个column family 存成不同的文件</li>
+<li>缓存/压缩/version
+<img src="/images/reg_hfile.jpg" alt="img"></li>
+</ul>
+<h2 id="hbase架构-1">HBASE架构-1</h2>
+<p>存储基于Haddop/HDFS:
+<img src="/images/hbase-1.jpg" alt="img"></p>
+<h2 id="hbase架构-2">HBASE架构-2</h2>
+<p>Region Server/Region：
+<img src="/images/hbase-2.jpg" alt="img"></p>
+<h2 id="hbase架构-3">HBASE架构-3</h2>
+<p><img src="/images/hbase-3.jpg" alt="img"></p>
+<h2 id="hbase架构-4">HBASE架构-4</h2>
+<ul>
+<li>zookeeper: 管理节点信息,hbase:meta信息
+<img src="/images/HBASE-4.jpg" alt="img"></li>
+</ul>
+<h2 id="hbase架构-5">HBASE架构-5</h2>
+<ul>
+<li>HMASTER： 管理RegionServer节点，所有metadata变化的接口
+<img src="/images/HBASE-5.jpg" alt="img"></li>
+</ul>
+<h2 id="hbase架构-6">HBASE架构-6</h2>
+<p>客户端访问：
+<img src="/images/hbase-7.jpg" alt="img"></p>
+<h2 id="hbase架构-7">HBASE架构-7</h2>
+<p>Region Sever 内部结构：
+<img src="/images/hbase-10.jpg" alt="img"></p>
+<p>Regions:</p>
+<pre><code>Table                    (HBase table)
+    Region               (Regions for the table)
+        Store            (Store per ColumnFamily for each Region for the table)
+            MemStore     (MemStore for each Store for each Region for the table)
+            StoreFile/HFILE    (StoreFiles for each Store for each Region for the table)
+                Block    (Blocks within a StoreFile within a Store for each Region for the table)
+</code></pre><h2 id="hbase架构-8">HBASE架构-8</h2>
+<p>HBASE是CP系统，WAL(Write Ahead Log)
+<img src="/images/hbase-11.jpg" alt="img">
+<img src="/images/hbase_wp.jpg" alt="img"></p>
+<h2 id="hbase">HBASE</h2>
+<ul>
+<li>table,rowkey,column family</li>
+<li>Region/Region Server</li>
+<li>Store/MemStore/StoreFile/HFILE/WAL</li>
+<li>Zookeeper/HMaster</li>
+</ul>
+<p><img src="https://mapr.com/blog/in-depth-look-hbase-architecture/assets/blogimages/HBaseArchitecture-Blog-Fig3.png" alt="img"></p>
+<h2 id="hbase-cli">HBase CLI</h2>
+<p>Use Hbase in CLI and JAVA to learning the basic usage of hbase:</p>
+<ul>
+<li>Use Hbase in a Local Mode</li>
+<li>Use Hbase in JAVA</li>
+</ul>
+<h2 id="hbase-local-mode">HBase Local Mode</h2>
+<p>使用Hbase的本地模式相当简单，启动hbase就可以,不需要太多额外配置。</p>
+<ul>
+<li>启动hbase</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cd <span style="color:#e6db74">${</span>HBASE_HOME<span style="color:#e6db74">}</span>/bin
+sh start-hbase.sh
+</code></pre></div><ul>
+<li>使用hbase shell 访问</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">./hbase shell
+HBase Shell
+Use <span style="color:#e6db74">&#34;help&#34;</span> to get list of supported commands.
+Use <span style="color:#e6db74">&#34;exit&#34;</span> to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.1.1, rb60a92d6864ef27295027f5961cb46f9162d7637, Fri Oct <span style="color:#ae81ff">26</span> 19:27:03 PDT <span style="color:#ae81ff">2018</span>
+Took 0.0336 seconds
+Ignoring executable-hooks-1.3.2 because its extensions are not built. Try: gem pristine executable-hooks --version 1.3.2
+Ignoring gem-wrappers-1.3.2 because its extensions are not built. Try: gem pristine gem-wrappers --version 1.3.2
+2.4.1 :001 &gt;
+</code></pre></div><h2 id="hbase-basic-commands">HBase Basic Commands</h2>
+<ul>
+<li>create table with column family</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  create <span style="color:#e6db74">&#39;test_table&#39;</span>,<span style="color:#e6db74">&#39;cf1&#39;</span>
+</code></pre></div><ul>
+<li>put data: 插入数据： put <!-- raw HTML omitted -->,&lt;row_key&gt;,<a href="cf:property">cf:property</a>,<!-- raw HTML omitted --></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">put <span style="color:#e6db74">&#39;test_table&#39;</span>,<span style="color:#e6db74">&#39;row_key_1&#39;</span>,<span style="color:#e6db74">&#39;cf1:k1&#39;</span>,<span style="color:#e6db74">&#39;k1:v1&#39;</span>
+</code></pre></div><p>同一个column family,不同数据，然后scan结果, scan的结果是cell-oriented</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"> <span style="color:#f92672">=</span>&gt; <span style="color:#f92672">[</span><span style="color:#e6db74">&#34;test_table&#34;</span><span style="color:#f92672">]</span>
+2.4.1 :004 &gt; put <span style="color:#e6db74">&#39;test_table&#39;</span>,<span style="color:#e6db74">&#39;row_key_1&#39;</span>,<span style="color:#e6db74">&#39;cf1:k1&#39;</span>,<span style="color:#e6db74">&#39;k1:v1&#39;</span>
+Took 0.2186 seconds
+2.4.1 :005 &gt; put <span style="color:#e6db74">&#39;test_table&#39;</span>,<span style="color:#e6db74">&#39;row_key_1&#39;</span>,<span style="color:#e6db74">&#39;cf1:k2&#39;</span>,<span style="color:#e6db74">&#39;k2:v2&#39;</span>
+Took 0.0094 seconds
+2.4.1 :006 &gt; put <span style="color:#e6db74">&#39;test_table&#39;</span>,<span style="color:#e6db74">&#39;row_key_1&#39;</span>,<span style="color:#e6db74">&#39;cf1:k3&#39;</span>,<span style="color:#e6db74">&#39;k3:v3&#39;</span>
+Took 0.0032 seconds
+2.4.1 :007 &gt; scan <span style="color:#e6db74">&#39;test_table&#39;</span>
+ROW                        COLUMN+CELL
+ row_key_1                 column<span style="color:#f92672">=</span>cf1:k1, timestamp<span style="color:#f92672">=</span>1545926595556, value<span style="color:#f92672">=</span>k1:v1
+ row_key_1                 column<span style="color:#f92672">=</span>cf1:k2, timestamp<span style="color:#f92672">=</span>1545926683964, value<span style="color:#f92672">=</span>k2:v2
+ row_key_1                 column<span style="color:#f92672">=</span>cf1:k3, timestamp<span style="color:#f92672">=</span>1545926692956, value<span style="color:#f92672">=</span>k3:v3
+</code></pre></div><ul>
+<li>get data</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">2.4.1 :008 &gt; get <span style="color:#e6db74">&#39;test_table&#39;</span>,<span style="color:#e6db74">&#39;row_key_1&#39;</span>
+COLUMN                     CELL
+ cf1:k1                    timestamp<span style="color:#f92672">=</span>1545926595556, value<span style="color:#f92672">=</span>k1:v1
+ cf1:k2                    timestamp<span style="color:#f92672">=</span>1545926683964, value<span style="color:#f92672">=</span>k2:v2
+ cf1:k3                    timestamp<span style="color:#f92672">=</span>1545926692956, value<span style="color:#f92672">=</span>k3:v3
+</code></pre></div><p>以上实际上就是HBASE的最常用的使用方法: put/get(write/read)</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/bigdata">bigdata</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/hbase">hbase</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/python/yuml-usage/"> &laquo; YUML Basic Usage</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/tips/frp-usage/">内网穿透方案 - frp &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

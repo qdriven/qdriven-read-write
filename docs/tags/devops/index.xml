@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>devops on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/devops/</link>
+    <description>Recent content in devops on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright><atom:link href="https://qdriven.github.io/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>服务器免密登录</title>
+      <link>https://qdriven.github.io/blog/tips/ssh-login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/ssh-login/</guid>
+      <description>使用下例中ssh-keygen和ssh-copy-id，仅需通过3个步骤的简单设置而无需输入密码就能登录远程Linux主机。
+ ssh-keygen 创建公钥和密钥。 ssh-copy-id 把本地主机的公钥复制到远程主机的authorized_keys文件上。 ssh-copy-id 也会给远程主机的用户主目录（home）和~/.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class"/>
+<meta name="twitter:description" content="Extract-Interface,Method,Sub Class,Supper Class
+以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性.
+开始:实例代码 以下是一个需要重构的实例代码："/>
+
+	<meta property="og:title" content="Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class" />
+<meta property="og:description" content="Extract-Interface,Method,Sub Class,Supper Class
+以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性.
+开始:实例代码 以下是一个需要重构的实例代码：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-extract-interface-method/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2015-10-26T10:31:11&#43;08:00" />
+<meta property="article:modified_time" content="2015-10-26T10:31:11&#43;08:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Oct 26, 2015
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>Extract-Interface,Method,Sub Class,Supper Class</p>
+<p>以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性.</p>
+<h2 id="开始实例代码">开始:实例代码</h2>
+<p>以下是一个需要重构的实例代码：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Receipt</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span> discounts<span style="color:#f92672">=</span> Lists<span style="color:#f92672">.</span><span style="color:#a6e22e">newArrayList</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">private</span> List<span style="color:#f92672">&lt;</span>Double<span style="color:#f92672">&gt;</span> itemTotals<span style="color:#f92672">=</span>Lists<span style="color:#f92672">.</span><span style="color:#a6e22e">newArrayList</span><span style="color:#f92672">();</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">calculateGradTotal</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">double</span> subTotal <span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Double itemTotal <span style="color:#f92672">:</span> itemTotals<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            subTotal<span style="color:#f92672">+=</span>itemTotal<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>discounts<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()&gt;</span>0<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Double discount <span style="color:#f92672">:</span> discounts<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                subTotal<span style="color:#f92672">-=</span>discount<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">double</span> tax<span style="color:#f92672">=</span>subTotal<span style="color:#f92672">*</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">065</span><span style="color:#f92672">;</span>
+        subTotal<span style="color:#f92672">+=</span>tax<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> subTotal<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="抽取方法">抽取方法</h2>
+<p>阅读代码,根据计算方法的步骤,可以通过如下尝试抽取方法:</p>
+<ul>
+<li>calculateSubTotal</li>
+<li>calculateDiscounts</li>
+<li>calculateTax</li>
+</ul>
+<p>最后calculateGrandTotal 调用着三个方法. 由于实例代码比较简单,所以还看不出有多少优点.
+但是如果想像calculateGrandTotal这个方法是很长的话，那么通过这种方式重构可以让计算calculateGrandTotal
+的逻辑更加清晰.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">calculateGrandTotal</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">double</span> subTotal<span style="color:#f92672">=</span>calculateSubTotal<span style="color:#f92672">();</span>
+        subTotal<span style="color:#f92672">=</span>calculateDiscounts<span style="color:#f92672">(</span>subTotal<span style="color:#f92672">);</span>
+        subTotal<span style="color:#f92672">=</span>calculateTax<span style="color:#f92672">(</span>subTotal<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> subTotal<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">calculateTax</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> subTotal<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">double</span> tax<span style="color:#f92672">=</span>subTotal<span style="color:#f92672">*</span>0<span style="color:#f92672">.</span><span style="color:#a6e22e">065</span><span style="color:#f92672">;</span>
+        subTotal<span style="color:#f92672">+=</span>tax<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> subTotal<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">calculateDiscounts</span><span style="color:#f92672">(</span><span style="color:#66d9ef">double</span> subTotal<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>discounts<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()&gt;</span>0<span style="color:#f92672">){</span>
+            <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Double discount <span style="color:#f92672">:</span> discounts<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                subTotal<span style="color:#f92672">-=</span>discount<span style="color:#f92672">;</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">return</span> subTotal<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">calculateSubTotal</span><span style="color:#f92672">(){</span>
+        <span style="color:#66d9ef">double</span> subTotal<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Double itemTotal <span style="color:#f92672">:</span> itemTotals<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            subTotal<span style="color:#f92672">+=</span>itemTotal<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#66d9ef">return</span> subTotal<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><h2 id="抽取接口">抽取接口</h2>
+<p>接口的好处想来大家都不叫清楚，所以有时有不同的实现出现时，抽取一个接口定义来也是一个不错的重构
+时间。</p>
+<ul>
+<li>假设ClassRegistration 如下:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassRegistration</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">double</span> total<span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">(){</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;create&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">transfer</span><span style="color:#f92672">(){</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;transfer&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+</code></pre></div><ul>
+<li>有一个新的ClassRegistration，所以抽取接口</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">IClassRegistration</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">transfer</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>然后修改ClassRegistration 使他实现IClassRegistration</p>
+<ul>
+<li>客户端代码在增加一个实现之后实际上不需要修改了,或者只需要修改方法签名就可以</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RegistrationProcessor</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">double</span> <span style="color:#a6e22e">processRegistration</span><span style="color:#f92672">(</span>IClassRegistration registration<span style="color:#f92672">){</span>
+        registration<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> registration<span style="color:#f92672">.</span><span style="color:#a6e22e">total</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h2 id="extract-subclass-supperclass">Extract SubClass SupperClass</h2>
+<p>这两个实际上就是合并子类，或者分解类.将方法，属性放到更合适的位置。</p>
+<h2 id="一些小结">一些小结</h2>
+<p>通过移动方法，分解方法，合并子类，分离大类，个人认为实际上完成了一些目的:</p>
+<ul>
+<li>将大方法分解到小方法，更好的维护</li>
+<li>分解不必要的依赖，可以通过新的实现来完成而不需要修改客户端代码</li>
+<li>大方法分解之后,方法负责的任务更加小，更加清楚</li>
+<li>小方法实际有更好的复用</li>
+</ul>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/refactoring">refactoring</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/tips/refactoring/2015-10-26-replace-inheritance-with-delegation/"> &laquo; Refactoring-6-Replace Inheritance with Delegation</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/automation/2015-10-24-phantomjs-usage/">Phantomjs Tutorial &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

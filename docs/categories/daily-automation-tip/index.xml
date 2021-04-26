@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>daily-automation-tip on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/categories/daily-automation-tip/</link>
+    <description>Recent content in daily-automation-tip on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 11 Mar 2020 08:50:24 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/categories/daily-automation-tip/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>devops nginx 使用tips</title>
+      <link>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</link>
+      <pubDate>Wed, 11 Mar 2020 08:50:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</guid>
+      <description>为什么使用nginx 使用nginx来进行web服务的反向代理，举个例子来说，目前有两个vue的前端项目，使用同一个nginx，通过路径或者端口的不同访问不同的项目入口. 先从nginx安装开始吧：
+ MAC 安装Nginx:  brew install nginx  启动Nginx  brew services start nginx  nginx 配置目录说明:  ## nginx安装文件目录 /usr/local/Cellar/nginx ## nginx配置文件目录 /usr/local/etc/nginx ## config文件目录 /usr/local/etc/nginx/nginx.</description>
+    </item>
+    
+    <item>
+      <title>数据驱动测试- 测试用例加载</title>
+      <link>https://qdriven.github.io/blog/python/read_excel_yml/</link>
+      <pubDate>Fri, 22 Nov 2019 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/read_excel_yml/</guid>
+      <description>使用pytest作为测试工具，有一个pytest.parameterized 的装饰器可以用来进行数据驱动测试，以下是一个最简单的例子：
+@pytest.mark.parametrize(&amp;#34;id_num&amp;#34;, (1, 2, 3, 4, 5)) def test_issue_plain(id_num): print(id_num) test_issue方法有一个参数名称是 id_num, 这个值可以在测试过程中不断的被改变，但是实际中接口自动化中，有时我们会使用一些excel，yml作为外部测试用例来传入参数进行测试，那怎么样才能实现这个功能呢？</description>
+    </item>
+    
+  </channel>
+</rss>

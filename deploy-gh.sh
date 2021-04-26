@@ -1,5 +1,6 @@
 #!/bin/sh
-
+git add .
+git commit -m "update blog sources"
 hugo
 mv docs/* ../qdriven.github.io
 cd ../qdriven.github.io

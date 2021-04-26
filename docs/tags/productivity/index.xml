@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>productivity on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/productivity/</link>
+    <description>Recent content in productivity on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Fri, 13 Dec 2019 02:19:56 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/productivity/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速生成简单的TPS报告</title>
+      <link>https://qdriven.github.io/blog/python/2020-07-01-generate-tps-chart/</link>
+      <pubDate>Fri, 13 Dec 2019 02:19:56 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2020-07-01-generate-tps-chart/</guid>
+      <description>练手的机会无处不在，不需要太久，也许只要10分钟半个小时就可以. 测试人员来说每天重复的事情其实不少，比如今天这件，大体时期如下:
+ 要做压力测试，需要提供一个TPS时间序列报告 压力测试工具是开发自己写的，TPS的数据从日志里面拿 不同的并发数下面需要重复好几次整理收集的事情，不同的版本下面又需要做好多次这样的事情  那么先让我们改进一下吧。</description>
+    </item>
+    
+    <item>
+      <title>服务器免密登录</title>
+      <link>https://qdriven.github.io/blog/tips/ssh-login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/ssh-login/</guid>
+      <description>使用下例中ssh-keygen和ssh-copy-id，仅需通过3个步骤的简单设置而无需输入密码就能登录远程Linux主机。
+ ssh-keygen 创建公钥和密钥。 ssh-copy-id 把本地主机的公钥复制到远程主机的authorized_keys文件上。 ssh-copy-id 也会给远程主机的用户主目录（home）和~/.</description>
+    </item>
+    
+  </channel>
+</rss>

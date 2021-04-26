@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>toolings on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/toolings/</link>
+    <description>Recent content in toolings on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 04 Nov 2015 10:31:11 +0800</lastBuildDate><atom:link href="https://qdriven.github.io/tags/toolings/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试用例-一些有意思的工具</title>
+      <link>https://qdriven.github.io/blog/tips/2015-11-03-test-tools/</link>
+      <pubDate>Wed, 04 Nov 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/2015-11-03-test-tools/</guid>
+      <description>Automation Test Case Generate Tools  Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.</description>
+    </item>
+    
+  </channel>
+</rss>

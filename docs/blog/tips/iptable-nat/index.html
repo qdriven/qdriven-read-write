@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Shell Learning - iptables | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell Learning - iptables"/>
+<meta name="twitter:description" content="kernel modules
+modprobe ip_tables modprobe iptable_nat modprobe iptable_filter modprobe ip_conntrack modprobe ip_conntrack_ftp modprobe ip_nat_ftp   ip_forward"/>
+
+	<meta property="og:title" content="Shell Learning - iptables" />
+<meta property="og:description" content="kernel modules
+modprobe ip_tables modprobe iptable_nat modprobe iptable_filter modprobe ip_conntrack modprobe ip_conntrack_ftp modprobe ip_nat_ftp   ip_forward" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tips/iptable-nat/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-08-24T10:31:11&#43;08:00" />
+<meta property="article:modified_time" content="2014-08-24T10:31:11&#43;08:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Aug 24, 2014
+                                    <i class="far fa-clock clock"></i>
+                                    3 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Shell Learning - iptables</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <ol>
+<li>
+<p>kernel modules</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">modprobe ip_tables
+modprobe iptable_nat
+modprobe iptable_filter
+modprobe ip_conntrack
+modprobe ip_conntrack_ftp
+modprobe ip_nat_ftp
+</code></pre></div></li>
+<li>
+<p>ip_forward</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sysctl -w net.ipv4.ip_forward<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</code></pre></div></li>
+<li>
+<p>iptables.service</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">yum install -y iptables
+
+systemctl restart iptables.service
+
+<span style="color:#75715e"># show rules</span>
+iptables -t nat -L
+
+<span style="color:#75715e"># clear rules</span>
+iptables -t nat -F
+   
+<span style="color:#75715e"># save rules</span>
+iptables-save &gt; /etc/sysconfig/iptables
+</code></pre></div></li>
+</ol>
+<h2 id="hosts-information">Hosts Information</h2>
+<ul>
+<li>
+<p>Jumpbox/Gatewaybox:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Interface</th>
+<th>IP Address</th>
+<th>Netmask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public</td>
+<td>eth0</td>
+<td>10.123.10.99</td>
+<td>255.255.255.0</td>
+</tr>
+<tr>
+<td>Internal</td>
+<td>eth1</td>
+<td>192.168.1.99</td>
+<td>255.255.255.0</td>
+</tr>
+</tbody>
+</table>
+<p>路由表: <code>route -n</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.123.10.1     0.0.0.0         UG    <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+10.123.10.0     0.0.0.0         255.255.255.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     <span style="color:#ae81ff">0</span>      <span style="color:#ae81ff">0</span>        <span style="color:#ae81ff">0</span> eth1
+</code></pre></div></li>
+<li>
+<p>Internal Boxes: <code>192.168.1.0/24</code></p>
+</li>
+</ul>
+<h2 id="外网访问内网-nat-端口映射">外网访问内网 (NAT 端口映射)</h2>
+<ul>
+<li>
+<p>User Case:</p>
+<pre><code>用户通过 10.123.10.99:11022 访问内网机器 192.168.1.11:22
+
+$ ssh root@10.123.10.99 -p 11022
+</code></pre></li>
+<li>
+<p>Flow Figure:</p>
+<pre><code>        |
+        V
+ src: x.x.x.x:xx
+dest: 10.123.10.99:11022
+        |
+        V
+---- eth0 (in) --------
+        |
+        | PREROUTING
+        |  (DNAT)
+        V
+ src: x.x.x.x:xx
+dest: 192.168.1.11:22
+        |
+        | routing
+        V
+---- eth1 (out) -------
+        |
+        | POSTROUTING
+        |  (SNAT)
+        V
+ src: 192.168.1.99:xx
+dest: 192.168.1.11:22
+        |
+        V
+---- Internal BOX ----
+</code></pre></li>
+<li>
+<p>Configure:</p>
+<ul>
+<li>
+<p>DNAT (任意方法均可)</p>
+<ul>
+<li>iptables -t nat -A PREROUTING  -p tcp -i eth0 -d 10.123.10.99 &ndash;dport 11022 -j DNAT &ndash;to 192.168.1.11:22</li>
+<li>iptables -t nat -A PREROUTING  -p tcp -i eth0 &ndash;dport 11022 -j DNAT &ndash;to 192.168.1.11:22</li>
+<li>iptables -t nat -A PREROUTING  -p tcp -d 10.123.10.99 &ndash;dport 11022 -j DNAT &ndash;to 192.168.1.11:22</li>
+<li>iptables -t nat -A PREROUTING  -p tcp &ndash;dport 11022 -j DNAT &ndash;to 192.168.1.11:22</li>
+</ul>
+</li>
+<li>
+<p>SNAT (任意方法均可)</p>
+<ul>
+<li>iptables -t nat -A POSTROUTING -p tcp -o eth1 -d 192.168.1.11 -j SNAT &ndash;to 192.168.1.99</li>
+<li>iptables -t nat -A POSTROUTING -p tcp -o eth1 -d 192.168.1.0/24 -j SNAT &ndash;to 192.168.1.99</li>
+<li>iptables -t nat -A POSTROUTING -p tcp -d 192.168.1.0/24 -j SNAT &ndash;to 192.168.1.99</li>
+<li>iptables -t nat -A POSTROUTING -p tcp -d 192.168.1.0/24 -j MASQUERADE</li>
+<li>iptables -t nat -A POSTROUTING -p tcp -o eth1 -j SNAT &ndash;to 192.168.1.99</li>
+<li>iptables -t nat -A POSTROUTING -p tcp -o eth1 -j MASQUERADE</li>
+</ul>
+</li>
+<li>
+<p>最简单的配置</p>
+<pre><code>iptables -t nat -A PREROUTING  -p tcp --dport 11022 -j DNAT --to 192.168.1.11:22
+iptables -t nat -A POSTROUTING -p tcp -o eth1 -j MASQUERADE
+</code></pre></li>
+</ul>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li>其中 <code>-j MASQUERADE</code> 等价于 <code>-j SNAT --to 192.168.1.99</code></li>
+<li><code>-j MASQUERADE</code> 会自动从服务器的网卡上，获取当前ip地址来做NAT</li>
+<li>参考：http://www.cnblogs.com/Dicky-Zhang/p/5934657.html</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<h2 id="内网访问外网-直连gateway">内网访问外网 (直连，GATEWAY)</h2>
+<ul>
+<li>
+<p>User Case:</p>
+<pre><code>内网机器 192.168.1.0/24 通过网关 10.123.10.99 直接访问外网
+</code></pre></li>
+<li>
+<p>Flow Figure:</p>
+<pre><code>---- Internal BOX ----
+        |
+        V
+ src: 192.68.1.0/24:xx
+dest: x.x.x.x:xx
+        |
+        V
+---- eth1 (in) --------
+        |
+        | routing
+        V
+---- eth0 (out) -------
+        |
+        | POSTROUTING
+        |  (SNAT)
+        V
+ src: 10.123.10.99:xx
+dest: x.x.x.x:xx
+        |
+        V
+</code></pre></li>
+<li>
+<p>Configure:</p>
+<ol>
+<li>在 GatewayBox 上配置</li>
+</ol>
+<pre><code>iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o eth0 -j MASQUERADE
+</code></pre><ol start="2">
+<li>在内网机器上设置默认 gateway 为 192.168.1.99</li>
+</ol>
+<pre><code>$ cat &gt; /etc/sysconfig/network-scripts/ifcfg-eth0 &lt;&lt; EOF
+NAME=eth0
+DEVICE=eth0
+ONBOOT=yes
+BOOTPROTO=static
+IPADDR=192.168.1.11
+NETMASK=255.255.255.0
+GATEWAY=192.168.1.99
+EOF
+
+$ systemctl restart network.service
+
+$ route -n
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         192.168.1.99    0.0.0.0         UG    0      0        0 eth0
+192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 eth0
+</code></pre></li>
+</ul>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/shell">shell</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/shell/2014-08-24-shell_101_controll_flow/"> &laquo; Shell Learning - Control Flow</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/shell/2014-08-24-shell_101_scripting/">Shell Learning - Scripting &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

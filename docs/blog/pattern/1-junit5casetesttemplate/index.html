@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Xmind,Test Cases,and Allure templates for TDD | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Xmind,Test Cases,and Allure templates for TDD"/>
+<meta name="twitter:description" content="Xmind,TestCases and JUnit5 Allure Template Learn from the requirements and write test cases are the common daily work of a tester."/>
+
+	<meta property="og:title" content="Xmind,Test Cases,and Allure templates for TDD" />
+<meta property="og:description" content="Xmind,TestCases and JUnit5 Allure Template Learn from the requirements and write test cases are the common daily work of a tester." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/pattern/1-junit5casetesttemplate/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-08-07T21:34:04&#43;00:00" />
+<meta property="article:modified_time" content="2019-08-07T21:34:04&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Aug 7, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    4 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Xmind,Test Cases,and Allure templates for TDD</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h1 id="xmindtestcases-and-junit5-allure-template">Xmind,TestCases and JUnit5 Allure Template</h1>
+<p>Learn from the requirements and write test cases are the common daily work of a tester.
+Normally write the mind map as a guide of test cases(in internet it is enough), then
+execute the test cases or write testing codes based on the xmind file(mind map).
+But do you ever question about this process? It is productive enough? Is there any improvement?</p>
+<!-- raw HTML omitted -->
+<p>Let me give an example: I want to test a DateUtil functionality, it has several features, the mindmap like this:</p>
+<ol>
+<li>
+<p>DateUtil Test Cases Mindmap:
+<img src="/images/productivity/testcase_map.jpg" alt="img"></p>
+</li>
+<li>
+<p>Then write test codes(your boss required you to write automation codes) using junit and allure:</p>
+</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Epic</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hutool DateUtil Usage&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@Feature</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hutool DateUtil Simple Usage&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HutoolDateUtilsTest</span> <span style="color:#f92672">{</span>
+
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DateUtil-Formatter-From Date&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@Story</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Formatter-From Date&#34;</span> <span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testFrom_Date</span><span style="color:#f92672">(){</span>
+        <span style="color:#75715e">//write testing codes
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DateUtil-Formatter-From DateTime&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@Story</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Formatter-From DateTime&#34;</span> <span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testFrom_DateTime</span><span style="color:#f92672">(){</span>
+        <span style="color:#75715e">//write testing codes
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p><a href="https://docs.qameta.io/allure/#_junit_5">allure</a> is a tool for unified test report. It is worth to use.
+Two conceptions in allure mapping to requirments:</p>
+<ul>
+<li>EPIC: A big functionality,usally have several small featuers</li>
+<li>Feature: A relative small functionality, which might have one or more user stories</li>
+<li>User Story: a small/independent functionality</li>
+</ul>
+<p>Writing code is actually transforming the test cases into codes, and labeling the test codes by different test cases names.</p>
+<ol start="3">
+<li>Running the tests, the report is like:</li>
+</ol>
+<p><img src="/images/productivity/allure_story_feature.jpg" alt="img"></p>
+<p>It is perfect! But don&rsquo;t you think you write test cases twice? In <em><strong>xmind</strong></em>, and in <em><strong>code</strong></em> like <em><strong>@Story</strong></em> bla bla bla &hellip;..</p>
+<p>Why do I write the annotations like @Story,@Epic or @Feature? The answer is that I want to make a fancy report,but I actually did duplicated work, didn&rsquo;t I?  Duplicate work have bad smell. In this case, it looks like you sacrifice your productivity to make report fancy. What if I want both fancy report and productivity? Is it possible to write once?  Scripting Boy thought there should be a way.</p>
+<h2 id="become-a-scripting-boy-to-connect-these-dots">Become a scripting boy to connect these dots</h2>
+<p>Actaully It is not that hard to find a way to achieve the goal: fancy report and productivity both.
+Let me figure it out:</p>
+<ol>
+<li>Export to test cases in markdown format through xmind(xmind has java/python sdk to manupilate the xmind file, but it is too complex), export is in xmind menu <em><strong>file&gt;export&gt;text</strong></em>:</li>
+</ol>
+<p><img src="/images/productivity/export_md.jpg" alt="img"></p>
+<p>BTW: importing md file to xmind is in ``file&gt;import&gt;text```</p>
+<p>The exported markdown file content:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># DateUtil</span>
+<span style="color:#75715e">## Functions</span>
+<span style="color:#75715e">### isSameDate</span>
+<span style="color:#75715e">### CurrentYear</span>
+<span style="color:#75715e">### CurrentMonth</span>
+<span style="color:#75715e">### CurrentDay</span>
+</code></pre></div><ol start="2">
+<li>Parse the markdown test cases, and render parsed test cases into testing code template
+It is not hard, there are only three files, and less than 50 lines of codes:</li>
+</ol>
+<ul>
+<li>pom.xml for leveraging existing libs</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">        <span style="color:#f92672">&lt;</span>dependency<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span>groupId<span style="color:#f92672">&gt;</span>org<span style="color:#f92672">.</span><span style="color:#a6e22e">jtwig</span><span style="color:#f92672">&lt;/</span>groupId<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span>artifactId<span style="color:#f92672">&gt;</span>jtwig<span style="color:#f92672">-</span>core<span style="color:#f92672">&lt;/</span>artifactId<span style="color:#f92672">&gt;</span>
+            <span style="color:#f92672">&lt;</span>version<span style="color:#f92672">&gt;</span>5<span style="color:#f92672">.</span><span style="color:#a6e22e">87</span><span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">.</span><span style="color:#a6e22e">RELEASE</span><span style="color:#f92672">&lt;/</span>version<span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;/</span>dependency<span style="color:#f92672">&gt;</span>
+</code></pre></div><ul>
+<li>a junit test code template file in class path(resources folder),named <em><strong>junit_allure_template.twig</strong></em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> io.qameta.allure.Epic<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> io.qameta.allure.Story<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> io.qameta.allure.Feature<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.junit.jupiter.api.Assertions<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.junit.jupiter.api.DisplayName<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.junit.jupiter.api.Test<span style="color:#f92672">;</span>
+
+<span style="color:#a6e22e">@Epic</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{{context.epic}}&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@Feature</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{{context.epic}}&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#960050;background-color:#1e0010">{{</span><span style="color:#a6e22e">context</span><span style="color:#f92672">.</span><span style="color:#a6e22e">epic</span><span style="color:#f92672">}}</span>Test <span style="color:#f92672">{</span>
+
+   <span style="color:#f92672">{%</span> <span style="color:#66d9ef">for</span> entry in context<span style="color:#f92672">.</span><span style="color:#a6e22e">features</span><span style="color:#f92672">.</span><span style="color:#a6e22e">entrySet</span><span style="color:#f92672">()</span> <span style="color:#f92672">%}</span>
+    <span style="color:#f92672">{%</span> <span style="color:#66d9ef">for</span> feature in entry<span style="color:#f92672">.</span><span style="color:#a6e22e">value</span><span style="color:#f92672">()</span> <span style="color:#f92672">%}</span>
+        <span style="color:#a6e22e">@Test</span>
+        <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{{context.epic}}-{{feature.desc}}&#34;</span><span style="color:#f92672">)</span>
+        <span style="color:#a6e22e">@Story</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{feature.desc}}&#34;</span> <span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> test<span style="color:#f92672">{{</span>feature<span style="color:#f92672">.</span><span style="color:#a6e22e">name</span><span style="color:#f92672">}}(){</span>
+            <span style="color:#75715e">//write testing codes
+</span><span style="color:#75715e"></span>        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">{%</span> endfor <span style="color:#f92672">%}</span>
+   <span style="color:#f92672">{%</span> endfor <span style="color:#f92672">%}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>50 lines of codes, to read the exported markdown file, and render the template <em><strong>junit_allure_template.twig</strong></em></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Junit5TestTemplateGenerator</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">generateJunit5TC</span><span style="color:#f92672">(</span>String mdFile<span style="color:#f92672">,</span>String fileName<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        AllureTestModel allureTestModel <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AllureTestModel<span style="color:#f92672">();</span>
+        List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> mdContent<span style="color:#f92672">=</span> Resources<span style="color:#f92672">.</span><span style="color:#a6e22e">readLines</span><span style="color:#f92672">(</span>Resources<span style="color:#f92672">.</span><span style="color:#a6e22e">getResource</span><span style="color:#f92672">(</span>mdFile<span style="color:#f92672">),</span>Charsets<span style="color:#f92672">.</span><span style="color:#a6e22e">UTF_8</span><span style="color:#f92672">);</span>
+
+        String currentFeature<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String line <span style="color:#f92672">:</span> mdContent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;###&#34;</span><span style="color:#f92672">)){</span>
+                AllureFeature feature <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AllureFeature<span style="color:#f92672">();</span>
+                feature<span style="color:#f92672">.</span><span style="color:#a6e22e">setDesc</span><span style="color:#f92672">(</span>currentFeature<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;-&#34;</span><span style="color:#f92672">+</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;###&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">());</span>
+                feature<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;###&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">().</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;_&#34;</span><span style="color:#f92672">));</span>
+                allureTestModel<span style="color:#f92672">.</span><span style="color:#a6e22e">features</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>currentFeature<span style="color:#f92672">).</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>feature<span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;##&#34;</span><span style="color:#f92672">)){</span>
+                currentFeature <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;##&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">();</span>
+                allureTestModel<span style="color:#f92672">.</span><span style="color:#a6e22e">features</span><span style="color:#f92672">.</span><span style="color:#a6e22e">putIfAbsent</span><span style="color:#f92672">(</span>currentFeature<span style="color:#f92672">,</span><span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;());</span>
+            <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">startsWith</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">)){</span>
+                allureTestModel<span style="color:#f92672">.</span><span style="color:#a6e22e">setEpic</span><span style="color:#f92672">(</span>line<span style="color:#f92672">.</span><span style="color:#a6e22e">replace</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;#&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">trim</span><span style="color:#f92672">());</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+
+        JtwigTemplate template <span style="color:#f92672">=</span> JtwigTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">classpathTemplate</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;junit_allure_template.twig&#34;</span><span style="color:#f92672">);</span>
+        JtwigModel model <span style="color:#f92672">=</span> JtwigModel<span style="color:#f92672">.</span><span style="color:#a6e22e">newModel</span><span style="color:#f92672">().</span><span style="color:#a6e22e">with</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;context&#34;</span><span style="color:#f92672">,</span>allureTestModel<span style="color:#f92672">);</span>
+        template<span style="color:#f92672">.</span><span style="color:#a6e22e">render</span><span style="color:#f92672">(</span>model<span style="color:#f92672">,</span><span style="color:#66d9ef">new</span> FileOutputStream<span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> File<span style="color:#f92672">(</span>fileName<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;.java&#34;</span><span style="color:#f92672">)));</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Data</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AllureTestModel</span><span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">private</span> String epic<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">private</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>List<span style="color:#f92672">&lt;</span>AllureFeature<span style="color:#f92672">&gt;&gt;</span> features <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+     <span style="color:#f92672">}</span>
+
+     <span style="color:#a6e22e">@Data</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AllureFeature</span><span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">private</span> String desc<span style="color:#f92672">;</span>
+     <span style="color:#f92672">}</span>
+     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException <span style="color:#f92672">{</span>
+        Junit5TestTemplateGenerator<span style="color:#f92672">.</span><span style="color:#a6e22e">generateJunit5TC</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DateUtil.md&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;HutoolDateUtilTest.java&#34;</span><span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>And the result is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Epic</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hutool DateUtil Usage&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@Feature</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hutool DateUtil Simple Usage&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HutoolDateUtilsTest</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DateUtil-Formatter-From Date&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@Story</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Formatter-From Date&#34;</span> <span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testFrom_Date</span><span style="color:#f92672">(){</span>
+        <span style="color:#75715e">//write testing codes
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Test</span>
+    <span style="color:#a6e22e">@DisplayName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DateUtil-Formatter-From DateTime&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@Story</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Formatter-From DateTime&#34;</span> <span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">testFrom_DateTime</span><span style="color:#f92672">(){</span>
+        <span style="color:#75715e">//write testing codes
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+    <span style="color:#f92672">......</span>
+<span style="color:#f92672">}</span>   
+</code></pre></div><p>which is same as your writing before.</p>
+<p>Scripting boy is not kidding you, use a JAVA template lib to make both fancy report and test cases real without
+duplicated work.</p>
+<p>It is not perfect solution which I need to admit. But it works somehow, and save my time anyway.
+It also demostrated that there are plenty opportunities to tester to practice coding skills,
+to know a little bit more about other libaries. It is not about rocket science, not about make a fancy product, it is just about practicing day in and day out to make life a little bit easier than before.</p>
+<h2 id="whats-next">What&rsquo;s next?</h2>
+<p>It looks good, not why not write it as a plugin of a modern ide like intellj IDEA. Wait, Wait, I am a scripting boy, try to
+make a product?  But Why not? And why not support more templates like testng or other testing framework?  See you next time!</p>
+<h2 id="reference-code">Reference Code</h2>
+<ul>
+<li><a href="https://github.com/evenhumble/tdd-simple">github</a></li>
+</ul>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/java">JAVA</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/pe">PE</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/qa-thoughts/0-build-in-q/"> &laquo; 软件质量文化建设</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/api-testing/0-start-from-the-end/">Implement A Integration Testing Libs in two days &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

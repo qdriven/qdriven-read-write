@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Python Related库,拯救你满是dict的代码，让测试代码更好懂 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Python Related库,拯救你满是dict的代码，让测试代码更好懂"/>
+<meta name="twitter:description" content="[QA-Daily] Python Related库,拯救你满是dict的代码，让测试代码更好懂 Related是一个python的仓库,用来序列化和反序列. 对于测试人员来说，选择一个第三方lib的使用，最主要的是三点:"/>
+
+	<meta property="og:title" content="Python Related库,拯救你满是dict的代码，让测试代码更好懂" />
+<meta property="og:description" content="[QA-Daily] Python Related库,拯救你满是dict的代码，让测试代码更好懂 Related是一个python的仓库,用来序列化和反序列. 对于测试人员来说，选择一个第三方lib的使用，最主要的是三点:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/python/2020-08-18-related/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-08-18T10:41:15&#43;00:00" />
+<meta property="article:modified_time" content="2020-08-18T10:41:15&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Aug 18, 2020
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Python Related库,拯救你满是dict的代码，让测试代码更好懂</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="qa-daily-python-related库拯救你满是dict的代码让测试代码更好懂">[QA-Daily] Python Related库,拯救你满是dict的代码，让测试代码更好懂</h2>
+<p>Related是一个python的仓库,用来序列化和反序列. 对于测试人员来说，选择一个第三方lib的使用，最主要的是三点:</p>
+<ul>
+<li>方便使用</li>
+<li>写出来的代码方便阅读</li>
+<li>性能问题基本不用考虑(什么序列化反序列的性能，测试代码不用考虑太多，好用和可读性最重要)</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>下面一张图就把related要做的事情表达的比较清楚了:</p>
+<p><img src="https://github.com/genomoncology/related/blob/master/.images/flow.png?raw=true" alt="img"></p>
+<p>通过以下几个例子说明related的用法.</p>
+<h3 id="related-to-yml">Related: to yml</h3>
+<p>如何将python类转化为yaml格式:</p>
+<ul>
+<li>定义model类，加上注解</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@related.immutable</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span>(object):
+    first_name <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>StringField()
+    last_name <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>StringField()
+
+
+<span style="color:#a6e22e">@related.immutable</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RoleModels</span>(object):
+    scientists <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>SetField(Person)
+</code></pre></div><ul>
+<li>把实例转化为yaml格式:</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">people <span style="color:#f92672">=</span> [Person(first_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Grace&#34;</span>, last_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Hopper&#34;</span>),
+          Person(first_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Katherine&#34;</span>, last_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Johnson&#34;</span>),
+          Person(first_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Katherine&#34;</span>, last_name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Johnson&#34;</span>)]
+
+<span style="color:#66d9ef">print</span>(related<span style="color:#f92672">.</span>to_yaml(RoleModels(scientists<span style="color:#f92672">=</span>people)))
+</code></pre></div><h2 id="related-json操作">Related: json操作</h2>
+<ul>
+<li>定义model类</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@related.immutable</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">StoreData</span>(object):
+    name <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>StringField()
+    id <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>IntegerField()
+    created_on <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>DateTimeField(<span style="color:#e6db74">&#34;%m/</span><span style="color:#e6db74">%d</span><span style="color:#e6db74">/%Y %H:%M:%S&#34;</span>)
+    data_from <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>DateTimeField()
+    data_to <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>DateTimeField()
+    days <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>SequenceField(DayData)
+    price <span style="color:#f92672">=</span> related<span style="color:#f92672">.</span>DecimalField()
+</code></pre></div><ul>
+<li>
+<p>from_json和to_json操作, 参考一下代码，其实就三个方法，让你可以在json，dict，类之间的转化</p>
+<ul>
+<li>json_dict = from_json(json_str)</li>
+<li>store_data = to_model(StoreData,json_dict)</li>
+<li>to_json(store_data)</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_json_from_to</span>():
+    json_str <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    {
+</span><span style="color:#e6db74">    &#34;created_on&#34;: &#34;12/21/2017 14:21:55&#34;,
+</span><span style="color:#e6db74">    &#34;data_from&#34;: &#34;2017-12-18T00:00:00&#34;,
+</span><span style="color:#e6db74">    &#34;data_to&#34;: &#34;2017-12-19T23:59:59&#34;,
+</span><span style="color:#e6db74">    &#34;days&#34;: [
+</span><span style="color:#e6db74">        {
+</span><span style="color:#e6db74">            &#34;closed_on&#34;: &#34;19:00:00&#34;,
+</span><span style="color:#e6db74">            &#34;customers&#34;: 487,
+</span><span style="color:#e6db74">            &#34;date&#34;: &#34;2017-12-18&#34;,
+</span><span style="color:#e6db74">            &#34;day_type&#34;: &#34;Normal&#34;,
+</span><span style="color:#e6db74">            &#34;logged_on&#34;: &#34;19:20&#34;,
+</span><span style="color:#e6db74">            &#34;open_at&#34;: &#34;08:00:00&#34;,
+</span><span style="color:#e6db74">            &#34;sales&#34;: 27223.65
+</span><span style="color:#e6db74">        },
+</span><span style="color:#e6db74">        {
+</span><span style="color:#e6db74">            &#34;closed_on&#34;: &#34;17:30:00&#34;,
+</span><span style="color:#e6db74">            &#34;customers&#34;: 192,
+</span><span style="color:#e6db74">            &#34;date&#34;: &#34;2017-12-19&#34;,
+</span><span style="color:#e6db74">            &#34;day_type&#34;: &#34;Holiday&#34;,
+</span><span style="color:#e6db74">            &#34;logged_on&#34;: &#34;17:50&#34;,
+</span><span style="color:#e6db74">            &#34;open_at&#34;: &#34;10:30:00&#34;
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">    ],
+</span><span style="color:#e6db74">    &#34;id&#34;: 982,
+</span><span style="color:#e6db74">    &#34;name&#34;: &#34;Acme store&#34;,
+</span><span style="color:#e6db74">    &#34;price&#34;: &#34;98237.448&#34;
+</span><span style="color:#e6db74">    }&#34;&#34;&#34;</span>
+    json_dict <span style="color:#f92672">=</span> from_json(json_str)
+    <span style="color:#66d9ef">print</span>(type(json_dict))
+    <span style="color:#66d9ef">print</span>(json_dict)
+    store_data <span style="color:#f92672">=</span> to_model(StoreData,json_dict)
+    <span style="color:#66d9ef">print</span>(store_data<span style="color:#f92672">.</span>name)
+    <span style="color:#66d9ef">print</span>(to_json(store_data))
+</code></pre></div><p>如果更高级的使用，可以参考<a href="https://github.com/genomoncology/related.git">github-related</a></p>
+<p>也欢迎大家查询公众号:<strong>动手吧测试</strong>，大家一起相互学习分享测试技术，在测试的路上不孤单.
+以上文章也会在<strong>动手吧测试</strong>公告号发布</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/python">python</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/qa-daily">qa-daily</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/test-ops/5-docker-onepage/"> &laquo; Docker in One Page</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/python/2020-08-17-deepdiff/">Python DeepDiff 使用 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

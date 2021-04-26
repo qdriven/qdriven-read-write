@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Integration-Runner Test Case Demo | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Integration-Runner Test Case Demo"/>
+<meta name="twitter:description" content="Last chapter introduce how to build a test framework in two days, In this chapter, let&rsquo;s do demos:"/>
+
+	<meta property="og:title" content="Integration-Runner Test Case Demo" />
+<meta property="og:description" content="Last chapter introduce how to build a test framework in two days, In this chapter, let&rsquo;s do demos:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/api-testing/1-demo-testcase/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-07-28T23:58:45&#43;00:00" />
+<meta property="article:modified_time" content="2019-07-28T23:58:45&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Jul 28, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    2 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Integration-Runner Test Case Demo</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>Last chapter introduce how to build a test framework in two days,
+In this chapter, let&rsquo;s do demos:</p>
+<ul>
+<li>A Api TestCase</li>
+<li>Api Chain Test Case</li>
+<li>Pre-Condition And Verification Render to use context data</li>
+</ul>
+<h2 id="a-api-testcase">A Api TestCase</h2>
+<p>Here are two cases:</p>
+<ol>
+<li>after call HttpBin API, check the url field in response is <a href="http://httpbin.org">http://httpbin.org</a></li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#e6db74">&#34;verification&#34;</span>: {<span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;is_equal_to http://httpbin.org&#34;</span>}
+</code></pre></div><ol start="2">
+<li>after call HttpBin API, check the headers.Accept field in response is application/json1</li>
+</ol>
+<p>The overall cases is:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{
+    <span style="color:#e6db74">&#34;test_cases&#34;</span>: [{
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;getapi-tc-1&#34;</span>,
+        <span style="color:#e6db74">&#34;tc_id&#34;</span>: <span style="color:#e6db74">&#34;tc-get-1&#34;</span>,
+        <span style="color:#e6db74">&#34;steps&#34;</span>: [
+            {
+                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;http get api&#34;</span>,
+                <span style="color:#e6db74">&#34;precondition&#34;</span>: {},
+                <span style="color:#e6db74">&#34;service&#34;</span>: HttpBinGet,
+                <span style="color:#e6db74">&#34;params&#34;</span>: {},
+                <span style="color:#e6db74">&#34;verification&#34;</span>: {<span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;is_equal_to http://httpbin.org&#34;</span>}
+            }
+        ]}
+    ,{
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;getapi-tc-21&#34;</span>,
+        <span style="color:#e6db74">&#34;tc_id&#34;</span>: <span style="color:#e6db74">&#34;tc-get-2&#34;</span>,
+        <span style="color:#e6db74">&#34;steps&#34;</span>: [
+            {
+                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;http get api&#34;</span>,
+                <span style="color:#e6db74">&#34;precondition&#34;</span>: {},
+                <span style="color:#e6db74">&#34;service&#34;</span>: HttpBinGet,
+                <span style="color:#e6db74">&#34;params&#34;</span>: {},
+                <span style="color:#e6db74">&#34;verification&#34;</span>: {<span style="color:#e6db74">&#34;headers.Accept&#34;</span>: <span style="color:#e6db74">&#34;is_equal_to application/json1&#34;</span>}
+            }
+        ]}
+
+    ]
+}
+
+</code></pre></div><p>and the demo codes are:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@allure.epic</span>(<span style="color:#e6db74">&#34;testing http bin test cases&#34;</span>)
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestHttpBinTestCase</span>:
+
+    <span style="color:#a6e22e">@allure.feature</span>(<span style="color:#e6db74">&#34;testing http bin get&#34;</span>)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_httpbin_get</span>(self):
+        runner <span style="color:#f92672">=</span> IntegrationExecutor(httpbinget_testcases)
+        result <span style="color:#f92672">=</span> runner<span style="color:#f92672">.</span>run()
+        <span style="color:#66d9ef">assert</span> result<span style="color:#f92672">.</span>get_tc_result() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;pass&#34;</span>
+</code></pre></div><h2 id="api-chain-test-case">Api Chain Test Case</h2>
+<p>test cases:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">{ 
+    <span style="color:#e6db74">&#34;test_cases&#34;</span>: [{
+        <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;tc description&#34;</span>,
+        <span style="color:#e6db74">&#34;tc_id&#34;</span>: <span style="color:#e6db74">&#34;testCaseId&#34;</span>,
+        <span style="color:#e6db74">&#34;steps&#34;</span>: [
+            {
+                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;http get api&#34;</span>,
+                <span style="color:#e6db74">&#34;precondition&#34;</span>: {},
+                <span style="color:#e6db74">&#34;service&#34;</span>: HttpBinGet,
+                <span style="color:#e6db74">&#34;params&#34;</span>: {},
+                <span style="color:#e6db74">&#34;post_action&#34;</span>: {<span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;url&#34;</span>, <span style="color:#e6db74">&#34;args&#34;</span>: <span style="color:#e6db74">&#34;args&#34;</span>},
+                <span style="color:#e6db74">&#34;verification&#34;</span>: {<span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;is_equal_to http://httpbin.org&#34;</span>}
+            },
+            {
+                <span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;http post api&#34;</span>,
+                <span style="color:#e6db74">&#34;precondition&#34;</span>: {},
+                <span style="color:#e6db74">&#34;service&#34;</span>: HttpBinPOST,
+                <span style="color:#e6db74">&#34;params&#34;</span>: {},
+                <span style="color:#e6db74">&#34;post_action&#34;</span>: {},
+                <span style="color:#e6db74">&#34;verification&#34;</span>: {<span style="color:#e6db74">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;is_equal_to http://httpbin.org&#34;</span>}
+            }
+        ]
+    }]
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@allure.epic</span>(<span style="color:#e6db74">&#34;testing http bin test cases&#34;</span>)
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestHttpBinTestCase</span>:
+
+    <span style="color:#a6e22e">@allure.feature</span>(<span style="color:#e6db74">&#34;testing http bin get/post&#34;</span>)
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_httpbin_tc</span>(self):
+        runner <span style="color:#f92672">=</span> IntegrationExecutor(httpbin_testcases)
+        result <span style="color:#f92672">=</span> runner<span style="color:#f92672">.</span>run()
+        <span style="color:#66d9ef">assert</span> result<span style="color:#f92672">.</span>get_tc_result() <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;pass&#34;</span>
+</code></pre></div><p>the test cases code is almost same.</p>
+<h2 id="pre-condition-and-verification-render-to-use-context-data">Pre-Condition And Verification Render to use context data</h2>
+<p>This case is more complex, use pre-condition, post-action, and verficiation to checkout
+how the context processing.</p>
+<p>We have two Api:</p>
+<ul>
+<li><code>/json</code> api to get a json, in this api&rsquo;s response, there is a <code>author</code> field,
+value is &ldquo;Yours Truly&rdquo;</li>
+<li><code>/cookies/set</code> api is to query a value by query parameter freeform</li>
+</ul>
+<p>So assume there is a workflow in real business:</p>
+<ol>
+<li>call <code>/json</code> to get author</li>
+<li>then use the author name to query(call <code>/cookie./set</code>) some author properties</li>
+</ol>
+<p>The author name might be changed over time in different environment, so I have to call
+the api first in step 1, then getting the author name as the second api&rsquo;s input, finally call the second
+api then verify the result .</p>
+<p>So the example test cases is:</p>
+<ul>
+<li>
+<p>Case 1: Use Context and Render Input and Verifications
+<img src="/images/complex_case.jpg" alt="img"></p>
+</li>
+<li>
+<p>Case2: Use jinja2 built-in filter to handle parameters in test cases</p>
+</li>
+</ul>
+<p><img src="/images/jinja2_filter.jpg" alt="img"></p>
+<p>and again, there is no re-invention, just use the exiting jinja2 template</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/api-teting">api-teting</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/ep">ep</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/english">english</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/48h">48h</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/api-testing/0-start-from-the-end/"> &laquo; Implement A Integration Testing Libs in two days</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/api-testing/3-inteljidea-codecoverage/">Using IntelljIdea For Code Coverage &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

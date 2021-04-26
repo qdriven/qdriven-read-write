@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pattern on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/pattern/</link>
+    <description>Recent content in pattern on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 02 Dec 2015 12:42:18 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/pattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Singleton 的不同写法</title>
+      <link>https://qdriven.github.io/blog/pattern/2015-12-02-singleton/</link>
+      <pubDate>Wed, 02 Dec 2015 12:42:18 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/2015-12-02-singleton/</guid>
+      <description>Singleton是JAVA的一个非常常见的方式，不过不同写的方式会有不同的想法，下面就介绍一下这个模式
+Singleton 懒汉式模式，线程不安全 一个基本的写法如下:
+private static LazySingleton instance; private LazySingleton(){} public static LazySingleton getInstance(){ if(instance==null){ instance=new LazySingleton(); } return instance; } 这个的一个问题是线程不安全，就是当instance是null的时候，可能有两个线程同时满足，这样就是两个实例产生</description>
+    </item>
+    
+  </channel>
+</rss>

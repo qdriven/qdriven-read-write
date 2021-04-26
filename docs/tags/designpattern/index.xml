@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>designpattern on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/designpattern/</link>
+    <description>Recent content in designpattern on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Mon, 11 Apr 2016 23:35:45 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/designpattern/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java Singleton ENUM as instance HOLDER</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-singleton/</link>
+      <pubDate>Mon, 11 Apr 2016 23:35:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-singleton/</guid>
+      <description>Singleton 单例设计模式 单例模式是产生一个类的唯一实例。
+Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的：</description>
+    </item>
+    
+    <item>
+      <title>Prototype Pattern</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-prototype-pattern/</link>
+      <pubDate>Mon, 11 Apr 2016 23:35:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-prototype-pattern/</guid>
+      <description>prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象.
+Java Prototype 一般Prototype模式中，又一个prototype的抽象类：</description>
+    </item>
+    
+    <item>
+      <title>ptyhon design pattern: chain of responsibility</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-ptyhon-design-pattern-chain/</link>
+      <pubDate>Mon, 11 Jan 2016 23:35:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-ptyhon-design-pattern-chain/</guid>
+      <description>python 的责任链模式.
+方法链：
+上代码吧： 其实就死return 了一个self，java里面可能是this</description>
+    </item>
+    
+    <item>
+      <title>python-borg-design-pattern</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-python-design-pattern-borg/</link>
+      <pubDate>Mon, 11 Jan 2016 23:05:26 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-python-design-pattern-borg/</guid>
+      <description>Python Design Pattern: Borg
+Borg Borg 模式实际上就是一个类的多个实例共享一个相同的状态.</description>
+    </item>
+    
+    <item>
+      <title>design pattern overview</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-12-22-design_pattern_overview/</link>
+      <pubDate>Tue, 22 Dec 2015 23:00:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-12-22-design_pattern_overview/</guid>
+      <description>Design Pattern overview, from GoF:</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/</link>
+      <pubDate>Tue, 03 Nov 2015 10:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/</guid>
+      <description>Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读:</description>
+    </item>
+    
+    <item>
+      <title>Functional Patterns</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-22-functional-programming-pattern/</link>
+      <pubDate>Fri, 23 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-22-functional-programming-pattern/</guid>
+      <description>Functional patterns  Core Principles of FP design  Functions Types Composition   Functions as parameters  Abstraction,Dependency injection Partial application, Continuations,Folds   Chaining Functions  Error handling, Async Monads   Dealing with wrapped data  Lifting,Functors Validation with applicatives   Aggregating data and operations  Monoids    Functional programming is scary  Functors applicatives currying catamorphism Monad Monoid chainable aggregatable mappable  Object oriented programming is scary  Generic Polymorphism Interface Inheritance SOLID: SRP,OCP,LSP,ISP,DIP,&amp;hellip;&amp;hellip; Covariance IOC,DI,MVC  OO Patterns VS FP Patterns   OO pattern/principle • Single Responsibility Principle • Open/Closed principle • Dependency Inversion Principle • Interface Segregation Principle • Factory pattern • Strategy pattern • Decorator pattern • Visitor pattern</description>
+    </item>
+    
+  </channel>
+</rss>
