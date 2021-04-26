@@ -1,0 +1,40 @@
+baseURL = "https://qdriven.github.io/"
+languageCode = "en-us"
+title = "DirtyHands-Tester"
+theme = "mediumish-gohugo-theme"
+summaryLength = 5
+copyright = "QDriven- All rights reserved"
+enableEmoji = true
+publishDir = "docs"
+#disqusShortname = "your-shortname-here"
+#googleAnalytics = "UA-1XXXXXXX1-1"
+
+[params]
+  logo = "/images/logos/logo.png"
+  description ="Learning from Practice"
+  #mailchimp = "you can provide a mailchimp-link here"
+
+[params.author]
+  name = "John Doe"
+  thumbnail = "/images/author.png"
+  description = "DirtyHands"
+
+[params.index]
+  picture = "/images/author.png"
+  title = "Quality is a Long Run"
+  subtitle = ""
+  mdtext = '''
+There is no such thing as perfection, but to improve over the time!
+'''
+  alertbar = false
+
+[params.social]
+  github = "qdriven"
+
+## Main Menu
+[[menu.main]]
+    name = "Blog"
+    weight = 100
+    identifier = "blog"
+    url = "/blog"
+
