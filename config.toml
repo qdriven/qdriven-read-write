@@ -25,6 +25,8 @@ publishDir = "docs"
   subtitle = ""
   mdtext = '''
 There is no such thing as perfection, but to improve over the time!
+
+欢迎访问[**测试相关文章**](/blog)
 '''
   alertbar = false
 
