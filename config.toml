@@ -15,7 +15,7 @@ publishDir = "docs"
   #mailchimp = "you can provide a mailchimp-link here"
 
 [params.author]
-  name = "John Doe"
+  name = "dirty-hands-qa"
   thumbnail = "/images/author.png"
   description = "DirtyHands"
 
@@ -33,8 +33,17 @@ There is no such thing as perfection, but to improve over the time!
 
 ## Main Menu
 [[menu.main]]
-    name = "Blog"
+    name = "All Blogs"
     weight = 100
     identifier = "blog"
     url = "/blog"
-
+[[menu.main]]
+    name="api测试英文"
+    weight = 100
+    identifier="english"
+    url="/tags/english/"
+ [[menu.main]]
+    name="python-tips"
+    weight = 100
+    identifier="python-tips"
+    url="/tags/python/"

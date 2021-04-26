@@ -3,7 +3,7 @@ title: 做决定，负责任
 date: 2020-08-10 21:50:47
 publishdate: 2020-10-07T11:40:11+02:00
 # image: "/images/blog/8.jpg"
-tags: ["qa-thoughts","QATrap"]
+tags: ["qa-thoughts"]
 comments: false
 ---
 做决定，负责任,并不容易.

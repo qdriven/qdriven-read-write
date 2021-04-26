@@ -3,7 +3,7 @@ title: 放养式开发管理
 date: 2020-08-11 08:58:55
 publishdate: 2020-10-07T11:40:11+02:00
 # image: "/images/blog/8.jpg"
-tags: ["qa-thoughts","QATrap"]
+tags: ["qa-thoughts"]
 comments: false
 ---
 
