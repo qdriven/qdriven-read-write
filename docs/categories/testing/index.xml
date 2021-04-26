@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>testing on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/categories/testing/</link>
+    <description>Recent content in testing on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Tue, 05 Jan 2016 23:37:49 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/categories/testing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sql injection, sql 注入</title>
+      <link>https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/</link>
+      <pubDate>Tue, 05 Jan 2016 23:37:49 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/</guid>
+      <description>SQL注入的问题由来以久,主要是针对于一些系统时通过拼接SQL的方式来处理程序.以下是关于JAVA WEB的一些SQL注入的介绍.
+来源OWASP
+什么是SQL注入 SQL injection vulnerabilities allow an attacker to inject (or execute) SQL commands within an application.</description>
+    </item>
+    
+    <item>
+      <title>软件容错</title>
+      <link>https://qdriven.github.io/blog/tools/2015-11-16-error_toleration/</link>
+      <pubDate>Mon, 16 Nov 2015 23:24:33 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2015-11-16-error_toleration/</guid>
+      <description>软件的世界已经变的及其复杂，在互联网的世界中一个个知道不知道的API将世界连接起来，如蜘蛛网一般,一个看的到的功能可能依赖了好几个看不到的API,所以中间出点错误实在不能说是个意外了。但是出错归出错，出错了软件也是一样要处理这些问题，下面就讲讲我学到遇到的一点容错的小知识。
+容错的目标 降低或者最小化对系统可用性，可靠性的影响，举个例子来说就是单点故障，如果一个地方出现错误 而把整个系统网络都拖垮了，这个显然是不能接受的。可以用一下几个来形容错误：
+ fault(缺陷) 一些bug error(错误) 一些业务无法正常执行 failure(故障) 业务较长时间无法正常执行  容错的方法  硬件容错：多备份,系统冗余，主备 软件容错：避免严重业务错误，降级，异常处理,侦测，监控，重启&amp;hellip;&amp;hellip; 系统容错  常见机遇鲁棒性  Process Pairs Graceful Degradation:降级 Selective Retry state handling Linking Process Rejuvenation: 不可重现问题 Checkpoint update lost application state scrubbing process pools recovery block micro reboot state correction  </description>
+    </item>
+    
+    <item>
+      <title>测试用例-一些有意思的工具</title>
+      <link>https://qdriven.github.io/blog/tips/2015-11-03-test-tools/</link>
+      <pubDate>Wed, 04 Nov 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/2015-11-03-test-tools/</guid>
+      <description>Automation Test Case Generate Tools  Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.</description>
+    </item>
+    
+    <item>
+      <title>测试用例设计- 随机指定一个产品的测试</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/2015-10-22-random-testcasedesign/</link>
+      <pubDate>Thu, 22 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/2015-10-22-random-testcasedesign/</guid>
+      <description>有时面试的时候会随机指定一个产品进行测试,比如一个电梯,你会如何设计测试用例？这个问题很发散,更多的是看应聘者的条理 和分析能力.
+本质上一个电梯是一个太大的范畴，实际测试的过程中很少一下子会有这么巨大的功能让你测试的。 与其说让你设计测试用例，其实好不如说让你想一个电梯有什么功能,然后根据功能再来考虑测试用例,所以更多的 是考察思路,在实际的测试工作中,如果突然有个人说我今天完成了一个电梯的功能,找个人给我测一下吧。 那么多半这个项目就是个让测试欲哭无泪的项目。</description>
+    </item>
+    
+  </channel>
+</rss>

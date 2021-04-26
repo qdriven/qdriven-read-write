@@ -2,7 +2,8 @@
 git add .
 git commit -m "update blog sources"
 hugo
-mv docs/* ../qdriven.github.io
+cp -rf docs/* ../qdriven.github.io
+rm docs/
 cd ../qdriven.github.io
 git add .
 git commit -m "update latest blog"

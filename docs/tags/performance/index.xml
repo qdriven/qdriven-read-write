@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>performance on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/performance/</link>
+    <description>Recent content in performance on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Tue, 04 Aug 2020 09:17:08 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/performance/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JAVA Lock</title>
+      <link>https://qdriven.github.io/blog/concurrency/java-locks/</link>
+      <pubDate>Tue, 04 Aug 2020 09:17:08 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/java-locks/</guid>
+      <description>0. JAVA Locks 锁在JAVA 并发编程中是一个重要的概念，而且是一些比较难懂的概念，一下是学习Lock概念的时候的一些记录。</description>
+    </item>
+    
+    <item>
+      <title>junit-perf</title>
+      <link>https://qdriven.github.io/blog/concurrency/1-junit-perf/</link>
+      <pubDate>Tue, 24 Jul 2018 22:11:05 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/1-junit-perf/</guid>
+      <description>使用JunitPerf进行性能测试 以下简单介绍一下如何使用JunitPerf进行性能测试，JunitPerf是基于JUnit4的一个单元性能测试插件，对于会远程调用API测试比较合适，如果想要比较nanosecond 延迟的则需要使用JMH.
+JunitPerf 依赖声明 此例子假设使用MAVEN管理项目，所以在POM文件中添加：</description>
+    </item>
+    
+    <item>
+      <title>JMETER NON GUI模式的结果</title>
+      <link>https://qdriven.github.io/blog/concurrency/how_to_use_grafana_to_monitor_jmeter_non_gui_result/</link>
+      <pubDate>Tue, 05 Apr 2016 18:31:42 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/how_to_use_grafana_to_monitor_jmeter_non_gui_result/</guid>
+      <description>JMETER NON GUI模式的结果 reference source</description>
+    </item>
+    
+    <item>
+      <title>Mobile 性能测试关键点</title>
+      <link>https://qdriven.github.io/blog/concurrency/2016-02-22-mobile_perf_testing/</link>
+      <pubDate>Mon, 22 Feb 2016 09:40:07 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/2016-02-22-mobile_perf_testing/</guid>
+      <description>移动端性能测试的一些关键点 阅读了一些人的PPT，再这里记录一些移动端性能测试的一些关键点，每个关键点会在后续润色，细化.
+移动端性能测试的方方面面 Android  Monkey Memory Usage:  /system/build.</description>
+    </item>
+    
+    <item>
+      <title>JMETER 分布式测试</title>
+      <link>https://qdriven.github.io/blog/concurrency/2016-02-22-jmeter_distribution_testing/</link>
+      <pubDate>Mon, 22 Feb 2016 09:33:59 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/2016-02-22-jmeter_distribution_testing/</guid>
+      <description>JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意：</description>
+    </item>
+    
+  </channel>
+</rss>

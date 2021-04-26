@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>VIM 使用小结 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VIM 使用小结"/>
+<meta name="twitter:description" content="VIM 用法 日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下：
+   命令 说明     q 退出   i insert   a append   h 左移   k 上移   j 下移   l 右移   r 替换   u 撤销   x 删除光标位置字符   d^ 删除当前位置到行首   dd 删除当前行   d$ 删除当前位置到行尾   dw 删除当前位置到一个word尾   3dd 删除当前行下三行   p 粘贴   &laquo; 当前行左移一个宽度   &raquo; 当前行右移一个宽度   ％ 匹配的括号   ^ 行的开始   ."/>
+
+	<meta property="og:title" content="VIM 使用小结" />
+<meta property="og:description" content="VIM 用法 日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下：
+   命令 说明     q 退出   i insert   a append   h 左移   k 上移   j 下移   l 右移   r 替换   u 撤销   x 删除光标位置字符   d^ 删除当前位置到行首   dd 删除当前行   d$ 删除当前位置到行尾   dw 删除当前位置到一个word尾   3dd 删除当前行下三行   p 粘贴   &laquo; 当前行左移一个宽度   &raquo; 当前行右移一个宽度   ％ 匹配的括号   ^ 行的开始   ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/shell/2016-04-05-vim-%E6%80%BB%E7%BB%93/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-04-05T18:31:42&#43;00:00" />
+<meta property="article:modified_time" content="2016-04-05T18:31:42&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Apr 5, 2016
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">VIM 使用小结</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="vim-用法">VIM 用法</h2>
+<p>日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>i</td>
+<td>insert</td>
+</tr>
+<tr>
+<td>a</td>
+<td>append</td>
+</tr>
+<tr>
+<td>h</td>
+<td>左移</td>
+</tr>
+<tr>
+<td>k</td>
+<td>上移</td>
+</tr>
+<tr>
+<td>j</td>
+<td>下移</td>
+</tr>
+<tr>
+<td>l</td>
+<td>右移</td>
+</tr>
+<tr>
+<td>r</td>
+<td>替换</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>x</td>
+<td>删除光标位置字符</td>
+</tr>
+<tr>
+<td>d^</td>
+<td>删除当前位置到行首</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td>d$</td>
+<td>删除当前位置到行尾</td>
+</tr>
+<tr>
+<td>dw</td>
+<td>删除当前位置到一个word尾</td>
+</tr>
+<tr>
+<td>3dd</td>
+<td>删除当前行下三行</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>&laquo;</td>
+<td>当前行左移一个宽度</td>
+</tr>
+<tr>
+<td>&raquo;</td>
+<td>当前行右移一个宽度</td>
+</tr>
+<tr>
+<td>％</td>
+<td>匹配的括号</td>
+</tr>
+<tr>
+<td>^</td>
+<td>行的开始</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配单字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0个或多个之前的字符</td>
+</tr>
+<tr>
+<td>$</td>
+<td>行的结束</td>
+</tr>
+<tr>
+<td>[</td>
+<td>还是一系列的匹配</td>
+</tr>
+<tr>
+<td>&lt;&gt;</td>
+<td>一个字的结束或开始,/&lt;the&gt; 只匹配the</td>
+</tr>
+<tr>
+<td>f</td>
+<td>向右移动到指定字符</td>
+</tr>
+<tr>
+<td>F</td>
+<td>向左移动到指定字符</td>
+</tr>
+<tr>
+<td>ctrl+b</td>
+<td>向后回滚一页</td>
+</tr>
+<tr>
+<td>ctrl＋d</td>
+<td>向前滚动半个窗口</td>
+</tr>
+<tr>
+<td>ctrl＋F</td>
+<td>向前滚动一页</td>
+</tr>
+<tr>
+<td>ctrl＋H</td>
+<td>左移一个空格</td>
+</tr>
+<tr>
+<td>ctrl＋J</td>
+<td>下移一个空格</td>
+</tr>
+<tr>
+<td>(</td>
+<td>移动到句子开头</td>
+</tr>
+<tr>
+<td>)</td>
+<td>移动到句子句尾</td>
+</tr>
+<tr>
+<td>{</td>
+<td>前一个段落</td>
+</tr>
+<tr>
+<td>+</td>
+<td>下一行非空字符</td>
+</tr>
+<tr>
+<td>-</td>
+<td>前一行非空字符</td>
+</tr>
+<tr>
+<td>_</td>
+<td>当前行的非空字符</td>
+</tr>
+</tbody>
+</table>
+<p>其他命令</p>
+<ul>
+<li>y和d的作用类似，不同的是y只提取文字而不删除文字</li>
+<li>缩写：ab test &ldquo;testing in tesitng&rdquo;</li>
+<li>mapping, :map,:map!</li>
+<li>vim -r file_name.txt</li>
+</ul>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/shell">shell</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/concurrency/how_to_use_grafana_to_monitor_jmeter_non_gui_result/"> &laquo; JMETER NON GUI模式的结果</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/ansible/2016-03-30-ansible_basic/">Ansible简单介绍 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

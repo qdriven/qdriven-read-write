@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Pythonic,What is it | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Pythonic,What is it"/>
+<meta name="twitter:description" content="Pythonic Style Pythonic 是种很有趣的风格，有些实际上python的惯用方法和特有方法。
+Switch Two variables python 通过tuple进行pack，unpack就不需要temp变量"/>
+
+	<meta property="og:title" content="Pythonic,What is it" />
+<meta property="og:description" content="Pythonic Style Pythonic 是种很有趣的风格，有些实际上python的惯用方法和特有方法。
+Switch Two variables python 通过tuple进行pack，unpack就不需要temp变量" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/python/2016-05-11-pythonic/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-05-11T10:41:15&#43;00:00" />
+<meta property="article:modified_time" content="2016-05-11T10:41:15&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    May 11, 2016
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Pythonic,What is it</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h1 id="pythonic-style">Pythonic Style</h1>
+<p>Pythonic 是种很有趣的风格，有些实际上python的惯用方法和特有方法。</p>
+<h2 id="switch-two-variables">Switch Two variables</h2>
+<p>python 通过tuple进行pack，unpack就不需要temp变量</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a,b<span style="color:#f92672">=</span>b,a
+</code></pre></div><p>如果其他语言需要swap的话，就需要一个temp变量，然后再置换。</p>
+<h2 id="p-vs-np">P VS NP</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># P</span>
+a<span style="color:#f92672">=</span><span style="color:#ae81ff">3</span>
+b<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+
+<span style="color:#ae81ff">1</span><span style="color:#f92672">&lt;=</span>b<span style="color:#f92672">&lt;=</span>a <span style="color:#f92672">and</span> a<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span> <span style="color:#75715e"># return True</span>
+
+<span style="color:#75715e">## NP</span>
+b<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">1</span> <span style="color:#f92672">and</span> b<span style="color:#f92672">&lt;=</span>a <span style="color:#f92672">and</span> a<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">10</span> <span style="color:#75715e"># True</span>
+
+</code></pre></div><p>reverse string</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_str</span>(s):
+  <span style="color:#66d9ef">return</span> s[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">reverse_str</span>(s):
+  t<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;&#39;</span>
+  <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> xrange(len(s)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
+    t<span style="color:#f92672">+=</span>s[x]
+  <span style="color:#66d9ef">return</span> t
+
+<span style="color:#75715e"># join the strList</span>
+str_list<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;Python&#34;</span>,<span style="color:#e6db74">&#34;is&#34;</span>,<span style="color:#e6db74">&#34;good&#34;</span>]
+res<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span><span style="color:#f92672">.</span>join(str_list) <span style="color:#75715e"># pythonic</span>
+
+<span style="color:#75715e"># NP:</span>
+res <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>
+<span style="color:#66d9ef">for</span> s <span style="color:#f92672">in</span> strList:
+    res <span style="color:#f92672">+=</span> s <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39; &#39;</span>
+
+<span style="color:#75715e"># P</span>
+numList <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>]   
+
+sum <span style="color:#f92672">=</span> sum(numList)  <span style="color:#75715e">#sum = 15</span>
+maxNum <span style="color:#f92672">=</span> max(numList) <span style="color:#75715e">#maxNum = 5</span>
+minNum <span style="color:#f92672">=</span> min(numList) <span style="color:#75715e">#minNum = 1</span>
+<span style="color:#f92672">from</span> operator <span style="color:#f92672">import</span> mul
+<span style="color:#75715e"># reduce is interesting</span>
+prod <span style="color:#f92672">=</span> reduce(mul, numList, <span style="color:#ae81ff">1</span>) <span style="color:#75715e">##prod = 120 默认值传1以防空列表报错</span>
+
+<span style="color:#75715e"># NP</span>
+sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+maxNum <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+minNum <span style="color:#f92672">=</span> float(<span style="color:#e6db74">&#39;inf&#39;</span>)
+prod <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">for</span> num <span style="color:#f92672">in</span> numList:
+    <span style="color:#66d9ef">if</span> num <span style="color:#f92672">&gt;</span> maxNum:
+        maxNum <span style="color:#f92672">=</span> num
+    <span style="color:#66d9ef">if</span> num <span style="color:#f92672">&lt;</span> minNum:
+        minNum <span style="color:#f92672">=</span> num
+    sum <span style="color:#f92672">+=</span> num
+    prod <span style="color:#f92672">*=</span> num
+<span style="color:#75715e"># sum = 15 maxNum = 5 minNum = 1 prod = 120</span>
+</code></pre></div><h2 id="列表推导式">列表推导式</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l <span style="color:#f92672">=</span> [x<span style="color:#f92672">*</span>x <span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>) <span style="color:#66d9ef">if</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>]
+<span style="color:#75715e">#l = [0, 9, 36, 81]</span>
+
+<span style="color:#75715e">##NP</span>
+l <span style="color:#f92672">=</span> []
+<span style="color:#66d9ef">for</span> x <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">10</span>):
+    <span style="color:#66d9ef">if</span> x <span style="color:#f92672">%</span> <span style="color:#ae81ff">3</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+        l<span style="color:#f92672">.</span>append(x<span style="color:#f92672">*</span>x)
+<span style="color:#75715e">#l = [0, 9, 36, 81]</span>
+
+</code></pre></div>
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/python">python</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/tips/interview/0-word-frequency/"> &laquo; Word Frequency - Use JDK Methods</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/tips/interview/2016-04-24-12factors/">12 factors Application &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

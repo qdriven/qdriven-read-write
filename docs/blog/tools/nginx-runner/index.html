@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>测试日志2020-5 前端部署 NGINX Conf文件自动配置 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="测试日志2020-5 前端部署 NGINX Conf文件自动配置"/>
+<meta name="twitter:description" content="前端部署 NGINX Conf文件自动配置 新部署了一个服务，测试环境NGINX帮忙配置一下；这周老鸟被这些事情忙的不亦乐乎，一会nginx加一个环境配置， 一会部署一个测试环境前端,一会重启一些nginx,一周很快就过去了，老鸟感觉一周测试的事情做的很少，倒是做了很多nginx运维的事情. 按照现在流行的说法叫test-ops，不知道哪个天才创造了这个职位名称，但是很遗憾，老鸟不能再招人了，公司HC已经冻结了，但是如果一直这样也不是个事情呀."/>
+
+	<meta property="og:title" content="测试日志2020-5 前端部署 NGINX Conf文件自动配置" />
+<meta property="og:description" content="前端部署 NGINX Conf文件自动配置 新部署了一个服务，测试环境NGINX帮忙配置一下；这周老鸟被这些事情忙的不亦乐乎，一会nginx加一个环境配置， 一会部署一个测试环境前端,一会重启一些nginx,一周很快就过去了，老鸟感觉一周测试的事情做的很少，倒是做了很多nginx运维的事情. 按照现在流行的说法叫test-ops，不知道哪个天才创造了这个职位名称，但是很遗憾，老鸟不能再招人了，公司HC已经冻结了，但是如果一直这样也不是个事情呀." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tools/nginx-runner/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2020-07-30T12:12:00&#43;00:00" />
+<meta property="article:modified_time" content="2020-07-30T12:12:00&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Jul 30, 2020
+                                    <i class="far fa-clock clock"></i>
+                                    1 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">测试日志2020-5 前端部署 NGINX Conf文件自动配置</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h2 id="前端部署-nginx-conf文件自动配置">前端部署 NGINX Conf文件自动配置</h2>
+<p>新部署了一个服务，测试环境NGINX帮忙配置一下；这周老鸟被这些事情忙的不亦乐乎，一会nginx加一个环境配置，
+一会部署一个测试环境前端,一会重启一些nginx,一周很快就过去了，老鸟感觉一周测试的事情做的很少，倒是做了很多nginx运维的事情.
+按照现在流行的说法叫test-ops，不知道哪个天才创造了这个职位名称，但是很遗憾，老鸟不能再招人了，公司HC已经冻结了，但是如果一直这样也不是个事情呀. 怎么解决？老鸟除了这些破事，还有其他项目要搞，会要开，还想着早点回家和小孩做做几何题，怎么办？</p>
+<p>问题怎么解决？ 老鸟一般问题会遵照下面几个步骤进行:</p>
+<ol>
+<li>问题是什么？想要解决什么问题</li>
+<li>有没有现成的解决方案？解决的思路是什么</li>
+<li>不求完美解决，但求80%以上解决问题</li>
+</ol>
+<!-- raw HTML omitted -->
+<h2 id="1-问题是什么">1. 问题是什么</h2>
+<p>问题其实很清楚，目前通过手工的方式修改NGXIN conf文件， 然后手工重启(reload)nginx进行配置更新,严重影响了工作产出了,如果不能够解决这些重要又紧急的事情，产出就不够了，年纪大了可能就被人嫌弃了, 那么怎么解决呢？</p>
+<p>无论如何先从实际情况出发，ngxin 配置到底配置的是什么? 这个NGINX前端的配置其实说来很简单,就是在NGINX CONF文件里面给每个新的项目(project2)添加URL路径,以及router的配置:</p>
+<ul>
+<li>
+<ol>
+<li>nginx Location 配置</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">location /project2 <span style="color:#f92672">{</span>
+    try_files $uri $uri/ @router;
+    index index.html;
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>
+<ol start="2">
+<li>project2 router的配置添加: 把project2的index.html加到router里面</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">location @router <span style="color:#f92672">{</span>
+    rewrite ^.*$ /index.html last;
+    rewrite ^.*$ /mng/index.html last;
+    rewrite ^.*$ /client/index.html last;
+    rewrite ^.*$ /engineer/index.html last;
+    rewrite ^.*$ /project2/index.html last;
+<span style="color:#f92672">}</span>
+</code></pre></div><p>把这些手动的事情自动化了，同时不加新的沟通，还沿用原来的使用方式,用户使用方面不需要又任何变化.</p>
+<p>为什么修改一个东西，我觉得大体分两种情况</p>
+<ol>
+<li>原来用户的使用习惯不需要变化，默默把他需要的事情给做了</li>
+<li>如果要改变用户的使用方式，一定要大大提高用户的效率，否者用户有隐性成本</li>
+</ol>
+<p>某种程度上Do&rsquo;t make me think的产品设计未必任何情况下都是对的， 也有一种可能就是扇用户两巴掌，说你有点傻，换个方式可以让你提高很多效率。</p>
+<h2 id="11-解决思路">1.1 解决思路</h2>
+<p>在开始考虑解决思路的时候，先考虑两个问题，当前的约束条件(一些现状)和最终要达成的目标.</p>
+<ul>
+<li>
+<p>约束条件
+公司没有什么高大上的服务发现，K8S集群，就只有一个NGINX服务给测试环境用,同时部署是通过JENKINS来发布的. 所以解决的办法不能超过这个范畴.</p>
+</li>
+<li>
+<p>最终要达成的效果</p>
+</li>
+</ul>
+<ol>
+<li>QA触发项目的新建的前端Jenkins任务</li>
+<li>QA开始测试新的前端项目</li>
+</ol>
+<ul>
+<li>完成目标分解的任务</li>
+</ul>
+<p>整件事情其实简单讲就是：</p>
+<ol>
+<li>输入： projectName</li>
+<li>输出:  对应的nginx conf就生成好，同时nginx生效(也就是需要reload)</li>
+</ol>
+<p>那么接下来的问题是从哪里输入这个projectName，目前看如果要融入到流程里面就已有一个地方，那就是Jenkins 部署的脚本里面.</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/python">python</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/test-ops">test-ops</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/tools/alimama-intelplatform-1/"> &laquo; 测试日志2020-4 Dive Into Markov(阿里妈妈功能测试平台)</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/shell/shell-arts/">命令行艺术-测试人员版本 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

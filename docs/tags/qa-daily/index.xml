@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>qa-daily on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/qa-daily/</link>
+    <description>Recent content in qa-daily on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Tue, 18 Aug 2020 10:41:15 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/qa-daily/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Related库,拯救你满是dict的代码，让测试代码更好懂</title>
+      <link>https://qdriven.github.io/blog/python/2020-08-18-related/</link>
+      <pubDate>Tue, 18 Aug 2020 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2020-08-18-related/</guid>
+      <description>[QA-Daily] Python Related库,拯救你满是dict的代码，让测试代码更好懂 Related是一个python的仓库,用来序列化和反序列. 对于测试人员来说，选择一个第三方lib的使用，最主要的是三点:</description>
+    </item>
+    
+    <item>
+      <title>Python DeepDiff 使用</title>
+      <link>https://qdriven.github.io/blog/python/2020-08-17-deepdiff/</link>
+      <pubDate>Mon, 17 Aug 2020 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2020-08-17-deepdiff/</guid>
+      <description>DeepDiff 使用 DeepDiff的用处:
+Deep Difference of dictionaries, iterables, strings and other objects.</description>
+    </item>
+    
+    <item>
+      <title>一款好用的markdown转换成微信公众号的编辑工具&#43;配合使用imgurl床图</title>
+      <link>https://qdriven.github.io/blog/daily/20-08-13-weichat-editor/</link>
+      <pubDate>Thu, 13 Aug 2020 13:29:38 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/daily/20-08-13-weichat-editor/</guid>
+      <description>由于日常写的文档都是使用markdown的格式，而markdown格式再转化为微信公众号内容，还是有点麻烦， 所以下面推荐一款工具给测试同学使用，就是doocs-md
+这个工具使用非常方便，直接将markdown文字贴进去就可以使用，然后点击复制按钮就可以使用， 为什么推荐这个工具，其实没有道理，就是方便.
+上个截图:</description>
+    </item>
+    
+    <item>
+      <title>一个几乎包含了大部分JAVA开发相关的教程的网站</title>
+      <link>https://qdriven.github.io/blog/daily/20-08-12-baeldung/</link>
+      <pubDate>Wed, 12 Aug 2020 08:29:57 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/daily/20-08-12-baeldung/</guid>
+      <description>每个测试都想学习一些开发相关的内容，如果你想学习JAVA的话，这个网站不要错过 baeldung, 网站上的大部分教程的代码在github仓库.
+动手吧测试，为测试同学定期推荐有用的一些工具，教程等等，目的只有一个就是让我们测试从业人多动手！
+首先先看看网站吧：</description>
+    </item>
+    
+    <item>
+      <title>命令行艺术-测试人员版本</title>
+      <link>https://qdriven.github.io/blog/shell/shell-arts/</link>
+      <pubDate>Tue, 12 May 2020 08:29:57 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/shell-arts/</guid>
+      <description>QA-Daily将每日不定期推送一些测试相关的github仓库,翻译/英文原文文章,好用的教程给测试/开发人员发现有用的测试工具,了解测试最新动态,扩大自己的技术视野,从开源项目中获取知识,提高自身能力,提高自己的Coding技能,提高自己的工资,也能让测试人员职业上又了解更多的选择!信息不是太少,是太多了,希望QA-Daily能在筛选信息方面帮到想要了解测试/质量相关的工程师. GITHUB 上面又一个很好的仓库命令行的艺术,一页纸的篇幅介绍了常用的 shell 命令, 这个项目有 82.</description>
+    </item>
+    
+    <item>
+      <title>git stash 使用</title>
+      <link>https://qdriven.github.io/blog/tips/git/git-tips-git-stash/</link>
+      <pubDate>Mon, 20 Jan 2020 09:52:58 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/git-tips-git-stash/</guid>
+      <description>git-stash 文档的说明有点抽象，下面用一些例子来解释如何使用git-stash。
+git-stash - Stash the changes in a dirty working directory away git-stash 主要使用的场景如下：</description>
+    </item>
+    
+  </channel>
+</rss>

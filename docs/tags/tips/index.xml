@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tips on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/tips/</link>
+    <description>Recent content in tips on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Thu, 30 Jul 2020 12:12:00 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/tips/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试日志2020-1 MAVEN 创建项目JAVA项目</title>
+      <link>https://qdriven.github.io/blog/pattern/tips-maven-java/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/tips-maven-java/</guid>
+      <description>MAVEN 创建项目JAVA项目 MAVEN是开发过程中常用的一个管理软件项目代码的工具，这里开始一个简单系列的介绍，给测试同学介绍MAVEN的使用， 以便更好的了解开发过程，以及版本，文档管理的方式.
+1.1. 什么是MAVEN 在理解MAVEN之前首先先要了解一个JAVA项目有哪些内容组成.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-2 Github Cli使用</title>
+      <link>https://qdriven.github.io/blog/tips/git/tips-github-cli/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/tips-github-cli/</guid>
+      <description>Github Cli,是一个命令行工具，可以让你在命令行中直接操作github的仓库. 那么命令行工具可以提高平常的效率吗? 我的答案是可以,原因如下:
+ 使用习惯: Dev/Test 工作中基本上和Code打交道，现代的IDE都可以terminal(命令行工具),不需要额外的切换浏览器操作github仓库 一个命令实现一个目的: 浏览器操作需要点击几个页面，输入不同的数据进行创建，但是命令行中使用了默认参数，可以一个命令就完成你想要的操作  0.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-3 Github 访问速度缓慢解决</title>
+      <link>https://qdriven.github.io/blog/tips/git/tips-github-slowdown/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/tips-github-slowdown/</guid>
+      <description>1. Github 访问速度缓慢解决 不知道什么原因，老鸟家里访问Github仓库速度缓慢，下载GITHUB仓库速度也是缓慢。 这种缓慢慢慢已经给老鸟造成了一些困扰. 但是问题是实际存在的，老鸟心里想一定需要解决.</description>
+    </item>
+    
+    <item>
+      <title>YUML Basic Usage</title>
+      <link>https://qdriven.github.io/blog/python/yuml-usage/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:36 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/yuml-usage/</guid>
+      <description>YUML Syntax  comments and directives class diagram  Comments and Directives  type: //{type:class} direction: // {direction:leftToRight} generate: // {generate:true}  Class diagram cheetsheet for class diagram</description>
+    </item>
+    
+    <item>
+      <title>内网穿透方案 - frp</title>
+      <link>https://qdriven.github.io/blog/tips/frp-usage/</link>
+      <pubDate>Wed, 21 Nov 2018 23:11:47 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/frp-usage/</guid>
+      <description>frp 使用golang编写的，下面几个例子来说明一下如何使用frp.
+ todo reference  </description>
+    </item>
+    
+    <item>
+      <title>jmespath 使用，jsonpath外的另外一种选择</title>
+      <link>https://qdriven.github.io/blog/python/jmespath/</link>
+      <pubDate>Mon, 13 Aug 2018 22:35:32 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/jmespath/</guid>
+      <description>在测试过程中，经常会去JSON中的某个值，jmespath可以是除了jsonpath的另外一种选择. 下面通过几个例子来说明jmespath在python的使用
+jmespath python安装 非常简单直接pip,</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>one-page on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/one-page/</link>
+    <description>Recent content in one-page on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Tue, 01 Sep 2020 21:49:22 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/one-page/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git in One Page</title>
+      <link>https://qdriven.github.io/blog/test-ops/6-one-page-git/</link>
+      <pubDate>Tue, 01 Sep 2020 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/6-one-page-git/</guid>
+      <description>索引  配置 配置文件 创建 本地修改 搜索 提交历史 分支与标签 更新与发布 合并与重置 撤销 Git Flow   配置 列出当前配置： $ git config --list 列出repository配置： $ git config --local --list 列出全局配置： $ git config --global --list 列出系统配置： $ git config --system --list 设置用户名： $ git config --global user.</description>
+    </item>
+    
+    <item>
+      <title>Docker in One Page</title>
+      <link>https://qdriven.github.io/blog/test-ops/5-docker-onepage/</link>
+      <pubDate>Fri, 28 Aug 2020 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/5-docker-onepage/</guid>
+      <description>Docker In One Page(30 minutes)  Docker Overview Docker Process Docker image Docker Components  5.</description>
+    </item>
+    
+  </channel>
+</rss>

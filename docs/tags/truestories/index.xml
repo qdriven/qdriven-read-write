@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>truestories on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/truestories/</link>
+    <description>Recent content in truestories on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 02 Dec 2015 13:26:07 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/truestories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>True Stories: 从API的URL定义想到的</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-12-02-api_contract_design/</link>
+      <pubDate>Wed, 02 Dec 2015 13:26:07 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-12-02-api_contract_design/</guid>
+      <description>关于REST API接口的设计没有了解太多，不过实际的测试中看到一些这样设计的接口资源路径URL，自己感觉就是怪怪的， 感觉这样的接口URL总是哪里不太对劲，所以自己就分析了一下：
+http://domain.org/api/v4/＊＊/coursePassed/{appCode}/{courseId}/{userCode} 自己的思考是感觉这个东西不是很理想，无法通过一个路径了解大概是个什么事情，自己的感觉或许这样会更清楚一点</description>
+    </item>
+    
+    <item>
+      <title>Talking is Cheap,show me the code</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-11-19-talking_is_cheep/</link>
+      <pubDate>Thu, 19 Nov 2015 23:27:56 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-11-19-talking_is_cheep/</guid>
+      <description>当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right?</description>
+    </item>
+    
+    <item>
+      <title>True Stories: About Return Flag</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-10-24-return-flag/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-10-24-return-flag/</guid>
+      <description>Return Flag 真实的一段代码片段：
+public boolean update(Inquiry inquiry) { boolean bUpdBaseInf = super.</description>
+    </item>
+    
+    <item>
+      <title>True Stories: 有趣的函数</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-10-24-interesting-methods/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-10-24-interesting-methods/</guid>
+      <description>有趣的函数 下面是一些有趣而真实的函数，自己的感受是：
+ 此刻的想法是复杂的 不敢想象 这是认真的吗?</description>
+    </item>
+    
+  </channel>
+</rss>

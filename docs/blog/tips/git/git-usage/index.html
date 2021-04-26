@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Git 基本使用 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Git 基本使用"/>
+<meta name="twitter:description" content="git是个分布式版本控制系统，所谓分布式版本控制就是任何一个在自己其实上就可以进行版本控制管理而无需连接中央服务器，这样提交代码就无需收到联网的限制。同时GIT提供了更好的branch等功能，也是目前最流行的工具.
+Git 配置 全局变量设置：
+git config --global user."/>
+
+	<meta property="og:title" content="Git 基本使用" />
+<meta property="og:description" content="git是个分布式版本控制系统，所谓分布式版本控制就是任何一个在自己其实上就可以进行版本控制管理而无需连接中央服务器，这样提交代码就无需收到联网的限制。同时GIT提供了更好的branch等功能，也是目前最流行的工具.
+Git 配置 全局变量设置：
+git config --global user." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/tips/git/git-usage/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2013-02-24T10:31:11&#43;08:00" />
+<meta property="article:modified_time" content="2013-02-24T10:31:11&#43;08:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Feb 24, 2013
+                                    <i class="far fa-clock clock"></i>
+                                    3 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Git 基本使用</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <p>git是个分布式版本控制系统，所谓分布式版本控制就是任何一个在自己其实上就可以进行版本控制管理而无需连接中央服务器，这样提交代码就无需收到联网的限制。同时GIT提供了更好的branch等功能，也是目前最流行的工具.</p>
+<h2 id="git-配置">Git 配置</h2>
+<p>全局变量设置：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global user.name <span style="color:#e6db74">&#34;Your name&#34;</span>
+git config --global user.email <span style="color:#e6db74">&#34;emailname@example.com&#34;</span>
+</code></pre></div><h2 id="创建版本库">创建版本库</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">//不是必须在空目录中使用git init命令
+git init
+</code></pre></div><p>建立成功之后，当前目录会多一个.git目录，有些代码库很大，其实大的就是这个.git文件夹</p>
+<h2 id="提交改动">提交改动</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git add .
+git commit . -m <span style="color:#e6db74">&#34;add new changes&#34;</span>
+
+</code></pre></div><h2 id="查看当前仓库状态">查看当前仓库状态</h2>
+<p>查看当前仓库状态的命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status
+</code></pre></div><h2 id="查看git-日志">查看git 日志</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git log
+git log --pretty<span style="color:#f92672">=</span>oneline
+</code></pre></div><h2 id="回滚git的提交">回滚git的提交</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rest --hard
+git rest --hard XXXXX-changeId
+</code></pre></div><h2 id="git-workspacestagehead">git workspace，stage，head</h2>
+<p>git里面又工作区，版本库（stage），head，git add命令将改动放到stage，最后提交则提交到head</p>
+<h2 id="git-checkout">git checkout</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git checkout --file
+git checkout
+</code></pre></div><h2 id="远程仓库">远程仓库</h2>
+<p>创建远程仓库，以github为例，一般步骤是：</p>
+<ol>
+<li>github注册用户</li>
+<li>github创建一个仓库</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;emailaddrss&#34;</span>
+git remote add origin &lt;github addrss&gt;
+git push -u origin master //关联远程仓库和本地仓库
+</code></pre></div><p>多人合作模式，一般的工作流程如下：</p>
+<ol>
+<li>clone git Repository</li>
+<li>创建本地分支</li>
+<li>提交改动到远程相对应的分支</li>
+<li>解决冲突</li>
+<li>建立分支关系(如果出现 no tracking information就需要此步骤)</li>
+</ol>
+<p>以下是对应的命令：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git clone &lt;branch-path&gt;
+git checkout -b branch_name
+git push origin branch-name
+git branch --set-upstream branch-name origin/branch-name
+</code></pre></div><h2 id="分支管理">分支管理</h2>
+<p>分支的实际作用，假设需要开发一个新的版本，需要两周完成，那么中间可能会提交不工作的代码，为了避免影响其他人，所以就开一个分支.
+不过现在有些公司提倡主干开发，直接在主干上开发，通过单元测试等等保证功能不会出现大问题。</p>
+<p>创建分支，创建分支时，也就是将当前head指向了新分支</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">//-b 就是创建一个新分支
+git checkout -b dev
+//创建分支但是不checkout
+git branch dev
+//查看branch 列表
+git branch
+</code></pre></div><p>合并分支</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">//切换到主干
+git checkout master
+//合并分支
+git merge dev
+//删除dev 分支
+git branch -d dev
+</code></pre></div><h2 id="解决冲突">解决冲突</h2>
+<p>提交时发生冲突，需要手动修正</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git log --graph  //查看分支合并图
+</code></pre></div><h2 id="合并分支--不使用fastforward">合并分支- 不使用fastforward</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git merge --no-ff -m <span style="color:#e6db74">&#34;merge with no-ff&#34;</span>
+</code></pre></div><p>bug 分支,可能某时需要紧急修改一个bug，但是当前又有没有测试
+这是可以使用git stash 保存当前工作情况</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git stash
+</code></pre></div><p>当修改完毕之后，恢复保存的内容,丢弃之前的内容都可以以下命令做到：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># list all stash info</span>
+git stash list
+<span style="color:#75715e"># 你也可以运行 git stash pop 来重新应用储藏，同时立刻将其从堆栈中移走</span>
+git stash pop
+<span style="color:#75715e"># 应用存储的内容</span>
+git stash apply stash@<span style="color:#f92672">{</span>0<span style="color:#f92672">}</span>
+<span style="color:#75715e"># 丢弃存储的内容</span>
+git stash drop
+</code></pre></div><h2 id="git-tag标签管理">Git Tag标签管理</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git tag v1.0
+git tag
+git tag v0.6 change_id
+git show v0.6
+git tag -s v0.2 //采用PGP签名
+</code></pre></div><h2 id="git-配置-1">Git 配置</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global alias.lg <span style="color:#e6db74">&#34;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&#34;</span>
+</code></pre></div><h5 id="git-cheat-sheet">git cheat-sheet</h5>
+<h6 id="configuration">configuration</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git config --global user.name <span style="color:#e6db74">&#34;&#34;</span>
+git config --global user.email <span style="color:#e6db74">&#34;&#34;</span>
+git config --global color.ui auto
+</code></pre></div><h6 id="create-repositories">create repositories</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git init <span style="color:#f92672">[</span>project-name<span style="color:#f92672">]</span>
+git clone <span style="color:#f92672">[</span>url<span style="color:#f92672">]</span>
+</code></pre></div><h6 id="make-changes">make changes</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git status  <span style="color:#75715e"># list all new or modified files to be commited</span>
+git diff  <span style="color:#75715e"># show file differences not yet staged</span>
+git add <span style="color:#f92672">[</span>file_name<span style="color:#f92672">]</span> <span style="color:#75715e">#snapshots the file in preperation of versioning</span>
+git diff --staged <span style="color:#75715e"># show files dofferences between staging files and the last file version</span>
+git reset <span style="color:#f92672">[</span>file<span style="color:#f92672">]</span> <span style="color:#75715e"># unstages the files but preserve it content</span>
+git commit -m <span style="color:#e6db74">&#34;descriptive comments&#34;</span> <span style="color:#75715e">#records the snapshot file permanently into version history</span>
+</code></pre></div><h6 id="group-changes">group changes</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git branch <span style="color:#75715e">## list all branches in local repository</span>
+git branch <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span> <span style="color:#75715e"># create new branch</span>
+git checkout <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span> <span style="color:#75715e">#switches to the specified branch</span>
+git branch -d <span style="color:#f92672">[</span>branch-name<span style="color:#f92672">]</span> <span style="color:#75715e"># delete the branch</span>
+</code></pre></div><h6 id="refactor-filenames">refactor filenames</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git rm <span style="color:#f92672">[</span>file<span style="color:#f92672">]</span> <span style="color:#75715e"># remove file</span>
+git rm --cached <span style="color:#f92672">[</span>file<span style="color:#f92672">]</span> <span style="color:#75715e"># remove the files from version control but preservers the file locally</span>
+git mv <span style="color:#f92672">[</span>original-file<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>file-renamed<span style="color:#f92672">]</span>
+</code></pre></div><h6 id="suppress-tracking">suppress tracking</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git ls-files --other --ignore --exclude-standard  
+<span style="color:#75715e">#list all ignored fiels in this project</span>
+</code></pre></div><h6 id="save-fragment">save fragment</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git statsh <span style="color:#75715e"># temporily stores all modified tracked files</span>
+git stash pop <span style="color:#75715e"># restores the most recently stashed files</span>
+git stash list <span style="color:#75715e"># list all stashed changesets</span>
+git stash drop <span style="color:#75715e">#discards the most recently stashed changeset</span>
+
+</code></pre></div><h6 id="review-history">review history</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git log <span style="color:#75715e">#list version hsitory for the current branch</span>
+git log --follow <span style="color:#f92672">[</span>file<span style="color:#f92672">]</span> <span style="color:#75715e"># list version history for a file, include renames</span>
+gut diff <span style="color:#f92672">[</span>first-branch<span style="color:#f92672">]</span>...<span style="color:#f92672">[</span>second branch<span style="color:#f92672">]</span>
+git show <span style="color:#f92672">[</span>commit<span style="color:#f92672">]</span>
+</code></pre></div><h6 id="redo-commits">redo commits</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git reset <span style="color:#75715e"># undoes all commits after commit</span>
+git reset --hard <span style="color:#75715e"># discard all history and changes back to specified commit</span>
+</code></pre></div><h6 id="synchronize-changes">synchronize changes</h6>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">git fetch <span style="color:#f92672">[</span>bookmark<span style="color:#f92672">]</span> <span style="color:#75715e">#downloads all history from the repository bookmark</span>
+git merge <span style="color:#f92672">[</span>bookmark<span style="color:#f92672">]</span>/<span style="color:#f92672">[</span>branch<span style="color:#f92672">]</span> <span style="color:#75715e"># combine into one</span>
+git push <span style="color:#f92672">[</span>alias<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>branch<span style="color:#f92672">]</span> <span style="color:#75715e"># upload all local branch commits to github</span>
+git pull <span style="color:#75715e"># download bookmark history and incorporated changes</span>
+</code></pre></div>
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/git">GIT</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/qa-thoughts/2013-09-24-thoughts_on_testing/"> &laquo; 关于测试职业疑惑的一点想法</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/mobile/android_tips-1/"> &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ansible on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/ansible/</link>
+    <description>Recent content in ansible on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Thu, 13 Sep 2018 23:31:21 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>学习ansible module-1</title>
+      <link>https://qdriven.github.io/blog/ansible/ansible-module-1/</link>
+      <pubDate>Thu, 13 Sep 2018 23:31:21 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/ansible/ansible-module-1/</guid>
+      <description>写一个Ansbile Module实际上非常容易，我从看 https://github.com/SeleniumHQ/ansible-selenium.git 这个源码的方式大概可以了解Ansible的一个简单的 插件.</description>
+    </item>
+    
+    <item>
+      <title>ansible In 30 Minutes</title>
+      <link>https://qdriven.github.io/blog/ansible/1-ansible-in-10-minutes/</link>
+      <pubDate>Sun, 01 Jul 2018 21:34:04 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/ansible/1-ansible-in-10-minutes/</guid>
+      <description>Ansible Basic Concept ansible 是一个操作机器的工具,可以通过编排不同的inventory,组合不同的命令来将日常运维的操作 变成可运行的脚本资产,同时也可以积累常用的脚本以便复用.</description>
+    </item>
+    
+    <item>
+      <title>Ansible简单介绍</title>
+      <link>https://qdriven.github.io/blog/ansible/2016-03-30-ansible_basic/</link>
+      <pubDate>Wed, 30 Mar 2016 13:15:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/ansible/2016-03-30-ansible_basic/</guid>
+      <description>Ansible 介绍 Ansible 目前都是使用在python2上面.
+installation 在MAC 上面安装ansible有两种方式：</description>
+    </item>
+    
+  </channel>
+</rss>

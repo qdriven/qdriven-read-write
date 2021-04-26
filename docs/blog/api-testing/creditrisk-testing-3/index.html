@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI"/>
+<meta name="twitter:description" content="Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the daily productivities."/>
+
+	<meta property="og:title" content="Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI" />
+<meta property="og:description" content="Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the daily productivities." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/api-testing/creditrisk-testing-3/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2019-04-28T23:58:45&#43;00:00" />
+<meta property="article:modified_time" content="2019-04-28T23:58:45&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Apr 28, 2019
+                                    <i class="far fa-clock clock"></i>
+                                    3 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h1 id="rule-based-risk-engine-part-3---the-easiest-mock-the-highest-roi">Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI</h1>
+<p>Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the
+daily productivities.</p>
+<p>The Risk Engine is in the middle of the whole system, The upstream and downstream modules leverage
+the result of the Risk Engine by API call in their own business flow. When other modules&rsquo;s tester want to execute their test cases,
+they often wanted to get the different risk engine results on demand. That means I needed to support them for their cases
+as I am the owner of risk engine. Everyday, I was interrupted serveral times. It really bothered me a lot. I can&rsquo;t refuse, but
+need to find a solution. Then the easiest mock came.</p>
+<h2 id="mock--get-what-you-set">Mock- Get What You Set!</h2>
+<p>It is quite simple but it is worth to write because it represents the value of codes which a tester can implement. I implemented a new WebService in our repo, and used a Map to store what the client set for mocking
+purpose. Then next API call against the setting URL, the response is what the client Set even without any deployment or restart.</p>
+<p>How can I achieve this? The most important thing is that we used the configuration center - <a href="https://github.com/ctripcorp/apollo">Apollo</a>. But does this mean in real case? You never need to restart the server for changing application properties. It makes things easier. The whole process was that:</p>
+<ol>
+<li>Setup Mock by calling: <code>http://domain/mock/A/setup</code></li>
+<li>Change the Risk Engine Url to <code>http://domain/mock/A/getMock</code> in Apollo Portal</li>
+<li>Deploy the changes</li>
+<li>Other modules' QA now can control the Risk Engine Response for any cases.
+And even more, this actually can be  applied to any other Http service to decouple modules,free my time, and keep me focusing</li>
+</ol>
+<p>Here is the simple codes.It only takes 10 minutes to complete, but it saved me a lot of time in daily basis.</p>
+<ul>
+<li>GenericMockStore for store Mock</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Component</span>
+<span style="color:#a6e22e">@Profile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericMockMemStore</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> ConcurrentHashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> mockStore <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ConcurrentHashMap<span style="color:#f92672">&lt;&gt;();</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">saveMock</span><span style="color:#f92672">(</span>String key<span style="color:#f92672">,</span> Object value<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockStore</span><span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>key<span style="color:#f92672">,</span> value<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getMock</span><span style="color:#f92672">(</span>String key<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">mockStore</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>key<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><ul>
+<li>GenericMock Service</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/mock&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#a6e22e">@Profile</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GenericMockController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Autowire</span>
+    <span style="color:#66d9ef">private</span> GenericMockMemStore mockMemStore<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/{productName}/setup&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#a6e22e">@PostMapping</span>
+    <span style="color:#66d9ef">public</span> MockSetupResponse <span style="color:#a6e22e">setupMock</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@RequestBody</span> GenericMockResponse setupResponse<span style="color:#f92672">,</span>
+                                       <span style="color:#a6e22e">@PathVariable</span> String productName<span style="color:#f92672">,</span>
+                                       HttpServletRequest request<span style="color:#f92672">){</span>
+
+        mockMemStore<span style="color:#f92672">.</span><span style="color:#a6e22e">saveMock</span><span style="color:#f92672">(</span>productName<span style="color:#f92672">,</span>setupResponse<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> MockSetupResponse<span style="color:#f92672">.</span><span style="color:#a6e22e">success</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{productName}/getMock&#34;</span><span style="color:#f92672">,</span>method <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">,</span>
+                                                                RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">,</span>RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">PUT</span><span style="color:#f92672">})</span>
+    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getMock</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> String productName<span style="color:#f92672">,</span>
+                                       HttpServletRequest request<span style="color:#f92672">){</span>
+
+       <span style="color:#66d9ef">return</span>  mockMemStore<span style="color:#f92672">.</span><span style="color:#a6e22e">getMock</span><span style="color:#f92672">(</span>productName<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+</code></pre></div><p>Here is an explaination for these codes:</p>
+<ol>
+<li>Two APIs:
+<ul>
+<li><code>POST /mock/{productName}/setup</code>  for setup mock for the <code>productName</code> you set</li>
+<li><code>/mock/{productName}/getMock</code> get the mock reponse which set previously</li>
+</ul>
+</li>
+<li><code>GenericMockMemStore</code>: Store the mocks by key: productName in memory</li>
+</ol>
+<p>Like I said before, the automation testing is not about automation, but about writing codes for testing,and productivity.
+Automation is a conception, not an action. It is too big to accomplish. But Writing codes is actionable, and you can see what
+you accomplished and what you improved immediately.</p>
+<p>And also know the infrastructure more, you will find the solution is in the upstream or low level.
+This is a tip I used when I tested this project. Luckly it worked. But still it is not a perfect solution, there are qeustions over here:</p>
+<ol>
+<li>Is there any pain point to improve?</li>
+<li>How to make it happen?</li>
+<li>Don&rsquo;t write any code, use exisitng tools like YAPI, can we achieve the same?</li>
+</ol>
+<p>Maybe you can find your answer, or stay tuned, I will write a post later.</p>
+<p>Finally It is honor to make these codes in the develop official repos.</p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/api-teting">api-teting</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/ep">ep</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/english">english</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/python/python-tester-should-know/"> &laquo; 测试的Python须知脑图</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/qa-thoughts/4-be-tough/">Think in Testing 1-Be Tough &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

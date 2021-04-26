@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>流量回放 on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE/</link>
+    <description>Recent content in 流量回放 on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Wed, 09 Oct 2019 10:06:26 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>goreplay 流量回放小尝试</title>
+      <link>https://qdriven.github.io/blog/test-ops/4-goreplay-usage/</link>
+      <pubDate>Wed, 09 Oct 2019 10:06:26 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/4-goreplay-usage/</guid>
+      <description>Gorelapy简介 goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。
+GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址 最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1428 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on DirtyHands-Tester</title>
+    <link>https://qdriven.github.io/blog/</link>
+    <description>Recent content in Blogs on DirtyHands-Tester</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>QDriven- All rights reserved</copyright>
+    <lastBuildDate>Sun, 10 Jan 2021 20:43:24 +0000</lastBuildDate><atom:link href="https://qdriven.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>测试陷阱5 - 测试就是找Bug</title>
+      <link>https://qdriven.github.io/blog/qa-traps/5-qa-bugs/</link>
+      <pubDate>Sun, 10 Jan 2021 20:43:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/5-qa-bugs/</guid>
+      <description>在我工作过的公司中，大部分的开发和测试工程师对于测试工程师的定位就是找Bug的人.这个认识我觉得没有什么问题，因为确实测试功能师大部分的工作就是找Bug. 一开始我自己也从来没有怀疑过，感觉这个定义偏差不是太大，但是随着工作年限的增加，我觉得这个定位越来越不那么正确了.
+为什么这样子说呢？我分两个方面来说明：
+ 测试的目的只是保证质量吗？ 测试过程中发现的Bug到底能代表什么？  测试的目的只是保证质量吗？ 测试的目的只是保证质量吗？我觉得说是，没有什么问题的；但是保证质量了它又是为了什么呢？为了让产品更有竞争力！ 所以测试的最根本的目的是为了产品更有竞争力！有了这一个目的，作为测试人员也许需要把眼界放的更开阔一些，需要更多平衡的思维.</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱4-跳出舒适区</title>
+      <link>https://qdriven.github.io/blog/qa-traps/4-comfortable-zone/</link>
+      <pubDate>Thu, 07 Jan 2021 11:40:11 +0200</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/4-comfortable-zone/</guid>
+      <description>最近几年陆陆续续也面试了不少测试的同学，好多同学也都提到了跳出舒适区的概念，好多人因为觉得需要跳出舒适区所以觉得需要换一个工作环境； 就测试而言好多同学都是觉得一直在做类似的事情，没有外部刺激，没有提高；同时又相信没有实际的项目锻炼，技能很难得到提高；甚至有些同学很明显 在自己公司做的还是不错的，升职也有，加薪也有，可是就是觉得自己在舒适区里面，觉得一定要跳出来才能很快提高。大体上套用美国总统的话就是keep me great.</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱3-自动化测试就是测试的技术</title>
+      <link>https://qdriven.github.io/blog/qa-traps/3-tech-is-all/</link>
+      <pubDate>Fri, 27 Nov 2020 23:49:47 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/3-tech-is-all/</guid>
+      <description>随着自动化测试的风靡，测试同学们越来越觉得自动化就是全部，自动化就是自己的方向。 这些本身没有太大问题，但是如果认为自动化测试就是终极技术，那么我觉得这是一个很大的陷阱。 为什么？个人觉得大部分的测试把自动化和技术都定义的太狭小了,技术和自动化都是非常宽泛的定义,下面是我自己问自己的两个问题:
+ 什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 什么是技术？技术难道就是写代码吗？把测试用例代码化吗？  什么是自动化？测试讨论的自动化难道就是接口自动化，UI自动化测试吗？ 为什么先问这个问题，因为很多同学一开始没有接触过自动化，后来写了一些自动化用例之后，要么觉得高人一等，要么觉得一会就觉得没意思了，原因何在？因为写过自动化测试用例之后，要么觉得我技术很厉害了，基本可以把所有问题都解决了；要么马上一个疑问是这有技术含量吗？ 大量重复的代码，差不多的验证点，没有比设计测试用例和执行用例高级到多少,然后就有一种深深的幻灭的感觉？路在何方的问题又来了.</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱2-永远都在忙碌重要紧急的事情</title>
+      <link>https://qdriven.github.io/blog/qa-traps/2-things-matter/</link>
+      <pubDate>Sat, 31 Oct 2020 13:22:54 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/2-things-matter/</guid>
+      <description>测试永远都很忙，忙着回归测试，忙着各种各样的测试，各种各样的交付，但是这样忙碌了3年左右之后， 你发现你在确实是进步了，进步的主要方面我想大部分就是以下几个方面:
+ 沟通能力增强了 业务熟悉了非常多，开发测试流程熟悉了很多 处理紧急事情能力提高了很多  这已经很不错，可能有些测试同样的过了三年这些进步都没有，更多的在听指令，别人说测试就是做测试。</description>
+    </item>
+    
+    <item>
+      <title>测试陷阱1 - 放弃怀疑</title>
+      <link>https://qdriven.github.io/blog/qa-traps/1-no-doubt/</link>
+      <pubDate>Thu, 29 Oct 2020 20:43:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-traps/1-no-doubt/</guid>
+      <description>对于大部分的初级测试人员来说，有时放弃怀疑可能在工作中陷入一些被动，甚至让自己的生活有时也会搞得一团乱. 下面我从一个加班事件说起，看看我们如果应对一些突发的情况.
+从一个加班事件说起 事情的由来是这样的,由于某种原因，一个功能只能在生产环境测试，于是测试同学自己觉得这个功能简单，就预估半天时间就可以测试完成。结果呢？由于各种配置问题，上了生产主流程都不通，然后一通检查，最后从上午一直到到晚上10点的时候发现需要的一个第三方账户权限设置错误，造成功能不同，然后在配置修改完了之后，再进行测试，结果弄到凌晨结束。从这个事情来看，完全从功能角度看，其实可能确实只要半天时间，但是这个功能又有很多依赖关系，而这些依赖关系确花了比实际测试更长的时间，而真正造成这些时间的问题确从来没有去怀疑过。于是班加了，结果其实还不太好，对外看来为什么会到最后才发现这些问题？为什么事前没有计划，为什么到最后主流程还不通？为什么从来没有人提出过这个里面可能的风险？
+怀疑不等于不相信，怀疑是想确认 我事后分析了一下，有一点就是测试同学早早的放弃了怀疑，放弃怀疑了两个地方:</description>
+    </item>
+    
+    <item>
+      <title>QE-Meetup： TDD 小结</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/1-tdd-way/</link>
+      <pubDate>Wed, 07 Oct 2020 11:40:11 +0200</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/1-tdd-way/</guid>
+      <description> 以下是关于TDD的小结，我个人的感受是：
+ 如果这个实践做的事情只是想知道那些接口出现了变动，那么可能通过代码review或者沟通是更好的方式，为了得到这个目的感觉要做的事情有点多 技术自然是很厉害，但是团队是不是沟通上面出现问题了？难道都不愿意到连改了什么，影响什么都不想说了   </description>
+    </item>
+    
+    <item>
+      <title>Git in One Page</title>
+      <link>https://qdriven.github.io/blog/test-ops/6-one-page-git/</link>
+      <pubDate>Tue, 01 Sep 2020 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/6-one-page-git/</guid>
+      <description>索引  配置 配置文件 创建 本地修改 搜索 提交历史 分支与标签 更新与发布 合并与重置 撤销 Git Flow   配置 列出当前配置： $ git config --list 列出repository配置： $ git config --local --list 列出全局配置： $ git config --global --list 列出系统配置： $ git config --system --list 设置用户名： $ git config --global user.</description>
+    </item>
+    
+    <item>
+      <title>Docker in One Page</title>
+      <link>https://qdriven.github.io/blog/test-ops/5-docker-onepage/</link>
+      <pubDate>Fri, 28 Aug 2020 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/5-docker-onepage/</guid>
+      <description>Docker In One Page(30 minutes)  Docker Overview Docker Process Docker image Docker Components  5.</description>
+    </item>
+    
+    <item>
+      <title>Python Related库,拯救你满是dict的代码，让测试代码更好懂</title>
+      <link>https://qdriven.github.io/blog/python/2020-08-18-related/</link>
+      <pubDate>Tue, 18 Aug 2020 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2020-08-18-related/</guid>
+      <description>[QA-Daily] Python Related库,拯救你满是dict的代码，让测试代码更好懂 Related是一个python的仓库,用来序列化和反序列. 对于测试人员来说，选择一个第三方lib的使用，最主要的是三点:</description>
+    </item>
+    
+    <item>
+      <title>Python DeepDiff 使用</title>
+      <link>https://qdriven.github.io/blog/python/2020-08-17-deepdiff/</link>
+      <pubDate>Mon, 17 Aug 2020 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2020-08-17-deepdiff/</guid>
+      <description>DeepDiff 使用 DeepDiff的用处:
+Deep Difference of dictionaries, iterables, strings and other objects.</description>
+    </item>
+    
+    <item>
+      <title>一款好用的markdown转换成微信公众号的编辑工具&#43;配合使用imgurl床图</title>
+      <link>https://qdriven.github.io/blog/daily/20-08-13-weichat-editor/</link>
+      <pubDate>Thu, 13 Aug 2020 13:29:38 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/daily/20-08-13-weichat-editor/</guid>
+      <description>由于日常写的文档都是使用markdown的格式，而markdown格式再转化为微信公众号内容，还是有点麻烦， 所以下面推荐一款工具给测试同学使用，就是doocs-md
+这个工具使用非常方便，直接将markdown文字贴进去就可以使用，然后点击复制按钮就可以使用， 为什么推荐这个工具，其实没有道理，就是方便.
+上个截图:</description>
+    </item>
+    
+    <item>
+      <title>一个几乎包含了大部分JAVA开发相关的教程的网站</title>
+      <link>https://qdriven.github.io/blog/daily/20-08-12-baeldung/</link>
+      <pubDate>Wed, 12 Aug 2020 08:29:57 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/daily/20-08-12-baeldung/</guid>
+      <description>每个测试都想学习一些开发相关的内容，如果你想学习JAVA的话，这个网站不要错过 baeldung, 网站上的大部分教程的代码在github仓库.
+动手吧测试，为测试同学定期推荐有用的一些工具，教程等等，目的只有一个就是让我们测试从业人多动手！
+首先先看看网站吧：</description>
+    </item>
+    
+    <item>
+      <title>放养式开发管理</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/3-let-it-be/</link>
+      <pubDate>Tue, 11 Aug 2020 08:58:55 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/3-let-it-be/</guid>
+      <description>或许是在充满巨大不确定性的情况下，或许是在敏捷开发的情况下，放养开发管理变得越来越多.陆陆续续经历了一些公司，项目，发现几乎是一个共性.
+我相信放养式开发管理是个中性词，没有好和坏，更多的是适合不适合. 一个词在不同的环境下，反应的情况是不一样的。
+放养式开发管理 - 一个成功的例子 如果在一个开发个人能力突出，严谨，负责，功能能力强的团队，放养式开发管理可以介绍很多不太需要的沟通成本，大家相互信任，对于共同的期望值有足够的默契，这是没有什么问题的， 这样的团队我也在其中过，那是一个非常棒的体验， 理性，克制，坦诚，一个目标，各司其职，而且都能完成的很好。但是如果我回头看看以前的这个团队的成员，每个人5年后发展，总共4个人，一个P8，一个高级经理了，一个资深架构了，一个创业当老板了。有时会感慨，这是一个什么团队.</description>
+    </item>
+    
+    <item>
+      <title>做决定，负责任</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/2-decision-making/</link>
+      <pubDate>Mon, 10 Aug 2020 21:50:47 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/2-decision-making/</guid>
+      <description>做决定，负责任,并不容易.
+测试工作，决定，负责任 为什么突然想起这个做决定，负责任的话题？因为日常工作中，我慢慢发现很多很多的开发同学不喜欢做决定，明明很多事情再我看来可以下决定，却非要请示上级，而每一次的请示有时会有很长一个等待时间，而有时这个等待时间往往在下班前后，叫人下班也不是，不下班也不是，只能单纯的等待请示结果.
+举个实际的例子来说，下班前的我们测试说测试完成了，可以上线了。然后负责这个功能的开发就是准备上线，问运维什么是否可以今天上线？运维回答说明天可以上线吗？开发马上把问题给了他老板，让他老板同不同意？而他的老板由于出差，等了三个多小时才回复可以介绍今天不上线。
+这个只是一件事情，但是我遇到过不少类似的事情。 我不能说这样的事情有什么大的不对，但是有时细细想想，十分不是滋味。</description>
+    </item>
+    
+    <item>
+      <title>Git Upstream/Patch Tips</title>
+      <link>https://qdriven.github.io/blog/tips/git/git-tips-1/</link>
+      <pubDate>Tue, 04 Aug 2020 09:17:08 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/git-tips-1/</guid>
+      <description>Fork的Github仓库如何同步更新  添加原始的GITHUB仓库到upstream  # 查看所有的远程项目 git remote -v # 添加原始仓库成为upstream git remote add upstream https://github.</description>
+    </item>
+    
+    <item>
+      <title>JAVA Lock</title>
+      <link>https://qdriven.github.io/blog/concurrency/java-locks/</link>
+      <pubDate>Tue, 04 Aug 2020 09:17:08 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/java-locks/</guid>
+      <description>0. JAVA Locks 锁在JAVA 并发编程中是一个重要的概念，而且是一些比较难懂的概念，一下是学习Lock概念的时候的一些记录。</description>
+    </item>
+    
+    <item>
+      <title>JIRA Fields 说明</title>
+      <link>https://qdriven.github.io/blog/tips/jira-tips/</link>
+      <pubDate>Tue, 04 Aug 2020 09:17:08 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/jira-tips/</guid>
+      <description>JIRA可以导出的字段的说明
+   JIRA可以导出的字段 中文名 字段说明 字段样例     Summary 概要 一句话描述问题 100字符以内的文本   Issue key 问题号 用于识别任务的唯一编号。可通过搜索问题号快速跳转至问题详情页面    Issue id 问题ID 用于系统表结构关联，用户无需关注 43021   Parent id 父问题ID 用于系统表结构关联，用户无需关注 38524   Issue Type 问题类型 标识问题的类型 史诗；任务；子任务等   Status 状态 标识问题的状态。可参考JIRA中的问题状态待办，进行中，开发中，测试，完成等    Project key 项目关键字 项目的唯一识别标识符。项目中的问题号会以累加的数列标识在关键字后面。例如 TS-1，TS-2   Project name 项目名称 项目名称，在创建项目时必填。项目管理员可随时修改项目名称    Project type 项目类型 项目类型分两种，software 或   Project lead 项目负责人 项目的负责人。其不一定是项目参与者或管理员人员名称    Project description 项目描述 项目名称，在创建项目时选填。项目管理员可随时修改项目描述可带特殊字符的文本，支持markup    Project url 项目URL链接 在项目链接板块选择添加的网页链接 网页链接   Priority 优先级 P1，P2，P3    Resolution 解决结果 当问题状态流转至最终阶段时系统填写的字段。系统通过此值来判断问题是否完成完成；未解决    Assignee 经办人 当前问题的负责人，由其负责该任务的完成人员名称    Reporter 报告人 当前问题的发起人，该角色关注此问题的进展人员名称    Creator 创建人 当前问题的创建者，操作创建的人，不一定是报告人或经办人人员名称    Created 创建时间 问题被创建时的时间 精确到分钟的时间戳   Updated 更新时间 问题被最近一次更新时的时间 精确到分钟的时间戳   Last Viewed 上次浏览时间 问题被最近一次浏览时的时间 精确到分钟的时间戳   Resolved 解决时间 仅当“解决结果”被赋值时由系统自动更新精确到分钟的时间戳    Fix Version/s 修复的版本 将发布此问题的版本号 文本   Affected Version/s 影响的版本 此问题造成影响的版本号，多用于故障类的问题文本 例   Components 模块 同一条记录可含有多个值 JIRA中的4个字段   Due Date 到期日 当前问题需要完成的截止日期 精确到分钟的时间戳   Log Work 工作日志 同一条记录可含有多个值 精确到分钟的记录时间；记录人；记录时长（秒）   OriginalEstimate 初始预估 记录一个问题的计划工作时长。参考时间记录3600（秒）    RemainingEstimate 剩余估算 记录一个问题的剩余工作时长。参考时间记录1080（秒）    TimeSpent 时间消耗 记录一个问题的耗费工作时长。参考时间记录360（秒）    WorkRatio 未明确 整数百分比例 85%   SecurityLevel 安全等级 未明确    Outwardissue link 外部连接问题 基于连接类型，同一条记录可含有多个值   Attachment 附件 同一条记录可含有多个值    Custom field (Baseline end date)   Custom field (Baseline start date)   Custom field (End date) 自定义字段   Custom field (Epic状态) 自定义字段 表示史诗的状态，系统通过此值来判断史诗是否完成待办，进行中，完成   Custom field (Epic颜色) 自定义字段 记录该史诗在史诗栏位中所使用的颜色   Custom field (Progress) 自定义字段 第三方插件SoftwarePlant引入的字段，用于BigPicture,   Custom field (Severity) 严重程度 表示此问题的严重程度。S1为最高   Custom field (Start date) 自定义字段   Custom field (Story Point) 自定义字段   Custom field (史诗名称) 自定义字段 史诗类型问题专用，一句话描述史诗问题包括项目创建、项目查询、基础信息、资源管理、项目角色及权限配置等   Custom field (史诗链接) 自定义字段 史诗类型问题专用，概括史诗，用于史诗栏内显示“项目管理”   Custom field (等级) 自定义字段 未明确   Comment 备注 同一条记录可含有多个值 可带特殊字符的文本，支持markup    </description>
+    </item>
+    
+    <item>
+      <title>修改Git提交人</title>
+      <link>https://qdriven.github.io/blog/tips/git/git-tips-2/</link>
+      <pubDate>Tue, 04 Aug 2020 09:17:08 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/git-tips-2/</guid>
+      <description>修改Github仓库的提交人 有时突然发现自己的github仓库使用的名称不对，那么如何把已经提交变更人修改呢？
+git filter-branch -f --env-filter &amp;#39; OLD_EMAIL=&amp;#34;&amp;lt;old@emai.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-1 MAVEN 创建项目JAVA项目</title>
+      <link>https://qdriven.github.io/blog/pattern/tips-maven-java/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/tips-maven-java/</guid>
+      <description>MAVEN 创建项目JAVA项目 MAVEN是开发过程中常用的一个管理软件项目代码的工具，这里开始一个简单系列的介绍，给测试同学介绍MAVEN的使用， 以便更好的了解开发过程，以及版本，文档管理的方式.
+1.1. 什么是MAVEN 在理解MAVEN之前首先先要了解一个JAVA项目有哪些内容组成.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-2 Github Cli使用</title>
+      <link>https://qdriven.github.io/blog/tips/git/tips-github-cli/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/tips-github-cli/</guid>
+      <description>Github Cli,是一个命令行工具，可以让你在命令行中直接操作github的仓库. 那么命令行工具可以提高平常的效率吗? 我的答案是可以,原因如下:
+ 使用习惯: Dev/Test 工作中基本上和Code打交道，现代的IDE都可以terminal(命令行工具),不需要额外的切换浏览器操作github仓库 一个命令实现一个目的: 浏览器操作需要点击几个页面，输入不同的数据进行创建，但是命令行中使用了默认参数，可以一个命令就完成你想要的操作  0.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-3 Github 访问速度缓慢解决</title>
+      <link>https://qdriven.github.io/blog/tips/git/tips-github-slowdown/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/tips-github-slowdown/</guid>
+      <description>1. Github 访问速度缓慢解决 不知道什么原因，老鸟家里访问Github仓库速度缓慢，下载GITHUB仓库速度也是缓慢。 这种缓慢慢慢已经给老鸟造成了一些困扰. 但是问题是实际存在的，老鸟心里想一定需要解决.</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-4 Dive Into Markov(阿里妈妈功能测试平台)</title>
+      <link>https://qdriven.github.io/blog/tools/alimama-intelplatform-1/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/alimama-intelplatform-1/</guid>
+      <description>Dive Into Markov(阿里妈妈功能测试平台) 架构分析 根据Markov本身提供的功能图，以及代码，大致总结Markov如下图: 从技术角度看了一下这个代码仓库的pom文件,有几个问题可以改善</description>
+    </item>
+    
+    <item>
+      <title>测试日志2020-5 前端部署 NGINX Conf文件自动配置</title>
+      <link>https://qdriven.github.io/blog/tools/nginx-runner/</link>
+      <pubDate>Thu, 30 Jul 2020 12:12:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/nginx-runner/</guid>
+      <description>前端部署 NGINX Conf文件自动配置 新部署了一个服务，测试环境NGINX帮忙配置一下；这周老鸟被这些事情忙的不亦乐乎，一会nginx加一个环境配置， 一会部署一个测试环境前端,一会重启一些nginx,一周很快就过去了，老鸟感觉一周测试的事情做的很少，倒是做了很多nginx运维的事情. 按照现在流行的说法叫test-ops，不知道哪个天才创造了这个职位名称，但是很遗憾，老鸟不能再招人了，公司HC已经冻结了，但是如果一直这样也不是个事情呀.</description>
+    </item>
+    
+    <item>
+      <title>命令行艺术-测试人员版本</title>
+      <link>https://qdriven.github.io/blog/shell/shell-arts/</link>
+      <pubDate>Tue, 12 May 2020 08:29:57 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/shell-arts/</guid>
+      <description>QA-Daily将每日不定期推送一些测试相关的github仓库,翻译/英文原文文章,好用的教程给测试/开发人员发现有用的测试工具,了解测试最新动态,扩大自己的技术视野,从开源项目中获取知识,提高自身能力,提高自己的Coding技能,提高自己的工资,也能让测试人员职业上又了解更多的选择!信息不是太少,是太多了,希望QA-Daily能在筛选信息方面帮到想要了解测试/质量相关的工程师. GITHUB 上面又一个很好的仓库命令行的艺术,一页纸的篇幅介绍了常用的 shell 命令, 这个项目有 82.</description>
+    </item>
+    
+    <item>
+      <title>devops nginx 使用tips</title>
+      <link>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</link>
+      <pubDate>Wed, 11 Mar 2020 08:50:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2020-03-11-nginx/</guid>
+      <description>为什么使用nginx 使用nginx来进行web服务的反向代理，举个例子来说，目前有两个vue的前端项目，使用同一个nginx，通过路径或者端口的不同访问不同的项目入口. 先从nginx安装开始吧：
+ MAC 安装Nginx:  brew install nginx  启动Nginx  brew services start nginx  nginx 配置目录说明:  ## nginx安装文件目录 /usr/local/Cellar/nginx ## nginx配置文件目录 /usr/local/etc/nginx ## config文件目录 /usr/local/etc/nginx/nginx.</description>
+    </item>
+    
+    <item>
+      <title>git stash 使用</title>
+      <link>https://qdriven.github.io/blog/tips/git/git-tips-git-stash/</link>
+      <pubDate>Mon, 20 Jan 2020 09:52:58 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/git-tips-git-stash/</guid>
+      <description>git-stash 文档的说明有点抽象，下面用一些例子来解释如何使用git-stash。
+git-stash - Stash the changes in a dirty working directory away git-stash 主要使用的场景如下：</description>
+    </item>
+    
+    <item>
+      <title>Scrum CheckList</title>
+      <link>https://qdriven.github.io/blog/pattern/scrum-checklist/</link>
+      <pubDate>Sun, 05 Jan 2020 18:31:42 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/scrum-checklist/</guid>
+      <description>Scrum Checklist The Bottom line    序号 事项 说明     1 每四周或者更少时间交付    2 交付业务最需要的内容    3 持续改善交付流程 如何持续改善,如何数据驱动    Core Scrum  For Product Owner:     序号 事项 说明     1 empowered to prioritize 优先级定义   2 有能力定义优先级 优先级的考量有很多,需要全面考虑   3 和Team随时沟通 如何有效沟通   4 和相关利益方保持沟通    5 one team，one voice      For Team:     序号 事项 说明     1 Sprint backlog 需求池   2 Team 全部可见    3 Daily Update Daily standup meeting   4 team own it    5 daily standup: team全部参加    6 daily standup: 进度，问题    7 demo in planning    8 Definiton of Done Team Respect Done   9 Retropective results/improvement implemented/all participates   10 Product backlog For long term planning/roadmap   11 Top Backlog prioritize    12 product backlog estimation estimated by team     For sprint planning     序号 事项 说明     1 Results in sprint planning sprint 排期   2 Priorities 定义清楚优先级   3 Timebox iteration Timebox Iteration   4 Reduce distupted and controlled    5 Max 9 people per team 人数是一个大问题,人多了自然不够敏捷    Recommended  Fullstack dev not locked into specific roles Product Owner Provide Vision Team knows top3 impediments Scrum master has strategy/focusing on removing impediment Escalated to management when can&amp;rsquo;t solve blocks Velocity Measurement Sprint Burndown chart Daily Scrum/Max 15 minutes  Indicators and Scaling  Having funs Overtime work is rare Discussing,criticizing,and experimenting with the process Daily Standup/Scrum of Scrums/Integrate within each sprint Chief Product Owner  Learning By Examples  Checklist is only a guideline,not rules Respective as a discussion tool not a evaluation tool  Why Scrum doesn&amp;rsquo;t work?</description>
+    </item>
+    
+    <item>
+      <title>快速生成简单的TPS报告</title>
+      <link>https://qdriven.github.io/blog/python/2020-07-01-generate-tps-chart/</link>
+      <pubDate>Fri, 13 Dec 2019 02:19:56 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2020-07-01-generate-tps-chart/</guid>
+      <description>练手的机会无处不在，不需要太久，也许只要10分钟半个小时就可以. 测试人员来说每天重复的事情其实不少，比如今天这件，大体时期如下:
+ 要做压力测试，需要提供一个TPS时间序列报告 压力测试工具是开发自己写的，TPS的数据从日志里面拿 不同的并发数下面需要重复好几次整理收集的事情，不同的版本下面又需要做好多次这样的事情  那么先让我们改进一下吧。</description>
+    </item>
+    
+    <item>
+      <title>数据驱动测试- 测试用例加载</title>
+      <link>https://qdriven.github.io/blog/python/read_excel_yml/</link>
+      <pubDate>Fri, 22 Nov 2019 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/read_excel_yml/</guid>
+      <description>使用pytest作为测试工具，有一个pytest.parameterized 的装饰器可以用来进行数据驱动测试，以下是一个最简单的例子：
+@pytest.mark.parametrize(&amp;#34;id_num&amp;#34;, (1, 2, 3, 4, 5)) def test_issue_plain(id_num): print(id_num) test_issue方法有一个参数名称是 id_num, 这个值可以在测试过程中不断的被改变，但是实际中接口自动化中，有时我们会使用一些excel，yml作为外部测试用例来传入参数进行测试，那怎么样才能实现这个功能呢？</description>
+    </item>
+    
+    <item>
+      <title>goreplay 流量回放小尝试</title>
+      <link>https://qdriven.github.io/blog/test-ops/4-goreplay-usage/</link>
+      <pubDate>Wed, 09 Oct 2019 10:06:26 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/4-goreplay-usage/</guid>
+      <description>Gorelapy简介 goreplay是一款从生产环境copy流量到测试环境的工具，且不会影响生产环境的业务响应，又能很简单的达到复用http请求来做稳定性测试的目的。
+GoReplay 工作方式：listener server 捕获流量，并将其发送至 replay server 或者保存至文件。replay server 会将流量转移至配置的地址 最简单的使用模式是：listener server捕获流量，并将其发送至kafka，然后解析kafka的消息并存入mysql,处理起来还是比较方便的.</description>
+    </item>
+    
+    <item>
+      <title>lagou PC版搜索选项工作经验选择应届后，取消应届后，不能返回原来的工作经验选项</title>
+      <link>https://qdriven.github.io/blog/bugs/lagou-search-bug/</link>
+      <pubDate>Mon, 07 Oct 2019 21:32:43 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/bugs/lagou-search-bug/</guid>
+      <description>Bug 描述 lagou PC版搜索选项工作经验选择应届后，取消应届后，不能返回原来的工作经验选项 步骤:</description>
+    </item>
+    
+    <item>
+      <title>软件质量文化建设</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/0-build-in-q/</link>
+      <pubDate>Mon, 07 Oct 2019 11:40:11 +0200</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/0-build-in-q/</guid>
+      <description>什么是质量文化 测试/QA质量文化建设  内建质量 质量外延    测试过程中的常见问题 这些都是测试过程中的常见问题，但是其实都不容易解决.</description>
+    </item>
+    
+    <item>
+      <title>Xmind,Test Cases,and Allure templates for TDD</title>
+      <link>https://qdriven.github.io/blog/pattern/1-junit5casetesttemplate/</link>
+      <pubDate>Wed, 07 Aug 2019 21:34:04 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/1-junit5casetesttemplate/</guid>
+      <description>Xmind,TestCases and JUnit5 Allure Template Learn from the requirements and write test cases are the common daily work of a tester.</description>
+    </item>
+    
+    <item>
+      <title>Implement A Integration Testing Libs in two days</title>
+      <link>https://qdriven.github.io/blog/api-testing/0-start-from-the-end/</link>
+      <pubDate>Sun, 28 Jul 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/0-start-from-the-end/</guid>
+      <description>There is a question over my head several times.</description>
+    </item>
+    
+    <item>
+      <title>Integration-Runner Test Case Demo</title>
+      <link>https://qdriven.github.io/blog/api-testing/1-demo-testcase/</link>
+      <pubDate>Sun, 28 Jul 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/1-demo-testcase/</guid>
+      <description>Last chapter introduce how to build a test framework in two days, In this chapter, let&amp;rsquo;s do demos:</description>
+    </item>
+    
+    <item>
+      <title>Using IntelljIdea For Code Coverage</title>
+      <link>https://qdriven.github.io/blog/api-testing/3-inteljidea-codecoverage/</link>
+      <pubDate>Sun, 28 Jul 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/3-inteljidea-codecoverage/</guid>
+      <description>Two Steps:
+ Run Test Code with code coverage - Right click the test class, select run *** with code coverage  Check the Code Coverage in intelli idea    Line Code Covearge/Method Coverage   Read marked as not covered lines, green as covered lines   </description>
+    </item>
+    
+    <item>
+      <title>The Easiest Mock, The highest ROI</title>
+      <link>https://qdriven.github.io/blog/api-testing/4-productivity-simplemock/</link>
+      <pubDate>Sun, 28 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/4-productivity-simplemock/</guid>
+      <description>Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the daily productivities.</description>
+    </item>
+    
+    <item>
+      <title>测试的Python须知脑图</title>
+      <link>https://qdriven.github.io/blog/python/python-tester-should-know/</link>
+      <pubDate>Sat, 27 Jul 2019 21:34:04 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/python-tester-should-know/</guid>
+      <description>下图是使用Python进行自动化测试需要了解的大纲.</description>
+    </item>
+    
+    <item>
+      <title>Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI</title>
+      <link>https://qdriven.github.io/blog/api-testing/creditrisk-testing-3/</link>
+      <pubDate>Sun, 28 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/creditrisk-testing-3/</guid>
+      <description>Rule Based Risk Engine Part 3 - The Easiest Mock, The highest ROI Actually it is not about how to test Rule Based Risk Engine, it is about how to use simple codes to improve the daily productivities.</description>
+    </item>
+    
+    <item>
+      <title>Think in Testing 1-Be Tough</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/4-be-tough/</link>
+      <pubDate>Sun, 28 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/4-be-tough/</guid>
+      <description>Think in Testing 1: Be Tough If someone tell you that software testing or quality assurance is an easy job to do, he/she might not understand what a tester or qa do.</description>
+    </item>
+    
+    <item>
+      <title>Rule Based Risk Engine Part 2 - Write Code to Test</title>
+      <link>https://qdriven.github.io/blog/api-testing/creditrisk-testing-2/</link>
+      <pubDate>Thu, 25 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/creditrisk-testing-2/</guid>
+      <description>Rule Based Risk Engine Part 2 - Write Code to Test What to do is quite obvious:</description>
+    </item>
+    
+    <item>
+      <title>Rule Based Risk Engine Testing Part 1- Background</title>
+      <link>https://qdriven.github.io/blog/api-testing/creditrisk-testing-1/</link>
+      <pubDate>Tue, 23 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/creditrisk-testing-1/</guid>
+      <description>Rule Based Risk Engine Testing Part 1- Background This article introduces a real world case for testing a rule based risk engine.</description>
+    </item>
+    
+    <item>
+      <title>Build API Testing Framework-1 - Learn Http Api</title>
+      <link>https://qdriven.github.io/blog/api-testing/apitesting-intro/</link>
+      <pubDate>Sat, 20 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/apitesting-intro/</guid>
+      <description>Build API Testing Framework-1 - Learn Http Api API now, in most cases, it is a HTTP API which over http protocol.</description>
+    </item>
+    
+    <item>
+      <title>Git Sub Module Usage</title>
+      <link>https://qdriven.github.io/blog/tips/git/0-git-submodule/</link>
+      <pubDate>Sat, 20 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/0-git-submodule/</guid>
+      <description>Git Sub Module Usage A Git Repo sometimes has several sub projects which are also a git repo.</description>
+    </item>
+    
+    <item>
+      <title>Use Anaconda3 Python In Ubuntue Usage</title>
+      <link>https://qdriven.github.io/blog/python/1-add_anaconda3_python/</link>
+      <pubDate>Sat, 20 Apr 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/1-add_anaconda3_python/</guid>
+      <description>Use Anaconda3 Python In Ubuntu First of all, where is your annaconda3 installed, and where is the system python path?</description>
+    </item>
+    
+    <item>
+      <title>Defensive Programming</title>
+      <link>https://qdriven.github.io/blog/pattern/3-defensive-programing/</link>
+      <pubDate>Wed, 20 Feb 2019 23:58:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/3-defensive-programing/</guid>
+      <description>Defensive Programming - reuse the validation What does Defensive Programming mean?</description>
+    </item>
+    
+    <item>
+      <title>YUML Basic Usage</title>
+      <link>https://qdriven.github.io/blog/python/yuml-usage/</link>
+      <pubDate>Mon, 24 Dec 2018 00:00:36 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/yuml-usage/</guid>
+      <description>YUML Syntax  comments and directives class diagram  Comments and Directives  type: //{type:class} direction: // {direction:leftToRight} generate: // {generate:true}  Class diagram cheetsheet for class diagram</description>
+    </item>
+    
+    <item>
+      <title>HBase 介绍</title>
+      <link>https://qdriven.github.io/blog/tips/hbase-intro/</link>
+      <pubDate>Wed, 21 Nov 2018 23:11:47 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/hbase-intro/</guid>
+      <description>What is HBASE  NoSQL: Not Only SQL Column-Oriented Database Based on Google BigTable HDFS as Storage TB/PB data and Random Access 解决10条记录和1000千万记录同样的读写性能问题  RDBMS 问题 HBASE VS MYSQL Google Big Table A Bigtable is a sparse, distributed, persistent multidimensional sorted map.</description>
+    </item>
+    
+    <item>
+      <title>内网穿透方案 - frp</title>
+      <link>https://qdriven.github.io/blog/tips/frp-usage/</link>
+      <pubDate>Wed, 21 Nov 2018 23:11:47 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/frp-usage/</guid>
+      <description>frp 使用golang编写的，下面几个例子来说明一下如何使用frp.
+ todo reference  </description>
+    </item>
+    
+    <item>
+      <title>Be Tough as a QA</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/thoughts-be-a-touch-tester/</link>
+      <pubDate>Tue, 20 Nov 2018 09:25:03 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/thoughts-be-a-touch-tester/</guid>
+      <description>Think in Testing 1: Be Tough If someone tell you that software testing or quality assurance is an easy job to do, he/she might not understand what a tester or qa do.</description>
+    </item>
+    
+    <item>
+      <title>学习ansible module-1</title>
+      <link>https://qdriven.github.io/blog/ansible/ansible-module-1/</link>
+      <pubDate>Thu, 13 Sep 2018 23:31:21 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/ansible/ansible-module-1/</guid>
+      <description>写一个Ansbile Module实际上非常容易，我从看 https://github.com/SeleniumHQ/ansible-selenium.git 这个源码的方式大概可以了解Ansible的一个简单的 插件.</description>
+    </item>
+    
+    <item>
+      <title>conda-cheatsheet</title>
+      <link>https://qdriven.github.io/blog/python/conda-cheetsheet/</link>
+      <pubDate>Wed, 12 Sep 2018 13:49:17 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/conda-cheetsheet/</guid>
+      <description>CONDA Cheat Sheet
+Conda Basics    Command Usage     conda info version   conda update conda update conda   conda install &amp;lt;package_name&amp;gt; install package   spyder run a package after installed   conda update &amp;lt;package_name&amp;gt; update package    Using Environment    Command Usage     conda create &amp;ndash;name py36 python=3.</description>
+    </item>
+    
+    <item>
+      <title>jLoan Calculation</title>
+      <link>https://qdriven.github.io/blog/api-testing/loan-calculation/</link>
+      <pubDate>Mon, 13 Aug 2018 22:35:32 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/loan-calculation/</guid>
+      <description>Loan Calculation Example  Loan Rule Defintion Installment Calculation Overdue Calculation IRR Calculation  Loan Rule Definition Installments Calculation  repayment-Principal: ROUND(10000/3,2) repayment-interest: ROUND(10000*2%,2)  Advanced Repayment calculation Overall Payment = Current Term Repayment + Remain Principal+ default penalty(10000*1%)</description>
+    </item>
+    
+    <item>
+      <title>jmespath 使用，jsonpath外的另外一种选择</title>
+      <link>https://qdriven.github.io/blog/python/jmespath/</link>
+      <pubDate>Mon, 13 Aug 2018 22:35:32 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/jmespath/</guid>
+      <description>在测试过程中，经常会去JSON中的某个值，jmespath可以是除了jsonpath的另外一种选择. 下面通过几个例子来说明jmespath在python的使用
+jmespath python安装 非常简单直接pip,</description>
+    </item>
+    
+    <item>
+      <title>junit-perf</title>
+      <link>https://qdriven.github.io/blog/concurrency/1-junit-perf/</link>
+      <pubDate>Tue, 24 Jul 2018 22:11:05 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/1-junit-perf/</guid>
+      <description>使用JunitPerf进行性能测试 以下简单介绍一下如何使用JunitPerf进行性能测试，JunitPerf是基于JUnit4的一个单元性能测试插件，对于会远程调用API测试比较合适，如果想要比较nanosecond 延迟的则需要使用JMH.
+JunitPerf 依赖声明 此例子假设使用MAVEN管理项目，所以在POM文件中添加：</description>
+    </item>
+    
+    <item>
+      <title>ansible In 30 Minutes</title>
+      <link>https://qdriven.github.io/blog/ansible/1-ansible-in-10-minutes/</link>
+      <pubDate>Sun, 01 Jul 2018 21:34:04 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/ansible/1-ansible-in-10-minutes/</guid>
+      <description>Ansible Basic Concept ansible 是一个操作机器的工具,可以通过编排不同的inventory,组合不同的命令来将日常运维的操作 变成可运行的脚本资产,同时也可以积累常用的脚本以便复用.</description>
+    </item>
+    
+    <item>
+      <title>Word Frequency - Use JDK Methods</title>
+      <link>https://qdriven.github.io/blog/tips/interview/0-word-frequency/</link>
+      <pubDate>Fri, 08 Jun 2018 01:50:03 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/interview/0-word-frequency/</guid>
+      <description>What is the problem Be confidence to the JDK, in most case, it is enough to solve problem.</description>
+    </item>
+    
+    <item>
+      <title>Pythonic,What is it</title>
+      <link>https://qdriven.github.io/blog/python/2016-05-11-pythonic/</link>
+      <pubDate>Wed, 11 May 2016 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-05-11-pythonic/</guid>
+      <description>Pythonic Style Pythonic 是种很有趣的风格，有些实际上python的惯用方法和特有方法。
+Switch Two variables python 通过tuple进行pack，unpack就不需要temp变量</description>
+    </item>
+    
+    <item>
+      <title>12 factors Application</title>
+      <link>https://qdriven.github.io/blog/tips/interview/2016-04-24-12factors/</link>
+      <pubDate>Sun, 24 Apr 2016 02:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/interview/2016-04-24-12factors/</guid>
+      <description>12 Factors Application   One Codebase，multiple deployments</description>
+    </item>
+    
+    <item>
+      <title>Git 基本使用－2</title>
+      <link>https://qdriven.github.io/blog/tips/git/git-history/</link>
+      <pubDate>Fri, 22 Apr 2016 02:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/git-history/</guid>
+      <description>GIT 基本使用  git log -p git diff git add git diff HEAD git commit -m &amp;ldquo;Add something&amp;rdquo; git branch git checkout -b feature-A git branch git merge &amp;ndash;no-ff feature-A git log &amp;ndash;graph git reset git reflog git merge &amp;ndash;no-ff fix-b git rebase -i HEAD-2 git remote add git push git push -u origin feature-D git fetch -all git fetch origin refspeec  GIT Flow git-flow-cheatsheet A cheatsheet on the usage of git flow, visit http://danielkummer.</description>
+    </item>
+    
+    <item>
+      <title>Linux 基础</title>
+      <link>https://qdriven.github.io/blog/tips/interview/2016-04-20-linux%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Thu, 21 Apr 2016 02:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/interview/2016-04-20-linux%E5%9F%BA%E7%A1%80/</guid>
+      <description>Linux 的使用的一些基本知识  Linux LVM 硬盘挂载 Linux 的用户安全 Linux 网络监控  Linux LVM 硬盘挂载 使用sda硬盘挂在到/var 目录，当硬盘用完之后就没有办法再挂载到/var 下面了，那么如何解决呢？ 使用LVM.</description>
+    </item>
+    
+    <item>
+      <title>Web监控基础</title>
+      <link>https://qdriven.github.io/blog/tips/interview/2016-04-20-%E7%9B%91%E6%8E%A7%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Thu, 21 Apr 2016 02:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/interview/2016-04-20-%E7%9B%91%E6%8E%A7%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B7%A5%E5%85%B7/</guid>
+      <description>监控工具收藏:   ELK:github
+ elastic Logstash Kibana    Datadog</description>
+    </item>
+    
+    <item>
+      <title>Maximum SubArray sum</title>
+      <link>https://qdriven.github.io/blog/tips/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</link>
+      <pubDate>Wed, 20 Apr 2016 02:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/interview/2016-04-20-%E6%9C%80%E5%A4%A7%E5%AD%90%E6%95%B0%E7%BB%84%E5%92%8C/</guid>
+      <description>Maximum SubArray 数组中有正,有负,求下面子集的最大和的思路是:
+假设: 数组Items: A B C D E 这里有两个标记值: 最大和maxSum,最大和结束的位置maxEndingHere 开始扫描数组:</description>
+    </item>
+    
+    <item>
+      <title>Python Tools- unittest,pip,pylint</title>
+      <link>https://qdriven.github.io/blog/python/2016-04-19-python-tools/</link>
+      <pubDate>Tue, 19 Apr 2016 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-04-19-python-tools/</guid>
+      <description>Python Tools 以下内容是Writing Solid Python Code-91 suggestions to improve your python program的 读书笔记。下面是关于第七章，使用工具辅助项目开发的笔记，这里提到了如下工具：</description>
+    </item>
+    
+    <item>
+      <title>Python Tricky-01</title>
+      <link>https://qdriven.github.io/blog/python/2016-04-17-python-tricky-01/</link>
+      <pubDate>Sun, 17 Apr 2016 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-04-17-python-tricky-01/</guid>
+      <description>Python Tricky python tricky 是记录一些Python使用过程中一些神奇的小技巧.</description>
+    </item>
+    
+    <item>
+      <title>Python Tricky-02</title>
+      <link>https://qdriven.github.io/blog/python/2016-04-17-python-tricky-02/</link>
+      <pubDate>Sun, 17 Apr 2016 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-04-17-python-tricky-02/</guid>
+      <description>Python Tricky-2 max split &amp;#34;&amp;#34;&amp;#34;split a string max times&amp;#34;&amp;#34;&amp;#34; string = &amp;#34;a_b_c_d_e&amp;#34; print(string.</description>
+    </item>
+    
+    <item>
+      <title>Rest API Security</title>
+      <link>https://qdriven.github.io/blog/api-testing/rest-api_security/</link>
+      <pubDate>Tue, 12 Apr 2016 13:26:07 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/api-testing/rest-api_security/</guid>
+      <description>REST API REST: Representational State Transfer REST 提倡无需Session，每次请求都带上身份认证，同样 REST基于HTTP的也是无状态的.</description>
+    </item>
+    
+    <item>
+      <title>Java Singleton ENUM as instance HOLDER</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-singleton/</link>
+      <pubDate>Mon, 11 Apr 2016 23:35:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-singleton/</guid>
+      <description>Singleton 单例设计模式 单例模式是产生一个类的唯一实例。
+Java Singleton Java 的Singleton实际上有很多种写法的，下面一个是使用枚举方式写的：</description>
+    </item>
+    
+    <item>
+      <title>Prototype Pattern</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-prototype-pattern/</link>
+      <pubDate>Mon, 11 Apr 2016 23:35:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-04-11-prototype-pattern/</guid>
+      <description>prototype pattern 实际上是通过clone的方式创建出同一个类的不同对象.
+Java Prototype 一般Prototype模式中，又一个prototype的抽象类：</description>
+    </item>
+    
+    <item>
+      <title>JMETER NON GUI模式的结果</title>
+      <link>https://qdriven.github.io/blog/concurrency/how_to_use_grafana_to_monitor_jmeter_non_gui_result/</link>
+      <pubDate>Tue, 05 Apr 2016 18:31:42 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/how_to_use_grafana_to_monitor_jmeter_non_gui_result/</guid>
+      <description>JMETER NON GUI模式的结果 reference source</description>
+    </item>
+    
+    <item>
+      <title>VIM 使用小结</title>
+      <link>https://qdriven.github.io/blog/shell/2016-04-05-vim-%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Tue, 05 Apr 2016 18:31:42 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2016-04-05-vim-%E6%80%BB%E7%BB%93/</guid>
+      <description>VIM 用法 日常会不经意间使用VIM编辑器来处理一些文本编辑的事情。所以整理VIM的基本使用如下：
+   命令 说明     q 退出   i insert   a append   h 左移   k 上移   j 下移   l 右移   r 替换   u 撤销   x 删除光标位置字符   d^ 删除当前位置到行首   dd 删除当前行   d$ 删除当前位置到行尾   dw 删除当前位置到一个word尾   3dd 删除当前行下三行   p 粘贴   &amp;laquo; 当前行左移一个宽度   &amp;raquo; 当前行右移一个宽度   ％ 匹配的括号   ^ 行的开始   .</description>
+    </item>
+    
+    <item>
+      <title>Ansible简单介绍</title>
+      <link>https://qdriven.github.io/blog/ansible/2016-03-30-ansible_basic/</link>
+      <pubDate>Wed, 30 Mar 2016 13:15:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/ansible/2016-03-30-ansible_basic/</guid>
+      <description>Ansible 介绍 Ansible 目前都是使用在python2上面.
+installation 在MAC 上面安装ansible有两种方式：</description>
+    </item>
+    
+    <item>
+      <title>Jenkins API的简单介绍</title>
+      <link>https://qdriven.github.io/blog/automation/2016-03-30-jenkins_basic/</link>
+      <pubDate>Wed, 30 Mar 2016 13:15:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2016-03-30-jenkins_basic/</guid>
+      <description>Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情.
+From Jenkins Home Page</description>
+    </item>
+    
+    <item>
+      <title>Python 面向对象，以及访问对象属性基础</title>
+      <link>https://qdriven.github.io/blog/python/2016-02-28-python_oop_attributes/</link>
+      <pubDate>Sun, 28 Feb 2016 14:57:44 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-02-28-python_oop_attributes/</guid>
+      <description>在前面的Zabbix API调用中我们看到了python的__getattr__的妙用，下面就探索一下这里面的道理,所以就聊聊python面向对象的基础知识.
+Python 面向对象 说到面向对象，就会说到类(class)，对象(object),那么什么是Class，Object呢？</description>
+    </item>
+    
+    <item>
+      <title>Simple Word Counter</title>
+      <link>https://qdriven.github.io/blog/python/2016-02-28-simple_word_count/</link>
+      <pubDate>Sun, 28 Feb 2016 10:41:15 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-02-28-simple_word_count/</guid>
+      <description>有时测试的面试题中会考点编程的内容，比如统计字符串中的相同字符数量，具体题目如下：
+ 给定一个字符串，如MIssissippi 计算字符串中每一个不同字符出现的数量  Python 的解法 letter_count={} for letter in &amp;#39;Mississippi&amp;#39;: letter[letter]=letter_count.</description>
+    </item>
+    
+    <item>
+      <title>Python 访问Zabbix API</title>
+      <link>https://qdriven.github.io/blog/python/2016-02-26-call_zabbix_api/</link>
+      <pubDate>Fri, 26 Feb 2016 16:51:20 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-02-26-call_zabbix_api/</guid>
+      <description>Zabbix API 访问 准备使用Python来访问一下Zabbix，首先当然阅读一下Zabbix的API Manual,抛开什么json rpc这样的问题之外，zabbix的API的分类还是很工整的，所以看起来比较舒服，在一定了解了zabbix基础之后，基本上就可以上手来写了，网上查了一下，找个一个python zabbix的调用的一个客户段代码，感觉不错，就开始行动了。</description>
+    </item>
+    
+    <item>
+      <title>zabbix 基础</title>
+      <link>https://qdriven.github.io/blog/python/2016-02-26-zabbix_monitoring/</link>
+      <pubDate>Fri, 26 Feb 2016 16:48:54 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-02-26-zabbix_monitoring/</guid>
+      <description>抽空花了1个小时看了一下Zabbix的界面和简单的手册，了解了一下Zabbix的基础知识，下面是一个小小的记录,后面就写一些Python的脚本来直接调用Zabbix的API在进行一些自动化的操作.
+Zabbix 基础 Zabbix 是一个开源的监控系统，由于需要帮助运维写一些调用ZABBIX API的代码，所以就开始了解一下ZABBIX的一些基本概念.</description>
+    </item>
+    
+    <item>
+      <title>Mobile 性能测试关键点</title>
+      <link>https://qdriven.github.io/blog/concurrency/2016-02-22-mobile_perf_testing/</link>
+      <pubDate>Mon, 22 Feb 2016 09:40:07 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/2016-02-22-mobile_perf_testing/</guid>
+      <description>移动端性能测试的一些关键点 阅读了一些人的PPT，再这里记录一些移动端性能测试的一些关键点，每个关键点会在后续润色，细化.
+移动端性能测试的方方面面 Android  Monkey Memory Usage:  /system/build.</description>
+    </item>
+    
+    <item>
+      <title>JMETER 分布式测试</title>
+      <link>https://qdriven.github.io/blog/concurrency/2016-02-22-jmeter_distribution_testing/</link>
+      <pubDate>Mon, 22 Feb 2016 09:33:59 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/concurrency/2016-02-22-jmeter_distribution_testing/</guid>
+      <description>JMETER DISTRIBUTION TESTING JMETER有时进行压力测试时，生成压力的机器性能不够，不能产生足够的压力，不过JMETER可以使用多个系统进行JMETER的压力测试，来解决这个问题. 使用多系统测试时需要注意：</description>
+    </item>
+    
+    <item>
+      <title>python yaml 使用介绍</title>
+      <link>https://qdriven.github.io/blog/python/2016-02-13-python-yaml/</link>
+      <pubDate>Sat, 13 Feb 2016 18:38:43 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2016-02-13-python-yaml/</guid>
+      <description>Python YAML 应用 YAML由于其可读性，越来越多的地方用它来做配置文件了来代替XML文件.下面就是用来介绍如何使用PYTHON来进行YAML的操作. 读取yaml或者写yaml，主要是用的是两个方法：</description>
+    </item>
+    
+    <item>
+      <title>01-微服务框架－Springboot/Flask,Hello World</title>
+      <link>https://qdriven.github.io/blog/test-ops/2016-02-01-microservice-try/</link>
+      <pubDate>Mon, 01 Feb 2016 23:57:29 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2016-02-01-microservice-try/</guid>
+      <description>现在有很多的微服务框架，这里试用一下Java Springboot和Python的Flask. 本文分别试用SpringBoot和Flask完成了一个简单的Hello World服务来展示如何使用Springboot和Flask构建 一个简单的服务. 同时用AB进行了一个简单的压力测试。</description>
+    </item>
+    
+    <item>
+      <title>assertions</title>
+      <link>https://qdriven.github.io/blog/automation/2016-02-01-assertions/</link>
+      <pubDate>Mon, 01 Feb 2016 23:48:35 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2016-02-01-assertions/</guid>
+      <description>由于一直都在进行测试的工作，所以会关注Assertion的工具，发现两个不错的Assertion 第三方包，准备在实践中使用. 这两个分别是：
+ Google Truth(http://google.</description>
+    </item>
+    
+    <item>
+      <title>WEB 开发的几个重点</title>
+      <link>https://qdriven.github.io/blog/automation/2016-01-27-web-dev/</link>
+      <pubDate>Wed, 27 Jan 2016 22:47:28 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2016-01-27-web-dev/</guid>
+      <description>再试用了Web 开发的框架之后，归纳一下大致的一个基础Web 开发需要的那些元素:
+ URL Router，如何定义URL的访问 Request Handler/Response Handler， HTTP请求/返回的处理  如果组织这些Request Handler/Response Handler 如何定义全局/局部的URL拦截器 如何处理特殊的HTTP Header 如何处理Session/Cookie   Database Access Layer/ORM， 数据操作CRUD  如何CRUD 如何进行分页，排序，filterByCriteria&amp;hellip;.</description>
+    </item>
+    
+    <item>
+      <title>ptyhon design pattern: chain of responsibility</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-ptyhon-design-pattern-chain/</link>
+      <pubDate>Mon, 11 Jan 2016 23:35:45 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-ptyhon-design-pattern-chain/</guid>
+      <description>python 的责任链模式.
+方法链：
+上代码吧： 其实就死return 了一个self，java里面可能是this</description>
+    </item>
+    
+    <item>
+      <title>python-borg-design-pattern</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-python-design-pattern-borg/</link>
+      <pubDate>Mon, 11 Jan 2016 23:05:26 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2016-01-11-python-design-pattern-borg/</guid>
+      <description>Python Design Pattern: Borg
+Borg Borg 模式实际上就是一个类的多个实例共享一个相同的状态.</description>
+    </item>
+    
+    <item>
+      <title>为什么自动化，如何自动化</title>
+      <link>https://qdriven.github.io/blog/automation/2016-01-10-why_how_automation/</link>
+      <pubDate>Sun, 10 Jan 2016 19:14:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2016-01-10-why_how_automation/</guid>
+      <description>在做一件事情之前，问一句为什么是必要的.做自动化测试之前也是一样，不管如何总是要有一个理由的吗，哪怕是所有的人都做，我也要做这样的理由. 以下说说我觉得要做自动化的理由.
+为什么自动化(Why Automation Testing) 为什么自动化,对于测试的而言的理由 VS 实际情况</description>
+    </item>
+    
+    <item>
+      <title>sql injection, sql 注入</title>
+      <link>https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/</link>
+      <pubDate>Tue, 05 Jan 2016 23:37:49 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2016-01-05-sql-injection/</guid>
+      <description>SQL注入的问题由来以久,主要是针对于一些系统时通过拼接SQL的方式来处理程序.以下是关于JAVA WEB的一些SQL注入的介绍.
+来源OWASP
+什么是SQL注入 SQL injection vulnerabilities allow an attacker to inject (or execute) SQL commands within an application.</description>
+    </item>
+    
+    <item>
+      <title>静态代码检查</title>
+      <link>https://qdriven.github.io/blog/tools/2016-01-05-static-code-analysis/</link>
+      <pubDate>Tue, 05 Jan 2016 23:00:55 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2016-01-05-static-code-analysis/</guid>
+      <description>静态代码检查有利于提高代码质量，同时也可以快速的发现一些问题. 常用的静态代码检查有一下几种， checkstyle，pmd，findbugs. 刚好公司需要做一个mybatis SQL注入的检查，所以收集了一下关于这三个工具使用的介绍</description>
+    </item>
+    
+    <item>
+      <title>docker usage: container</title>
+      <link>https://qdriven.github.io/blog/test-ops/2015-12-28-docker-usage-container/</link>
+      <pubDate>Mon, 28 Dec 2015 22:08:39 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2015-12-28-docker-usage-container/</guid>
+      <description>Docker container 的常用命令。
+Docker information docker info 如果docker没有安装，则下载docker tools,如果权限不过就使用如下方法：</description>
+    </item>
+    
+    <item>
+      <title>docker usage: images</title>
+      <link>https://qdriven.github.io/blog/test-ops/2015-12-28-docker_usage/</link>
+      <pubDate>Mon, 28 Dec 2015 21:49:22 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2015-12-28-docker_usage/</guid>
+      <description>Some Basic Command usage for docker</description>
+    </item>
+    
+    <item>
+      <title>下一步的技术了解</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/2015-12-28-next-reading/</link>
+      <pubDate>Mon, 28 Dec 2015 19:49:29 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/2015-12-28-next-reading/</guid>
+      <description>Thoughtworks 发布了2015年技术雷达，看看他提到的东西可以长长见识。
+技术篇 这里提到了几篇Martin Flower的文章，抽时间一定要看看。</description>
+    </item>
+    
+    <item>
+      <title>http status code HTTP 状态码</title>
+      <link>https://qdriven.github.io/blog/automation/2015-12-23-http_status_code/</link>
+      <pubDate>Wed, 23 Dec 2015 22:59:16 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2015-12-23-http_status_code/</guid>
+      <description>HTTP Status Codes This page is created from HTTP status code information found at ietf.</description>
+    </item>
+    
+    <item>
+      <title>design pattern overview</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-12-22-design_pattern_overview/</link>
+      <pubDate>Tue, 22 Dec 2015 23:00:24 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-12-22-design_pattern_overview/</guid>
+      <description>Design Pattern overview, from GoF:</description>
+    </item>
+    
+    <item>
+      <title>收集性能测试需求</title>
+      <link>https://qdriven.github.io/blog/tools/2015-12-08-collect-performance-requirement/</link>
+      <pubDate>Tue, 08 Dec 2015 13:36:27 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2015-12-08-collect-performance-requirement/</guid>
+      <description>很多时候遇到一些关于性能测试的需求的时候，需求方实际上是给不出任何具体的需求，更多的是一下如下的抱怨:
+ 速度慢(具体哪个操作慢又很难给出) 经常会出现系统过载(一般也不会自己看看监控的) 反正就是慢，我也不知道哪里慢 有一天突然系统响应时间慢，监控报警了  遇到这样的问题时,突然发现测试其实挺悲惨的,因为和这样的同事打交道其实压力挺大了.</description>
+    </item>
+    
+    <item>
+      <title>True Stories: 从API的URL定义想到的</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-12-02-api_contract_design/</link>
+      <pubDate>Wed, 02 Dec 2015 13:26:07 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-12-02-api_contract_design/</guid>
+      <description>关于REST API接口的设计没有了解太多，不过实际的测试中看到一些这样设计的接口资源路径URL，自己感觉就是怪怪的， 感觉这样的接口URL总是哪里不太对劲，所以自己就分析了一下：
+http://domain.org/api/v4/＊＊/coursePassed/{appCode}/{courseId}/{userCode} 自己的思考是感觉这个东西不是很理想，无法通过一个路径了解大概是个什么事情，自己的感觉或许这样会更清楚一点</description>
+    </item>
+    
+    <item>
+      <title>Singleton 的不同写法</title>
+      <link>https://qdriven.github.io/blog/pattern/2015-12-02-singleton/</link>
+      <pubDate>Wed, 02 Dec 2015 12:42:18 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/2015-12-02-singleton/</guid>
+      <description>Singleton是JAVA的一个非常常见的方式，不过不同写的方式会有不同的想法，下面就介绍一下这个模式
+Singleton 懒汉式模式，线程不安全 一个基本的写法如下:
+private static LazySingleton instance; private LazySingleton(){} public static LazySingleton getInstance(){ if(instance==null){ instance=new LazySingleton(); } return instance; } 这个的一个问题是线程不安全，就是当instance是null的时候，可能有两个线程同时满足，这样就是两个实例产生</description>
+    </item>
+    
+    <item>
+      <title>自动化测试－接口测试</title>
+      <link>https://qdriven.github.io/blog/automation/2015-11-27-webservice-automation/</link>
+      <pubDate>Fri, 27 Nov 2015 11:10:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2015-11-27-webservice-automation/</guid>
+      <description>在敏捷开发交付的流程中，自动化测试实际上被放在一个看起来挺重要的位置，而自动化测试中，接口测试是一个投入产出比比较高的 一种自动化测试的形式，而我自己也做了一个这样的脚手架一样的东西可以方便进行自动化测试，关键是在一些现有第三包的基础上做实现，其实一个脚手架不需要几个JAVA类就可以完成了，至少我自己的这个在10个文件以内.要论行数估计也没有多少代码量，主要时间其实都是在想怎么更方便的写自动化测试，怎么使用以后的开源代码了。
+下面介绍一下我自己如何完成这个自动化接口测试 脚手架设计和实现的，以及我自己实现过程中的种种发现。主要从以下几个方面来讲：
+ 如何构建接口自动化测试的脚手架 关于接口测试参考的一些资源 关于接口测试的后续的一些想法  如何构建接口自动化测试的脚手架 接口测试本文中主要是指HTTP的请求，构建接口自动化测试脚手架的时候，首先先看看平常接口测试，测试人员时如何做的，我了解主要是以下几种方式：</description>
+    </item>
+    
+    <item>
+      <title>Talking is Cheap,show me the code</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-11-19-talking_is_cheep/</link>
+      <pubDate>Thu, 19 Nov 2015 23:27:56 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-11-19-talking_is_cheep/</guid>
+      <description>当看到如下的代码出现在production代码库的时候，不知道做何想法？无数的人动辄就谈客户需求，要触动痛点,是的没错，但是软件工程师还是要点工程追求的吧？如果这样的代码存在一些时候也就罢了，结果存在来Controller里面3-4年之久，情何以堪呀？指望用这样的代码去触动痛点？你是认真的吗？ 工程师首先是个匠人,先写好自己的代码，再去谈论这些虚幻的东西.看几本抽象的书，谁都可以高谈阔论，so what? Talking is Cheap,right?</description>
+    </item>
+    
+    <item>
+      <title>软件容错</title>
+      <link>https://qdriven.github.io/blog/tools/2015-11-16-error_toleration/</link>
+      <pubDate>Mon, 16 Nov 2015 23:24:33 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tools/2015-11-16-error_toleration/</guid>
+      <description>软件的世界已经变的及其复杂，在互联网的世界中一个个知道不知道的API将世界连接起来，如蜘蛛网一般,一个看的到的功能可能依赖了好几个看不到的API,所以中间出点错误实在不能说是个意外了。但是出错归出错，出错了软件也是一样要处理这些问题，下面就讲讲我学到遇到的一点容错的小知识。
+容错的目标 降低或者最小化对系统可用性，可靠性的影响，举个例子来说就是单点故障，如果一个地方出现错误 而把整个系统网络都拖垮了，这个显然是不能接受的。可以用一下几个来形容错误：
+ fault(缺陷) 一些bug error(错误) 一些业务无法正常执行 failure(故障) 业务较长时间无法正常执行  容错的方法  硬件容错：多备份,系统冗余，主备 软件容错：避免严重业务错误，降级，异常处理,侦测，监控，重启&amp;hellip;&amp;hellip; 系统容错  常见机遇鲁棒性  Process Pairs Graceful Degradation:降级 Selective Retry state handling Linking Process Rejuvenation: 不可重现问题 Checkpoint update lost application state scrubbing process pools recovery block micro reboot state correction  </description>
+    </item>
+    
+    <item>
+      <title>Python 中String的格式化</title>
+      <link>https://qdriven.github.io/blog/python/2015-11-15-string-format-in-python/</link>
+      <pubDate>Sun, 15 Nov 2015 15:12:56 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2015-11-15-string-format-in-python/</guid>
+      <description>python中对于string有些挺有意思操作,现在把他记录如下：
+output = &amp;#39;Hello {0}!&amp;#39;.format(&amp;#39;World!&amp;#39;) output1 = &amp;#39;Hello {0} {1} !</description>
+    </item>
+    
+    <item>
+      <title>shell来自动生成Jekyll post文件</title>
+      <link>https://qdriven.github.io/blog/shell/2015-11-05-generate-jekyll-post-file/</link>
+      <pubDate>Thu, 05 Nov 2015 18:31:42 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2015-11-05-generate-jekyll-post-file/</guid>
+      <description>通过以下代码可以生成jekyll 的post 文件
+#! /bin/bash  CAT=$1 TITLE=$2 echo &amp;#34;current location: $PWD&amp;#34; echo &amp;#34;category: $CAT&amp;#34; echo &amp;#34;file_name: $TITLE&amp;#34; FilePrefix=`date &amp;#34;+%Y-%m-%d-&amp;#34;` FILE_NAME=&amp;#34;$FilePrefix$TITLE.</description>
+    </item>
+    
+    <item>
+      <title>测试用例-一些有意思的工具</title>
+      <link>https://qdriven.github.io/blog/tips/2015-11-03-test-tools/</link>
+      <pubDate>Wed, 04 Nov 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/2015-11-03-test-tools/</guid>
+      <description>Automation Test Case Generate Tools  Korat(structurally complex tests) Randoop (random testing) CERT Basic Fuzzing Framework ZZUF cert.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-10-introduce method object, replace conditions with polymorphism</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/</link>
+      <pubDate>Tue, 03 Nov 2015 10:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-11-3-refactoring-introduce-method-object-and-replace-conditions-with-poly/</guid>
+      <description>将方法参数转化为类 有时一个方法的传入参数太多，就需要考虑是否需要引入新的类来解决的。
+public class Registration { public void create(double amount,String name, double credits){ //do work  } } 重构后:</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-9-ArrowHead AntiPattern and Remove Double Negative</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/</link>
+      <pubDate>Tue, 03 Nov 2015 10:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-arrowhead-and-double-negative/</guid>
+      <description>Arrowhead AntiPattern 一下代码有一系列的if 判断，我们可以重新思考判断逻辑,合并一些逻辑判断 来让代码更可读:</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-8-remove God Class</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-remove-god-class/</link>
+      <pubDate>Tue, 03 Nov 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-remove-god-class/</guid>
+      <description>God Class 就是一个类里面有一大堆不相干的方法放在一起,一般 情况下很多的工具类，或者manager有可能会有这样的情况.不是说不能有 工具类或者manager类，这个的关键是不相干的放在一个类里面。</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-1-Encapsulate Collection</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-encapsulatecollection/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-encapsulatecollection/</guid>
+      <description>关于重构的第一篇，后续会在这个话题继续讨论
+What is Encapsulate Collection In certain scenarios it is beneficial to not expose a full collection to consumers of a class.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-2-Move Method</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-move-method/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-move-method/</guid>
+      <description>Move Method 重构实际上比较简单，一个简单的描述就是:
+ 如果有一个方法在一个类里面出现的频率很高，但他不在这个类里面 那么Move Method就是把这个方法移动到出现频率高的这个类里面  Before Move Method public class BankAccountOrigin { private int accountAge; private int creditScore; private AccountInterestOrigin accountInterest; public double calculateInterestRate(){ if(creditScore&amp;gt;800){ return 0.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-3-Pull Up Method</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-pull-up-method/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-pull-up-method/</guid>
+      <description>Pull Up Method 顾名思义,就是把方法向上拉,向上拉是个什么意思呢?在面向 对象中向上就是向父类，或者接口拉,是不是很形象？</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-4-Push Down Method and Pull Up and Posh Down Field</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-pullupfield-pushdownfield/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-pullupfield-pushdownfield/</guid>
+      <description>Push down method 和Pull Up method刚好相反.</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-5-rename</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-rename/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-rename/</guid>
+      <description>rename也是一个重构方式，对的，你没有看错，他确实是个重构的方法. 不要小看了命名，命名不是个简单活哦，他背后可能包含了历史，人文，幽默， 风格，立场。。。。。。。， 起个让大部分人都懂的名字可不是个容易活。</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-6-Replace Inheritance with Delegation</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-replace-inheritance-with-delegation/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-replace-inheritance-with-delegation/</guid>
+      <description>Replace Inheritance with Delegation, 这种重构方式主要是继承有时 看起来不是那么合理，同时继承可能让程序的扩展性不好，所以可以改用委托 或者组合的形式重构。</description>
+    </item>
+    
+    <item>
+      <title>Refactoring-7-Extract-Interface,Method,Sub Class,Supper Class</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-extract-interface-method/</link>
+      <pubDate>Mon, 26 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-26-refactoring-extract-interface-method/</guid>
+      <description>Extract-Interface,Method,Sub Class,Supper Class
+以上重构的方式主要是通过提起接口,方法,为了让代码有更好的可读性,可测性.
+开始:实例代码 以下是一个需要重构的实例代码：</description>
+    </item>
+    
+    <item>
+      <title>Phantomjs Tutorial</title>
+      <link>https://qdriven.github.io/blog/automation/2015-10-24-phantomjs-usage/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2015-10-24-phantomjs-usage/</guid>
+      <description>自己学习Phatomjs的教程,分享之.
+Quick Start 首先phantomjs是个什么? 以下是官方网站的解释:</description>
+    </item>
+    
+    <item>
+      <title>True Stories: About Return Flag</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-10-24-return-flag/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-10-24-return-flag/</guid>
+      <description>Return Flag 真实的一段代码片段：
+public boolean update(Inquiry inquiry) { boolean bUpdBaseInf = super.</description>
+    </item>
+    
+    <item>
+      <title>True Stories: 有趣的函数</title>
+      <link>https://qdriven.github.io/blog/true_stories/2015-10-24-interesting-methods/</link>
+      <pubDate>Sat, 24 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/true_stories/2015-10-24-interesting-methods/</guid>
+      <description>有趣的函数 下面是一些有趣而真实的函数，自己的感受是：
+ 此刻的想法是复杂的 不敢想象 这是认真的吗?</description>
+    </item>
+    
+    <item>
+      <title>Functional Patterns</title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/2015-10-22-functional-programming-pattern/</link>
+      <pubDate>Fri, 23 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/2015-10-22-functional-programming-pattern/</guid>
+      <description>Functional patterns  Core Principles of FP design  Functions Types Composition   Functions as parameters  Abstraction,Dependency injection Partial application, Continuations,Folds   Chaining Functions  Error handling, Async Monads   Dealing with wrapped data  Lifting,Functors Validation with applicatives   Aggregating data and operations  Monoids    Functional programming is scary  Functors applicatives currying catamorphism Monad Monoid chainable aggregatable mappable  Object oriented programming is scary  Generic Polymorphism Interface Inheritance SOLID: SRP,OCP,LSP,ISP,DIP,&amp;hellip;&amp;hellip; Covariance IOC,DI,MVC  OO Patterns VS FP Patterns   OO pattern/principle • Single Responsibility Principle • Open/Closed principle • Dependency Inversion Principle • Interface Segregation Principle • Factory pattern • Strategy pattern • Decorator pattern • Visitor pattern</description>
+    </item>
+    
+    <item>
+      <title>Python 面试题</title>
+      <link>https://qdriven.github.io/blog/tips/interview/2015-10-22-python_interview_questions/</link>
+      <pubDate>Thu, 22 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/interview/2015-10-22-python_interview_questions/</guid>
+      <description>测试有的时候出去会遇到一些编程面试题,以下是用python来解决两个简单面试题.
+倒转字符串中的单词的排列 给定字符串“Hello World!”,经过一段程序运行之后,得到输出结果“World! Hello”,也就是以单词 为单位,倒转输入“Hello World!</description>
+    </item>
+    
+    <item>
+      <title>测试用例设计- 随机指定一个产品的测试</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/2015-10-22-random-testcasedesign/</link>
+      <pubDate>Thu, 22 Oct 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/2015-10-22-random-testcasedesign/</guid>
+      <description>有时面试的时候会随机指定一个产品进行测试,比如一个电梯,你会如何设计测试用例？这个问题很发散,更多的是看应聘者的条理 和分析能力.
+本质上一个电梯是一个太大的范畴，实际测试的过程中很少一下子会有这么巨大的功能让你测试的。 与其说让你设计测试用例，其实好不如说让你想一个电梯有什么功能,然后根据功能再来考虑测试用例,所以更多的 是考察思路,在实际的测试工作中,如果突然有个人说我今天完成了一个电梯的功能,找个人给我测一下吧。 那么多半这个项目就是个让测试欲哭无泪的项目。</description>
+    </item>
+    
+    <item>
+      <title>Page Factory in Selenium</title>
+      <link>https://qdriven.github.io/blog/automation/2015-09-24-page-factory/</link>
+      <pubDate>Thu, 24 Sep 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2015-09-24-page-factory/</guid>
+      <description>本文主要用来分析Page Factory实现的原理以及一些扩展的可能性。
+Page Factory 的例子 Selenium Page Factory Wiki</description>
+    </item>
+    
+    <item>
+      <title>TestNG 报告定制最简单的原理</title>
+      <link>https://qdriven.github.io/blog/automation/2015-09-24-testng-simple-report/</link>
+      <pubDate>Thu, 24 Sep 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/automation/2015-09-24-testng-simple-report/</guid>
+      <description>如果需要定制TestNG的测试报告,可以先想一下首先需要什么的数据,其实最简单的数据就是测试用例成功失败的数据, 那么实际上TestNG提供了ITestListener的接口可以让你获取这些测试数据. 同时IReporter 接口可以让用户在调用最后自己生成测试报告.
+所以其实只要用一个类实现ITestListener,IReporter就可以了.</description>
+    </item>
+    
+    <item>
+      <title>Python完成简单的SVN Reviewboard Precommit的客户端</title>
+      <link>https://qdriven.github.io/blog/python/2015-05-16-svn_reviewboard_python/</link>
+      <pubDate>Sat, 16 May 2015 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2015-05-16-svn_reviewboard_python/</guid>
+      <description>最近公司需要使用review board进行代码pre-commit review(pre-commit:正式提交前review)，而公司的现状是：
+ 使用SVN作为代码版本管理工具 开发工具有eclipse，idea MAC 和windows 机器居多  考虑到开发eclipse和idea插件，连接review board我一个人无法完成，同时能力也不够来开发这两种插件， 所以就准备python写一个命令行工具，期间研究了一下taobao review board的插件，感觉有点复杂，这个也是 使用python来些命令行工具的一个理由,也考虑过使用node-webkit来写个客户端，不过由于时间上的限制也就先放弃了</description>
+    </item>
+    
+    <item>
+      <title>Python PIP mirror设置</title>
+      <link>https://qdriven.github.io/blog/python/2014-11-24-python_mirror/</link>
+      <pubDate>Mon, 24 Nov 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2014-11-24-python_mirror/</guid>
+      <description>使用默认的pip mirror速度实在太慢了，所以使用douban的pypi镜像.如何使用呢？很简单，以下几步：
+ 修改~/.pip/pip.conf 文件，将index_url改成douban镜像地址:http://pypi.douban.com/simple  [global] index-url=http://pypi.</description>
+    </item>
+    
+    <item>
+      <title>Python virtualenv in Mac</title>
+      <link>https://qdriven.github.io/blog/python/2014-11-24-virtual_env/</link>
+      <pubDate>Mon, 24 Nov 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2014-11-24-virtual_env/</guid>
+      <description>virtualenv是一个创建python虚拟环境的工具,主要的解决的问题是,让在一个干净的Python环境中开发,不需要被不同的python 安装包烦恼,python3中实际已经内置了venv的,可以不使用virtualenv,以下是简要说明以下安装使用方法:
+ps: 关于Python3和Python2很有可能在同一台机器上都有安装,所以注意python命令对应的是那个版本.have fun :)</description>
+    </item>
+    
+    <item>
+      <title>更新一个目录下所有的git repository的shell 脚本</title>
+      <link>https://qdriven.github.io/blog/shell/2014-10-24-shell_for_update_all_git_repo/</link>
+      <pubDate>Fri, 24 Oct 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-10-24-shell_for_update_all_git_repo/</guid>
+      <description>更新一个目录下所有的git repository的shell 脚本 最近感觉需要了解一些shell脚本的使用，刚好本地上面的一个文件夹中有一些github上面的代码仓库，所以刚好学着用shell来更新各个代码仓库
+#! /bin/bash  for file in .</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - Variant 变量</title>
+      <link>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_variant/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_variant/</guid>
+      <description>变量赋值 #!/bin/sh var=value echo $var var=&amp;#39;the value&amp;#39; echo $var var=&amp;#34;the $PARAM&amp;#34; echo $var echo $var echo `pwd` echo $(pwd) #result: ╰─[:)] % sh shell_variant.</description>
+    </item>
+    
+    <item>
+      <title>DNS Tips</title>
+      <link>https://qdriven.github.io/blog/test-ops/1-dns/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/1-dns/</guid>
+      <description>DNS 使用Tips  dig 工具使用  dig www.</description>
+    </item>
+    
+    <item>
+      <title>Linux Learning - linux 用户管理</title>
+      <link>https://qdriven.github.io/blog/tips/linux-users/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/linux-users/</guid>
+      <description>linux 用户管理 基本上所有linux命令，都可以先用cmd --help后用man cmd查看特殊的选项</description>
+    </item>
+    
+    <item>
+      <title>Linux Learning - linux的文件系统</title>
+      <link>https://qdriven.github.io/blog/shell/linux_fs/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/linux_fs/</guid>
+      <description>linux的文件系统 概述（个人描述） linux有个说法，一切皆文件，算是对IO的简化。 通常我们操作的目录+文件名是个逻辑上的概念，用以定位，目录也是文件。 物理上的概念是分区，分区需要挂载mount到特定目录上使用，挂载后就屏蔽了物理细节了。</description>
+    </item>
+    
+    <item>
+      <title>Nginx Commands</title>
+      <link>https://qdriven.github.io/blog/test-ops/6.nginx-one-page/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/6.nginx-one-page/</guid>
+      <description>Nginx Commands file:
+/etc/nginx/nginx.conf  work_processor  ps aux | grep nginx  worker_cpu_affinity gzip  http { gzip on; gzip_comp_level 3; gzip_types application/javascript application/xml; gzip_static on; }  IPVS: Internet Protocol Virtual Server Weighted Least Connection Worker Server ipvsadmin sysctl  sysctl -p  route  Destination Gateway Flags Metric Ref use Iface    route add default gw 192.</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - Concept</title>
+      <link>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_concept/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_concept/</guid>
+      <description>摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html
+标准IO 文件描述符 0 标准输入 默认键盘 1 标准输出 默认终端 2 标准错误 默认终端  重定向 &amp;gt; 输出重定向 &amp;gt;&amp;gt; 追加到输出重定向 &amp;lt; 输入重定向 &amp;lt;&amp;lt; 追加到输入重定向 ls -l &amp;gt; /tmp/a cmd &amp;gt;/dev/null #输出到垃圾桶  dev是设备(device)的英文缩写。/dev这个目录对所有的用户都十分重要。因为在这个目录中包含了所有Linux系统中使用的外部设备。但是这里并不是放的外部设备的驱动程序，这一点和windows,dos操作系统不一样。它实际上是一个访问这些外部设备的端口。我们可以非常方便地去访问这些外部设备，和访问一个文件，一个目录没有任何区别。</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - Control Flow</title>
+      <link>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_controll_flow/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_controll_flow/</guid>
+      <description>if/test 条件测试 #!/bin/bash  a=34 if test $a = 4 then echo true else echo false fi if [ $a -eq 34 ] then echo true else echo false fi #Result: h controll_flow.</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - iptables</title>
+      <link>https://qdriven.github.io/blog/tips/iptable-nat/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/iptable-nat/</guid>
+      <description>kernel modules
+modprobe ip_tables modprobe iptable_nat modprobe iptable_filter modprobe ip_conntrack modprobe ip_conntrack_ftp modprobe ip_nat_ftp   ip_forward</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - Scripting</title>
+      <link>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_scripting/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_scripting/</guid>
+      <description>Shell Script sample #!/bin/bash # do somthing Run Shell Script sh script.</description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - 操作符号</title>
+      <link>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_operator/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_operator/</guid>
+      <description>摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html
+计算 #!/bin/bash no_1=4 no_2=5 let result=no_1+no_2 let result-- echo $result let result++ echo $result # expr(漏洞之源？？) result=`expr 3+4` echo $result result=`expr $no_1+345` echo $result result=$[ no_1 + no_2 ] echo $result result=$[ $no_1 + 5 ] echo $result result=$(( no_1 + 5 )) echo $result # result: 8 9 3+4 4+345 9 9 9 </description>
+    </item>
+    
+    <item>
+      <title>Shell Learning - 环境变量</title>
+      <link>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_env/</link>
+      <pubDate>Sun, 24 Aug 2014 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/shell/2014-08-24-shell_101_env/</guid>
+      <description>摘自：http://wklken.me/posts/2014/01/12/shell-script-base.html
+env env |grep keyword 修改环境变量 未在当前进程中定义，而是从父进程中继承而来的变量 export 设置环境变量,之后,从当前shell 执行的任何程序都会继承这个变量</description>
+    </item>
+    
+    <item>
+      <title>Python 基础-字符串处理</title>
+      <link>https://qdriven.github.io/blog/python/2013-11-24-python_string/</link>
+      <pubDate>Sun, 24 Nov 2013 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2013-11-24-python_string/</guid>
+      <description>学习一门语言，就当多一门手艺。虽然是个测试，被人唾弃，但是相信自己比什么都重要。 卷起袖子，dirty your hand。以下是学习https://github.com/qiwsir/StarterLearningPython的笔记.
+python 运行 以下是python运行命令，同时带了两个不同的参数：</description>
+    </item>
+    
+    <item>
+      <title>Python 基础-语法</title>
+      <link>https://qdriven.github.io/blog/python/2013-11-24-python_basic/</link>
+      <pubDate>Sun, 24 Nov 2013 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2013-11-24-python_basic/</guid>
+      <description>学习一门语言，就当多一门手艺。虽然是个测试，被人唾弃，但是相信自己比什么都重要。 卷起袖子，dirty your hand。以下是学习https://github.com/qiwsir/StarterLearningPython的笔记.
+python 运行 以下是python运行命令，同时带了两个不同的参数：</description>
+    </item>
+    
+    <item>
+      <title>Python 常用包</title>
+      <link>https://qdriven.github.io/blog/python/2013-11-24-python_libs/</link>
+      <pubDate>Sun, 24 Nov 2013 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/python/2013-11-24-python_libs/</guid>
+      <description>python常用包介绍
+Network Application  HTTP Requests  Distrbuted systems  ZeroMQ RabbitMQ  Web applications  WSGI Flask URL routing Template Engine development Web Server Django Werkzeug Tornado Pyramid Nginx WSGI Server Gunicorn uWSGI  The majority of self-hosted Python applications today are hosted with a WSGI server such as Gunicorn, either directly or behind a lightweight web server such as nginx.</description>
+    </item>
+    
+    <item>
+      <title>关于测试职业疑惑的一点想法</title>
+      <link>https://qdriven.github.io/blog/qa-thoughts/2013-09-24-thoughts_on_testing/</link>
+      <pubDate>Tue, 24 Sep 2013 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/qa-thoughts/2013-09-24-thoughts_on_testing/</guid>
+      <description>引子 作为全职测试大概有8年时间了，总体来说整个这8年不是一个愉快的过程。其中辛苦可能没有做过测试的人未必能理解。对于一个职场人来说不够愉快的点个人认为大概可能是以下几点：
+ 成就感不多 个人技术积累不多 可供选择的机会相对较少，转型难度大  问题分析 1.</description>
+    </item>
+    
+    <item>
+      <title>Git 基本使用</title>
+      <link>https://qdriven.github.io/blog/tips/git/git-usage/</link>
+      <pubDate>Sun, 24 Feb 2013 10:31:11 +0800</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/git/git-usage/</guid>
+      <description>git是个分布式版本控制系统，所谓分布式版本控制就是任何一个在自己其实上就可以进行版本控制管理而无需连接中央服务器，这样提交代码就无需收到联网的限制。同时GIT提供了更好的branch等功能，也是目前最流行的工具.
+Git 配置 全局变量设置：
+git config --global user.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://qdriven.github.io/blog/mobile/android_tips-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/mobile/android_tips-1/</guid>
+      <description>Android截图命令screencap 查看帮助命令 adb shell screencap -v screencap: invalid option -- v usage: screencap [-hp] [-d display-id] [FILENAME] -h: this message -p: save the file as a png.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://qdriven.github.io/blog/tips/refactoring/bad_code_never_die/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/refactoring/bad_code_never_die/</guid>
+      <description>Bad Code Never Die 坏代码到处都是，好代码其实也不少，了解坏在哪里，好在哪里才是最重要的.</description>
+    </item>
+    
+    <item>
+      <title>Install Python3.7 in Centos</title>
+      <link>https://qdriven.github.io/blog/test-ops/1-install-python3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/1-install-python3/</guid>
+      <description>Centos安装Python3.7需要通过自己编译安装进行，中间是不是会遇到一些问题，以下是一些安装步骤和一些问题：
+ 下载Python3.7文件 解压Pyton3.7文件 设置config make install  下载Python3.</description>
+    </item>
+    
+    <item>
+      <title>Linux 命令基础</title>
+      <link>https://qdriven.github.io/blog/test-ops/2-linux-commands/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/2-linux-commands/</guid>
+      <description>查询用户和密码 less /etc/passwd awk -F: &amp;#39;{ print $1}&amp;#39; /etc/passwd cut -d: -f1 /etc/passwd getent passwd | awk -F: &amp;#39;{ print $1}&amp;#39; getent passwd getent passwd | grep sonar grep -E &amp;#39;^UID_MIN|^UID_MAX&amp;#39; /etc/login.</description>
+    </item>
+    
+    <item>
+      <title>SONAR环境建立</title>
+      <link>https://qdriven.github.io/blog/test-ops/3-sonar-installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/test-ops/3-sonar-installation/</guid>
+      <description>postgresql 初始化 sudo rpm -Uvh https://download.</description>
+    </item>
+    
+    <item>
+      <title>一次获取IP地址的小重构</title>
+      <link>https://qdriven.github.io/blog/pattern/refactor-get-ipaddress/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/pattern/refactor-get-ipaddress/</guid>
+      <description>原始代码不好的地方：
+ 有很多if/else 扩展需要增加内部的if/else判断  public static String getIpAddr(HttpServletRequest request) { if (request == null) { return &amp;#34;unknown&amp;#34;; } String ip = request.</description>
+    </item>
+    
+    <item>
+      <title>服务器免密登录</title>
+      <link>https://qdriven.github.io/blog/tips/ssh-login/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://qdriven.github.io/blog/tips/ssh-login/</guid>
+      <description>使用下例中ssh-keygen和ssh-copy-id，仅需通过3个步骤的简单设置而无需输入密码就能登录远程Linux主机。
+ ssh-keygen 创建公钥和密钥。 ssh-copy-id 把本地主机的公钥复制到远程主机的authorized_keys文件上。 ssh-copy-id 也会给远程主机的用户主目录（home）和~/.</description>
+    </item>
+    
+  </channel>
+</rss>

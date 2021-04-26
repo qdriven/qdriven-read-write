@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Jenkins API的简单介绍 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Jenkins API的简单介绍"/>
+<meta name="twitter:description" content="Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情.
+From Jenkins Home Page"/>
+
+	<meta property="og:title" content="Jenkins API的简单介绍" />
+<meta property="og:description" content="Jenkins 介绍 Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情.
+From Jenkins Home Page" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/automation/2016-03-30-jenkins_basic/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2016-03-30T13:15:11&#43;08:00" />
+<meta property="article:modified_time" content="2016-03-30T13:15:11&#43;08:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Mar 30, 2016
+                                    <i class="far fa-clock clock"></i>
+                                    2 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Jenkins API的简单介绍</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h1 id="jenkins-介绍">Jenkins 介绍</h1>
+<p>Jenkins是一个非常有用的持续集成的工具，可以通过它完成代码的build，测试，发布等一系列的事情.</p>
+<p>From Jenkins Home Page</p>
+<pre><code>Jenkins is an automation engine with an unparalleled plugin ecosystem to support all of your favorite tools in your delivery pipelines, whether your goal is continuous integration, automated testing, or continuous delivery.
+</code></pre><h2 id="jenkins-使用">Jenkins 使用</h2>
+<p>关于Jenkins的基本使用网上有很多的教程，基本使用其事没有太多说的，它是个平台，可以集成很多不同的工具，脚本等等.
+总结下来这些东西包括：</p>
+<ul>
+<li>jenkins parameter setting, string, choice, &hellip;&hellip;</li>
+<li>JAVA 的maven, ant, gradle 等打包工具，其他语言也有类似的build，deploy，依赖管理的工具</li>
+<li>定制化的脚本，可以在一个Jenkins的build步骤中运行这些脚本如shell命令，python脚本</li>
+<li>定制插件来完成自己的特殊的目的</li>
+</ul>
+<p>这些内容非常庞大，自己也不可能完全都知道，如果遇到实际的一些问题需要解决的话,
+大体的逻辑就是，如果遇到一些特殊需求，那么先去找插件看能不能完成，如果没有插件就再想shell，python脚本等不同的事情，或者自己开发插件.</p>
+<h2 id="jenkins-的实践问题">Jenkins 的实践问题</h2>
+<p>随着Jenkins里面的任务越来越多，管理的环境越来越多，变更越来愈多，手工管理就会遇到一些问题：</p>
+<ul>
+<li>比如为了改一个IP地址，可能需要没一个任务都去改具体的配置，比如部署同一个war到不同的测试环境，就需要给不同的job改IP</li>
+<li>为了不同的环境配置不同的任务，需要很多的人工的配置修改等等</li>
+<li>如果需要迁移一个多应用的测试环境，那么需要很多的复制，修改工作</li>
+</ul>
+<p>那么为了解决这些问题，个人觉得可以改善的地方是：</p>
+<ul>
+<li>定义一些类型项目的模版，抽象一些参数出来给Jenkins里面的Job做参数话，当然有时需要修改的是默认值</li>
+<li>在定义了一些模版之后，就可以通过操作Jenkins API的方式来操作</li>
+<li>在尝试了一些Jenkins API之后，感觉纯粹通过API的方式去操作，不一定比复制Jenkins 任务，然后修改来的快，但是通过Jenkins API的方式
+来操作Jenkins 的好处是，如果这些东西融入到运维的流程中，那么它会提高生产率</li>
+</ul>
+<p>一些体会是，可能代码方式的操作单个单个来看不一定会提高多少生产率(参数一样要设)，但是如果放在一个流程的角度看，那么他的效率是高的，比如你如果需要运维帮你建环境，那么你需要提供一些信息，而这些信息就可以直接建立Jenkins的Job了，那么作为用户你只提供一次信息，就可以完成你需要的所有事情，这样效率就高了.</p>
+<p>我对于自动化一切的看法是，也许对于单个任务来说，通过写代码的方式不一定是最优方式，但是如果放在一个流程中来看，那么一定是.所以平常可以积累点不同类型的脚本，代码，然后在某个时间点，也许连接你的这些脚本，代码，就可以流水线化一些你的工作了，不要以为这不会带来，我觉得这一天一定会有的。</p>
+<h2 id="jenkins-api-的使用">Jenkins API 的使用</h2>
+<p>对于Jenkins API来说，我使用过Java和Python的，总结下来大同小异，逻辑上可以分为几个层次：</p>
+<ul>
+<li>Job: 不同类型的Job
+<ul>
+<li>添加，修改，删除Job</li>
+<li>Job的详细信息</li>
+<li>可以通过Job的config.xml文件来修改配置</li>
+<li>Job创建属于哪个父类和Jenkins的URL有关系</li>
+</ul>
+</li>
+<li>View
+基本功能和Job类似</li>
+</ul>
+<h3 id="jenkins-api---java">Jenkins API - JAVA</h3>
+<p>我自己使用的是这个Jenkins的这个API client.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>com.offbytwo.jenkins<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>jenkins-client<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>0.3.3<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+</code></pre></div><p>这个包中最主要的两个类是：</p>
+<ul>
+<li>JenkinsServer: JenkinsServer 可以认为是一个JenkinsHttpClient的一个Wrapper，封装了一些常用的方法，如getJob，getJobXml等等，具体可以参考他<a href="https://github.com/RisingOak/jenkins-client">github</a></li>
+<li>JenkinsHttpClient：可以通过这个HttpClient组装URL和参数来达到完成调用其他API的方法，提供的一些方法主要包括了:
+<ul>
+<li>post</li>
+<li>post_xml: 主要用来修改job的config.xml</li>
+</ul>
+</li>
+</ul>
+<p>大体的东西就是这些，那么通过这个Jenkins的API client，完成了一些一些功能：</p>
+<ul>
+<li>复制Job,根据参数修改复制出来的Job</li>
+<li>复制View，根据参数修改复制出来的View，同时包括了所有的子Job</li>
+<li>查询到使用了某个shell 命令或者某个配置的任务</li>
+</ul>
+<p>一些实例代码如下：</p>
+<p>复制任务：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JenkinsReplicator</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String COPY_FROM_VIEW_URL <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/view/%s/createItem?&#34;</span><span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String DEFAULT_VIEW <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;All&#34;</span><span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> JenkinsInstance instance<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> JenkinsHttpClient client<span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">JenkinsReplicator</span><span style="color:#f92672">(</span>JenkinsInstance instance<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">instance</span> <span style="color:#f92672">=</span> instance<span style="color:#f92672">;</span>
+      <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">client</span> <span style="color:#f92672">=</span> instance<span style="color:#f92672">.</span><span style="color:#a6e22e">getJenkinsHttpClient</span><span style="color:#f92672">();</span>
+  <span style="color:#f92672">}</span>
+
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">   * @param fromName: copied from issue
+</span><span style="color:#75715e">   * @param toName:   new Name
+</span><span style="color:#75715e">   * @param parentName: to View name
+</span><span style="color:#75715e">   */</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">copyItem</span><span style="color:#f92672">(</span>String fromName<span style="color:#f92672">,</span> String toName<span style="color:#f92672">,</span> String parentName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> formData <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+      formData<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">,</span> toName<span style="color:#f92672">);</span>
+      formData<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;mode&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;copy&#34;</span><span style="color:#f92672">);</span>
+      formData<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;from&#34;</span><span style="color:#f92672">,</span> fromName<span style="color:#f92672">);</span>
+      formData<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;json&#34;</span><span style="color:#f92672">,</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;{\&#34;name\&#34;: \&#34;%s\&#34;, \&#34;mode\&#34;: \&#34;copy\&#34;, \&#34;from\&#34;: \&#34;%s\&#34;}&#34;</span><span style="color:#f92672">,</span> toName<span style="color:#f92672">,</span> fromName<span style="color:#f92672">));</span>
+      formData<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Submit&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;OK&#34;</span><span style="color:#f92672">);</span>
+      <span style="color:#66d9ef">try</span> <span style="color:#f92672">{</span>
+          <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">client</span><span style="color:#f92672">.</span><span style="color:#a6e22e">post_form</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>COPY_FROM_VIEW_URL<span style="color:#f92672">,</span> parentName<span style="color:#f92672">),</span> formData<span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span> <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>IOException e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+          <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> JenkinsBaseException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;copy item &#34;</span><span style="color:#f92672">+</span> fromName<span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;to &#34;</span> <span style="color:#f92672">+</span> toName<span style="color:#f92672">+</span><span style="color:#e6db74">&#34; in view &#34;</span> <span style="color:#f92672">+</span> parentName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; failed&#34;</span><span style="color:#f92672">,</span> e<span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>update config file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String configXml <span style="color:#f92672">=</span> jobDescription<span style="color:#f92672">.</span><span style="color:#a6e22e">jobConfigXml</span><span style="color:#f92672">();</span>
+<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getJenkins</span><span style="color:#f92672">().</span><span style="color:#a6e22e">updateJob</span><span style="color:#f92672">(</span>jobDescription<span style="color:#f92672">.</span><span style="color:#a6e22e">getJobName</span><span style="color:#f92672">(),</span>configXml<span style="color:#f92672">,</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+</code></pre></div><p>复制整个view下面同时包括了不同的子Job:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+   <span style="color:#66d9ef">public</span> View <span style="color:#a6e22e">copy</span><span style="color:#f92672">(</span>String fromName<span style="color:#f92672">,</span> String toName<span style="color:#f92672">,</span> String parentNameOrNull<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+       View fromView <span style="color:#f92672">=</span> getByName<span style="color:#f92672">(</span>fromName<span style="color:#f92672">);</span>
+       <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>fromView <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> JenkinsViewException<span style="color:#f92672">(</span>fromName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;view is not found,can&#39;t copy from it!&#34;</span><span style="color:#f92672">);</span>
+       View toView <span style="color:#f92672">=</span> getOrCreate<span style="color:#f92672">(</span>toName<span style="color:#f92672">,</span> fromName<span style="color:#f92672">,</span> parentNameOrNull<span style="color:#f92672">);</span>
+       Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Job<span style="color:#f92672">&gt;</span> viewJobs <span style="color:#f92672">=</span> jobController<span style="color:#f92672">.</span><span style="color:#a6e22e">getJobsByViewName</span><span style="color:#f92672">(</span>fromName<span style="color:#f92672">);</span>
+       <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Map<span style="color:#f92672">.</span><span style="color:#a6e22e">Entry</span><span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Job<span style="color:#f92672">&gt;</span> entry <span style="color:#f92672">:</span> viewJobs<span style="color:#f92672">.</span><span style="color:#a6e22e">entrySet</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+           jobController<span style="color:#f92672">.</span><span style="color:#a6e22e">copy</span><span style="color:#f92672">(</span>entry<span style="color:#f92672">.</span><span style="color:#a6e22e">getKey</span><span style="color:#f92672">(),</span> toName <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;_&#34;</span> <span style="color:#f92672">+</span> entry<span style="color:#f92672">.</span><span style="color:#a6e22e">getKey</span><span style="color:#f92672">(),</span> toView<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+       <span style="color:#f92672">}</span>
+
+       <span style="color:#66d9ef">return</span> getByName<span style="color:#f92672">(</span>toName<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+
+</code></pre></div><h2 id="python-api-使用">Python API 使用</h2>
+<p>Python的Jenkins API client 可以通过以下命令安装：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  pip install jenkinsapi
+</code></pre></div><p>基本的python jenkins api client 和JAVA的概念比较类似，不过python 的这个jenkinsapi很明显要比java的这个客户端功能要丰富的多的多，后面会详细介绍这个python client api的使用.</p>
+<h2 id="代码">代码</h2>
+<p><a href="https://github.com/testless/jenkins-controller.git">GITHUB</a></p>
+
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/automation">automation</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/ansible/2016-03-30-ansible_basic/"> &laquo; Ansible简单介绍</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/python/2016-02-28-python_oop_attributes/">Python 面向对象，以及访问对象属性基础 &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>

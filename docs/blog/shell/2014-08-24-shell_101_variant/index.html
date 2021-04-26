@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.82.0" />
+	
+	<link rel="icon" href="/images/logos/logo.png">
+	
+	<title>Shell Learning - Variant 变量 | DirtyHands-Tester</title>
+	
+	
+
+	<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell Learning - Variant 变量"/>
+<meta name="twitter:description" content="变量赋值 #!/bin/sh var=value echo $var var=&#39;the value&#39; echo $var var=&#34;the $PARAM&#34; echo $var echo $var echo `pwd` echo $(pwd) #result: ╰─[:)] % sh shell_variant."/>
+
+	<meta property="og:title" content="Shell Learning - Variant 变量" />
+<meta property="og:description" content="变量赋值 #!/bin/sh var=value echo $var var=&#39;the value&#39; echo $var var=&#34;the $PARAM&#34; echo $var echo $var echo `pwd` echo $(pwd) #result: ╰─[:)] % sh shell_variant." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://qdriven.github.io/blog/shell/2014-08-24-shell_101_variant/" /><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2014-08-24T10:31:11&#43;00:00" />
+<meta property="article:modified_time" content="2014-08-24T10:31:11&#43;00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+	 crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="/css/medium.css" rel="stylesheet">
+	<link href="/css/additional.css" rel="stylesheet">
+
+	
+	
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top mediumnavigation nav-down">
+    <div class="container pr-0">
+        
+        <a class="navbar-brand" href="https://qdriven.github.io//">
+
+            
+            <img src="/images/logos/logo.png" alt="logo">
+            
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">All Blogs</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/english/">Api测试-英文</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/python/">Python-Tips</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/shell/">Shell</a>
+                </li>
+                 
+                <li class="nav-item ">
+                    <a class="nav-link" href="/tags/tips/">Tips</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle">DirtyHands-Tester</h1>
+    <p class="lead">
+         Learning from Practice
+    </p>
+</div><div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    
+    
+
+    
+</div>
+</div>
+                                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        	
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                                <img class="author-thumb" src="/images/author.png" alt="dirty-hands-qa">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                                <a target="_blank" class="link-dark">dirty-hands-qa</a><br>
+                                <span class="author-description">
+                                    DirtyHands<br>
+                                    <i class="far fa-star"></i>
+                                    Aug 24, 2014
+                                    <i class="far fa-clock clock"></i>
+                                    2 min read
+                                </span>					
+                            </div>
+                        </div>			
+                        	
+                        
+                                                
+                        
+                        <h1 class="posttitle">Shell Learning - Variant 变量</h1> 
+                    </div>
+
+                    
+                    
+                    
+                    
+
+                    
+                    <div class="article-post">
+                        <h3 id="变量赋值">变量赋值</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>var<span style="color:#f92672">=</span>value
+echo $var
+var<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;the value&#39;</span>
+echo $var
+var<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;the </span>$PARAM<span style="color:#e6db74">&#34;</span>
+echo $var
+echo $var
+echo <span style="color:#e6db74">`</span>pwd<span style="color:#e6db74">`</span>
+echo <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef">)</span>
+
+<span style="color:#75715e">#result:</span>
+╰─<span style="color:#f92672">[</span>:<span style="color:#f92672">)]</span> % sh shell_variant.sh
+value
+the value
+the
+the
+/Users/patrick/workspace/works/shell_learning
+/Users/patrick/workspace/works/shell_learning
+</code></pre></div><h3 id="字符串处理">字符串处理</h3>
+<ul>
+<li>可以给出字符串的长度</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo $#
+echo $0
+echo $1 $2
+echo $$
+
+p<span style="color:#f92672">=</span>$2
+echo $p
+
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">${#</span>p<span style="color:#e6db74">}</span> !<span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">]</span>
+<span style="color:#66d9ef">then</span>
+  echo <span style="color:#e6db74">&#34;wrong input&#34;</span>
+<span style="color:#66d9ef">fi</span>
+
+<span style="color:#75715e"># Result</span>
+
+h read_parameter.sh <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">2</span>
+read_parameter.sh
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">24217</span>
+<span style="color:#ae81ff">2</span>
+wrong input
+</code></pre></div><h3 id="变量分类">变量分类</h3>
+<p>四种变量：环境变量、本地变量、位置变量、特定变量参数</p>
+<ul>
+<li>环境变量可作用于所有子进程</li>
+<li>本地变量在用户现在的shell 生命期的脚本中使用，仅存在于当前进程</li>
+<li>位置变量：作为程序参数</li>
+<li>特定变量：特殊作用</li>
+</ul>
+<h3 id="环境变量">环境变量</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    设置
+    MYVAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+    expirt MYVAR
+    or
+    export MYVAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+
+    只读
+    MYVAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+    readonly MYVAR
+    or
+    readonly MYVAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+
+    显示
+    export -p
+    env <span style="color:#75715e">#查看所有环境变量</span>
+    $MYVAR <span style="color:#75715e">#获取</span>
+
+    消除
+    unset MYVAR
+</code></pre></div><h3 id="本地变量">本地变量</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">设置
+LOCAL_VAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+or
+LOCAL_VAR<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>
+readonly LOCAL_VAR <span style="color:#75715e">#设置只读</span>
+
+还可以使用declare命令定义
+</code></pre></div><h3 id="位置变量">位置变量</h3>
+<ul>
+<li>$0 脚本名称</li>
+<li>$# 传递到脚本参数个数</li>
+<li>$$ shell脚本运行当前进程ID</li>
+<li>$? 退出状态</li>
+<li>$N N&gt;=1，第n个参数</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
+</span><span style="color:#75715e"></span>
+echo $#
+echo $0
+echo $1 $2
+echo $$
+
+<span style="color:#75715e"># result:</span>
+<span style="color:#ae81ff">2</span>
+read_parameter.sh
+<span style="color:#ae81ff">1</span> <span style="color:#ae81ff">2</span>
+<span style="color:#ae81ff">24171</span>
+</code></pre></div><h3 id="拼接字符串">拼接字符串</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo <span style="color:#e6db74">&#34;</span>$x$y<span style="color:#e6db74">&#34;</span>
+</code></pre></div><h3 id="字符串切片">字符串切片</h3>
+<p>${变量名:起始:长度}得到子字符串</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ test<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;I love china&#39;</span>
+$ echo <span style="color:#e6db74">${</span>test:5<span style="color:#e6db74">}</span>
+e china
+$ echo <span style="color:#e6db74">${</span>test:5:10<span style="color:#e6db74">}</span>
+e china
+
+str<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hello world&#34;</span>
+echo <span style="color:#e6db74">${</span>str:6<span style="color:#e6db74">}</span>  <span style="color:#75715e"># ${var:offset:length}</span>
+</code></pre></div><h3 id="字符串替换">字符串替换</h3>
+<p>${变量/查找/替换值}</p>
+<p>一个“/”表示替换第一个，”//”表示替换所有,当查找中出现了：”/”请加转义符”/”表示</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">echo <span style="color:#e6db74">${</span>str/foo/bar<span style="color:#e6db74">}</span> <span style="color:#75715e">#首个</span>
+echo <span style="color:#e6db74">${</span>str//foo/bar<span style="color:#e6db74">}</span> <span style="color:#75715e">#所有</span>
+</code></pre></div><h3 id="正则匹配">正则匹配</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> $str <span style="color:#f92672">=</span>~ <span style="color:#f92672">[</span>0-9<span style="color:#f92672">]</span>+<span style="color:#ae81ff">\.</span><span style="color:#f92672">[</span>0-9<span style="color:#f92672">]</span>+ <span style="color:#f92672">]]</span>
+</code></pre></div><h3 id="数值处理">数值处理</h3>
+<p>自增</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+a<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr a + 1<span style="color:#e6db74">`</span>
+
+or
+
+a<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+let a++
+let a<span style="color:#f92672">+=</span><span style="color:#ae81ff">2</span>
+let
+
+no1<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+no2<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>
+let result<span style="color:#f92672">=</span>no1+no2
+expr
+
+result<span style="color:#f92672">=</span><span style="color:#e6db74">`</span>expr <span style="color:#ae81ff">3</span> + 4<span style="color:#e6db74">`</span>
+result<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>expr $no1 + 5<span style="color:#66d9ef">)</span>
+</code></pre></div><h3 id="其他">其他</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">result<span style="color:#f92672">=</span>$<span style="color:#f92672">[</span> no1 + no2 <span style="color:#f92672">]</span>
+result<span style="color:#f92672">=</span>$<span style="color:#f92672">[</span> $no + <span style="color:#ae81ff">5</span> <span style="color:#f92672">]</span>
+
+result<span style="color:#f92672">=</span><span style="color:#66d9ef">$((</span> no1 <span style="color:#f92672">+</span> <span style="color:#ae81ff">5</span> <span style="color:#66d9ef">))</span>
+浮点数
+
+echo <span style="color:#e6db74">&#34;4 * 0.56&#34;</span> | bc
+设定精度
+echo <span style="color:#e6db74">&#34;scale=2;3/8&#34;</span> | bc
+进制转换
+echo <span style="color:#e6db74">&#34;obase=2;100&#34;</span> | bc
+平方
+echo <span style="color:#e6db74">&#34;sqrt(100)&#34;</span> | bc
+数组和map
+</code></pre></div>
+                    </div>
+                    
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags">
+                        
+                        <li>
+                        <a href="/tags/shell">shell</a>
+                        </li>
+                        
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold">
+                    
+                        <a class="d-block col-md-6" href="https://qdriven.github.io/blog/shell/2014-10-24-shell_for_update_all_git_repo/"> &laquo; 更新一个目录下所有的git repository的shell 脚本</a>
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://qdriven.github.io/blog/test-ops/1-dns/">DNS Tips &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+            </div>
+<div class="jumbotron fortags">
+	<div class="d-md-flex h-100">
+		<div class="col-md-4 transpdark align-self-center text-center h-100">
+			<div class="d-md-flex align-items-center justify-content-center h-100">
+				<h2 class="d-md-block d-none align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+			</div>
+		</div>
+		<div class="col-md-8 p-5 align-self-center text-center">
+			
+			<a class="mt-1 mb-1" href="/tags/10minutes">10minutes</a>
+			
+			<a class="mt-1 mb-1" href="/tags/48h">48h</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ansible">ansible</a>
+			
+			<a class="mt-1 mb-1" href="/tags/anti-bug">anti-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-testing">api-testing</a>
+			
+			<a class="mt-1 mb-1" href="/tags/api-teting">api-teting</a>
+			
+			<a class="mt-1 mb-1" href="/tags/automation">automation</a>
+			
+			<a class="mt-1 mb-1" href="/tags/bigdata">bigdata</a>
+			
+			<a class="mt-1 mb-1" href="/tags/cheatsheet">cheatsheet</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ci-cd">ci-cd</a>
+			
+			<a class="mt-1 mb-1" href="/tags/concurrency">concurrency</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-automation-tip">daily-automation-tip</a>
+			
+			<a class="mt-1 mb-1" href="/tags/daily-tips">daily-tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/designpattern">designpattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/devops">devops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/english">english</a>
+			
+			<a class="mt-1 mb-1" href="/tags/ep">ep</a>
+			
+			<a class="mt-1 mb-1" href="/tags/git">git</a>
+			
+			<a class="mt-1 mb-1" href="/tags/hbase">hbase</a>
+			
+			<a class="mt-1 mb-1" href="/tags/interview">interview</a>
+			
+			<a class="mt-1 mb-1" href="/tags/java">java</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jira">jira</a>
+			
+			<a class="mt-1 mb-1" href="/tags/jmeter">jmeter</a>
+			
+			<a class="mt-1 mb-1" href="/tags/one-page">one-page</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pattern">pattern</a>
+			
+			<a class="mt-1 mb-1" href="/tags/pe">pe</a>
+			
+			<a class="mt-1 mb-1" href="/tags/performance">performance</a>
+			
+			<a class="mt-1 mb-1" href="/tags/productivity">productivity</a>
+			
+			<a class="mt-1 mb-1" href="/tags/python">python</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-daily">qa-daily</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qa-thoughts">qa-thoughts</a>
+			
+			<a class="mt-1 mb-1" href="/tags/qatrap">qatrap</a>
+			
+			<a class="mt-1 mb-1" href="/tags/real-bug">real-bug</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactor">refactor</a>
+			
+			<a class="mt-1 mb-1" href="/tags/refactoring">refactoring</a>
+			
+			<a class="mt-1 mb-1" href="/tags/scrum">scrum</a>
+			
+			<a class="mt-1 mb-1" href="/tags/shell">shell</a>
+			
+			<a class="mt-1 mb-1" href="/tags/test-ops">test-ops</a>
+			
+			<a class="mt-1 mb-1" href="/tags/testing-platform">testing-platform</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tips">tips</a>
+			
+			<a class="mt-1 mb-1" href="/tags/tooling">tooling</a>
+			
+			<a class="mt-1 mb-1" href="/tags/toolings">toolings</a>
+			
+			<a class="mt-1 mb-1" href="/tags/truestories">truestories</a>
+			
+			<a class="mt-1 mb-1" href="/tags/worthless">worthless</a>
+			
+			<a class="mt-1 mb-1" href="/tags/%E6%B5%81%E9%87%8F%E5%9B%9E%E6%94%BE">流量回放</a>
+			
+		</div>
+	</div>
+</div>
+
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/js/mediumish.js"></script>
+
+    </body>
+</html>
