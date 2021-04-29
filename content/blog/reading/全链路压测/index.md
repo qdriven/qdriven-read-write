@@ -1,9 +1,9 @@
 ---
 title: QE-Meetup 全链路压测-Perfma 笔记
 date: 2021-04-28 23:58:45
+image: "/images/全链路压测.png"
 tags: ["qa-thoughts"]
 ---
-# QE-Meetup 全链路压测-Perfma 笔记
 
 关于全链路压力测试的一个Meetup的一个小结，总结如下:
 
