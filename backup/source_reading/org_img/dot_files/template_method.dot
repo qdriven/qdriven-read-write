@@ -1,0 +1,10 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.template_method";
+    AbstractHelloWorld [ label = "{AbstractHelloWorld | + public String helloWorld()\l+ public abstract String getInterjection()\l+ public abstract String getObject()\l+ public abstract String getSeparator()\l+ public abstract String getTerminator()\l}" ] 
+    TemplateMethodHelloWorld [ label = "{TemplateMethodHelloWorld | + public String getInterjection()\l+ public String getObject()\l+ public String getSeparator()\l+ public String getTerminator()\l}" ] 
+  }
+  TemplateMethodHelloWorld -> AbstractHelloWorld [arrowhead=empty color=slategray];
+}

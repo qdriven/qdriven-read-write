@@ -1,0 +1,17 @@
+data:
+  - https://github.com/debezium/debezium
+
+java:
+    - https://github.com/lisihocke/rest-practice
+algorithms:
+    - https://github.com/TheAlgorithms
+    - https://github.com/karlseguin/ccache
+issue:
+    - https://github.com/cptactionhank?tab=repositories
+    - https://github.com/haxqer/confluence
+    - https://github.com/mvndaemon/mvnd
+    - https://github.com/wswebcreation
+    - https://octo.github.com/
+    - https://github.com/charmbracelet
+app:
+    - https://github.com/fmtjava/Jetpack_GitHub

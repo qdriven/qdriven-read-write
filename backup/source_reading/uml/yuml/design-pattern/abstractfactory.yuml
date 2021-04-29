@@ -1,0 +1,7 @@
+// {type:class}
+// {direction:topDown}
+// {generate:true}
+[note: You can stick notes on diagrams too!{bg:cornsilk}]
+[＜＜interface＞＞;AbstractFactory|+createProduct();]^-.-[ConcreteFactory|+createProduct();]
+[＜＜interface＞＞;AbstractProduct]^-.-[ConcreteProduct]
+

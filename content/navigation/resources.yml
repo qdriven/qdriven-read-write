@@ -1,0 +1,86 @@
+Resource:
+  radar: 
+    - https://www.githubs.cn/
+  portal: 
+    - https://opensourcestash.com/
+    - https://bit.dev/
+    - https://elide.io/
+    - https://ng-tech.icu/books/#pl
+    - https://www.magicpattern.design/tools
+    - https://www.baeldung.com/java-strategy-pattern
+    - https://www.tutorialspoint.com/design_pattern/strategy_pattern.htm
+  automation:
+    - https://www.mautic.org/
+    - https://n8n.io/
+    - https://faircode.io/
+    - https://zepel.io/
+    repos:
+      - https://github.com/n8n-io
+      - https://github.com/mautic
+  database:
+    - https://github.com/supabase
+  tools:
+    - https://github.com/hanchuanchuan/goInception
+    - https://github.com/teambit/bit
+    - https://github.com/devhubapp/devhub.git
+    - https://github.com/graphql-java/graphql-java
+    - https://github.com/hasura
+    - https://github.com/swisskyrepo
+    - https://github.com/iamturns/til
+    - https://github.com/LeCoupa/awesome-tailwindcss
+    - https://github.com/oppia/oppia
+    - https://github.com/welliamcao/OpsManage
+    - https://github.com/crowi
+    - https://github.com/excalidraw
+    - https://github.com/integrations
+    - https://github.com/argoproj
+    - https://github.com/xugaoyi/vuepress-theme-vdoing
+  blog: 
+    - https://github.com/halo-dev
+    - https://github.com/TryGhost
+  tutorial:
+    - https://github.com/senghoo/golang-design-pattern
+    - https://github.com/tmrts/go-patterns
+    - https://github.com/torokmark/design_patterns_in_typescript
+    - https://github.com/JamesZBL/java_design_patterns
+    - https://github.com/EdOverflow/bugbounty-cheatsheet
+    - https://github.com/github/training-kit
+    - https://github.com/wojtekmaj/react-lifecycle-methods-diagram
+    - https://github.com/agrim123/reading-material
+    - https://github.com/trimstray/nginx-admins-handbook
+    - https://github.com/alexanderepstein/Bash-Snippets
+    - https://github.com/cheat/cheat
+    - https://github.com/MindorksOpenSource/android-interview-questions
+    - https://github.com/LeCoupa/awesome-cheatsheets
+    - https://github.com/docker/awesome-compose
+    - https://github.com/spring-projects-experimental
+    - https://gitee.com/helixin/projects
+  organization:
+    - https://github.com/palantir
+    - https://github.com/security-cheatsheet
+    - https://github.com/ExpediaGroup
+    - https://github.com/manifold-systems
+    - https://github.com/Kong
+    - https://github.com/Enigmatis
+    - https://github.com/americanexpress
+    - https://github.com/OWASP
+    - https://github.com/Netflix
+    - https://github.com/cdr
+  tools-org: 
+    - https://github.com/dromara
+    - https://github.com/networknt
+  person:
+    - https://github.com/oldratlee
+    - https://github.com/singgel/JAVA_LINE
+    - https://github.com/Kimi-Gao
+    - https://github.com/forax
+    - https://github.com/iluwatar
+    - https://github.com/kamranahmedse
+    - https://github.com/faif
+    - https://github.com/DovAmir
+    - https://github.com/sohamkamani
+    - https://github.com/ZoranPandovski
+    - https://github.com/Tikam02
+    - https://github.com/GorvGoyl
+    - https://github.com/LeCoupa
+    - https://github.com/lqsong

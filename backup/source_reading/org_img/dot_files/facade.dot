@@ -1,0 +1,10 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.structural.facade";
+    HelloWorldFacade [ label = "{HelloWorldFacade | + public HelloWorld facadeHelloWorld()\l+ public static HelloWorldFacade instance()\l}" ] 
+    HelloWorldFacadeInstanceHolder [ label = "{HelloWorldFacadeInstanceHolder | }" ] 
+  }
+  HelloWorldFacadeInstanceHolder -> HelloWorldFacade [ dir=back arrowtail=odiamond color=slategray];
+}

@@ -1,0 +1,11 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.creational.builder";
+    DataHolder [ label = "{DataHolder | }" ] 
+    ComplicatedDataHolder [ label = "{ComplicatedDataHolder | + public String toString()\l+ public static void main(String[])\l}" ] 
+    HelloWorldBuilder [ label = "{HelloWorldBuilder | + public HelloWorld getHelloWorld()\l+ public HelloWorldBuilder interjection(String)\l+ public HelloWorldBuilder object(String)\l+ public static HelloWorldBuilder builder()\l+ static String access$000(HelloWorldBuilder)\l+ static String access$100(HelloWorldBuilder)\l}" ] 
+    Builder [ label = "{Builder | }" ] 
+  }
+}

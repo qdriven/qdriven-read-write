@@ -1,0 +1,16 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.state";
+    HelloWorldState [ label = "{HelloWorldState | + public abstract void append(HelloWorldStateContext,String)\l}" ] 
+    HelloWorldStateContext [ label = "{HelloWorldStateContext | + HelloWorldStateContext append(String)\l+ public HelloWorldStateContext appendWord(String)\l+ public HelloWorldStateContext setState(HelloWorldState)\l+ public String helloWorld()\l}" ] 
+    HelloWorldFinalizedState [ label = "{HelloWorldFinalizedState | + public void append(HelloWorldStateContext,String)\l}" ] 
+    HelloWorldInterjectionState [ label = "{HelloWorldInterjectionState | + public void append(HelloWorldStateContext,String)\l}" ] 
+    HelloWorldObjectState [ label = "{HelloWorldObjectState | + public void append(HelloWorldStateContext,String)\l}" ] 
+  }
+  HelloWorldStateContext -> HelloWorldState [ dir=back arrowtail=odiamond color=slategray];
+  HelloWorldFinalizedState -> HelloWorldState [arrowhead=empty color=slategray];
+  HelloWorldInterjectionState -> HelloWorldState [arrowhead=empty color=slategray];
+  HelloWorldObjectState -> HelloWorldState [arrowhead=empty color=slategray];
+}

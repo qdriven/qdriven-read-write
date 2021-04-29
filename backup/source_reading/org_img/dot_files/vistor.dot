@@ -1,0 +1,16 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.vistor";
+    HelloWorldCharacterVisitor [ label = "{HelloWorldCharacterVisitor | + public String helloWorld()\l+ public void visit(HelloWorldElement)\l}" ] 
+    HelloWorldVisitor [ label = "{HelloWorldVisitor | + public abstract void visit(HelloWorldElement)\l}" ] 
+    HelloWorldElement [ label = "{HelloWorldElement | + public abstract void accept(HelloWorldVisitor)\l}" ] 
+    HelloWorldCharacterElements [ label = "{HelloWorldCharacterElements | + public void accept(HelloWorldVisitor)\l}" ] 
+    HelloWorldCharacterElement [ label = "{HelloWorldCharacterElement | + public char getCh()\l+ public void accept(HelloWorldVisitor)\l}" ] 
+  }
+  HelloWorldCharacterElements -> HelloWorldCharacterElement [ dir=back arrowtail=odiamond color=slategray];
+  HelloWorldCharacterVisitor -> HelloWorldVisitor [arrowhead=empty color=slategray];
+  HelloWorldCharacterElements -> HelloWorldElement [arrowhead=empty color=slategray];
+  HelloWorldCharacterElement -> HelloWorldElement [arrowhead=empty color=slategray];
+}

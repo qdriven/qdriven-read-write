@@ -1,0 +1,14 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.strategy";
+    JavaHelloWorldStrategy [ label = "{JavaHelloWorldStrategy | + public String helloWorld()\l}" ] 
+    DesignPatternHelloWorldStrategy [ label = "{DesignPatternHelloWorldStrategy | + public String helloWorld()\l}" ] 
+    HelloWorldStrategyContext [ label = "{HelloWorldStrategyContext | + public String helloWorld()\l}" ] 
+    HelloWorldStrategy [ label = "{HelloWorldStrategy | }" ] 
+  }
+  HelloWorldStrategyContext -> HelloWorldStrategy [ dir=back arrowtail=odiamond color=slategray];
+  JavaHelloWorldStrategy -> HelloWorldStrategy [arrowhead=empty color=slategray];
+  DesignPatternHelloWorldStrategy -> HelloWorldStrategy [arrowhead=empty color=slategray];
+}

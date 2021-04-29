@@ -1,0 +1,17 @@
+digraph web_app {
+
+  edge [color=red]
+  /* Entities */
+  app [label="web app", shape="square"
+      style="filled" color="#F1C40F"]
+  /* Relationships */
+  web_server[label="web server",style="filled" color=limegreen]
+  database [label="user database" style="filled" color="#69ad31"]
+  business_info [label="business info" style="filled" color = limegreen]
+  app->web_server
+  web_server->app
+  web_server->database
+  database -> web_server
+  web_server->business_info
+  business_info-> web_server
+}

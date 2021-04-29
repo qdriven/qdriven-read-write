@@ -1,0 +1,22 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+mkdocs = "*"
+pygments = "*"
+markdown = ">=3.0.1"
+pymdown-extensions = "*"
+mkdocs-material = "*"
+markdown-include = "*"
+jinja2 = "*"
+yasha = "*"
+tornado = "*"
+yapf = "*"
+PyYAML = "*"
+
+[requires]
+python_version = "3.7"

@@ -1,0 +1,9 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.memeto";
+    HelloWorldMementoOriginator [ label = "{HelloWorldMementoOriginator | + public HelloWorldMementoOriginator set(String)\l+ public Memento saveToMemento()\l+ public String helloWorld()\l+ public void restoreFromMemento(Memento)\l}" ] 
+    Memento [ label = "{Memento | }" ] 
+  }
+}

@@ -1,0 +1,20 @@
+@startuml
+
+class Client {
+    operation(): prototype.Clone()
+}
+
+
+class Prototype{
+ clone(): Prototype
+}
+class ConcretePrototype1{
+ clone(): Prototype
+}
+class ConcretePrototype2{
+ clone(): Prototype
+}
+
+ConcretePrototype1 --|> Prototype
+ConcretePrototype2 --|> Prototype
+@enduml

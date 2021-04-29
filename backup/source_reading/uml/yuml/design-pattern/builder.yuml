@@ -1,0 +1,30 @@
+// {type:class}
+// {direction: leftToRight}
+// {generate:true}
+[note: Builder Patterns {bg:cornsilk}]
+[Director|+build();]++-[Builder|+buildPart();]
+[Builder]^-.-[ConcreteBuilder|+buildPart();+getResult():Product;]
+
+[note: Factory Method Pattern {bg:cornsilk}]
+[Creator|+factoryMethod():Product;]^-[ConcreteCreator|+factoryMethod():Product;]
+
+[note: Prototype Pattern  {bg:cornsilk}]
+[＜＜interface＞＞;Prototype|+clone():Prototype;]^-.-[ConcretePrototypeB|+clone():Prototype;]
+[＜＜interface＞＞;Prototype|+clone():Prototype;]^-.-[ConcretePrototypeA|+clone():Prototype;]
+
+[note: Singleton Pattern {bg:cornsilk}]
+[Singleton|-instance:Singleton = null|-Singleton();+getInstance():Singleton;]
+
+[note: Adapter Pattern {bg:cornsilk}]
+[＜＜interface＞＞;Target|+request();]^-.-[Adapter|+request();]
+[Adapter]-^[Adaptee|+specificRequest();]
+
+[note: Bridge Pattern {bg:cornsilk}]
+[Abstraction|-impl:Implementor;+function()]^-[RefinedAbstraction |+refinedFunction();]
+[Abstraction]<>-[Implementor|+implementation();]
+[Implementor]^-[ConceteImplementor|+implementation();]
+
+[note: Composite Pattern {bg:cornsilk}]
+[Component|+opertation()]^-[Leaf|+operation();]
+[Component]^-[Composite|+operation();+add();+remove();+getChild()]
+[Component]0..*-<>1[Composite]

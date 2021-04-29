@@ -1,0 +1,15 @@
+@startuml
+
+class Singleton
+
+
+class Singleton {
+- instance: Singleton
+- singleTonData: HashMap
+- private Singleton()
++ getInstance(): Singleton
++ singletonMethodA(): void
++ singletonMethodB(): void
+}
+
+@enduml

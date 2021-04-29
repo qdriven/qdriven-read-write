@@ -1,0 +1,5 @@
+admin:
+    - https://github.com/xuae/vue-admin-antd.git
+
+blog:
+    - https://github.com/geekape/geek-navigation

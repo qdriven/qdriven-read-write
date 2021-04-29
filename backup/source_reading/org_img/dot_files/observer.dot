@@ -1,0 +1,12 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.observer";
+    Observer [ label = "{Observer | + public abstract void update()\l}" ] 
+    Subject [ label = "{Subject | + public Subject attach(Observer)\l+ public void notifyObservers()\l}" ] 
+    HelloWorldObserver [ label = "{HelloWorldObserver | + public void setPrinter(PrintStream)\l+ public void update()\l}" ] 
+  }
+  Subject -> Observer [ dir=back arrowtail=odiamond color=slategray];
+  HelloWorldObserver -> Observer [arrowhead=empty color=slategray];
+}

@@ -1,0 +1,9 @@
+TestingTools:
+  - UI: 
+    - https://github.com/sorry-cypress
+  - API:
+    - https://github.com/OpenAPITools
+
+Monitoring:
+  - AI: 
+    - https://github.com/lab-ml/labml/

@@ -1,0 +1,13 @@
+digraph web_perform {
+  node [ fontname = "Consolas", fontsize = 12, shape = "Mrecord" ];
+  edge [ fontname = "Consolas", fontsize = 12 ];
+  node [style="filled", color="#eeeeee"];
+  edge [color="red"]
+
+  idq [label="Initial \lDocument Requested"]
+  processing [label="Processing\l initial Document"]
+  waiting [label="waiting for\l initial document"]
+
+  idq->processing
+  processing->waiting
+}

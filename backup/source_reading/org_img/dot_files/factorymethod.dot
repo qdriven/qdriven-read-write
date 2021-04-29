@@ -1,0 +1,10 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.creational.factorymethod";
+    FactoryMethodHelloWorldFactory [ label = "{FactoryMethodHelloWorldFactory | + public HelloWorld createHelloWorld()\l}" ] 
+    HelloWorldFactory [ label = "{HelloWorldFactory | + public HelloWorld createHelloWorld()\l}" ] 
+  }
+  FactoryMethodHelloWorldFactory -> HelloWorldFactory [arrowhead=empty color=slategray];
+}

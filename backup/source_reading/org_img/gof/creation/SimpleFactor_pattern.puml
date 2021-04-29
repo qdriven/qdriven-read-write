@@ -1,0 +1,21 @@
+@startuml
+
+interface Product
+class ProductMaker
+Product <|-- Product1
+Product <|-- Product2
+ProductMaker --> Product
+
+class Product1{
+    sendSms()
+}
+
+
+class Product2{
+    sendSms()
+}
+
+class ProductMaker{
+    Product createProduct()
+}
+@enduml

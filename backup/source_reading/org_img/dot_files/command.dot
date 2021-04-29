@@ -1,0 +1,10 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.command";
+    HelloWorldPrintCommand [ label = "{HelloWorldPrintCommand | + public void execute()\l+ public void setPrinter(PrintStream)\l}" ] 
+    Command [ label = "{Command | + public abstract void execute()\l}" ] 
+  }
+  HelloWorldPrintCommand -> Command [arrowhead=empty color=slategray];
+}

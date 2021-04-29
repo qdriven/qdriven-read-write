@@ -1,0 +1,11 @@
+mkdocs
+pygments
+markdown>=3.0.1
+pymdown-extensions
+mkdocs-material
+markdown-include
+jinja2
+yasha
+tornado
+pyyaml
+yapf

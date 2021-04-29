@@ -1,0 +1,13 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.chainOfResponsibility";
+    HelloWorldObjectHandler [ label = "{HelloWorldObjectHandler | + public void handle(StringBuffer)\l}" ] 
+    HelloWorldHandler [ label = "{HelloWorldHandler | + public HelloWorldHandler setNext(HelloWorldHandler)\l+ public String helloWorld()\l+ public abstract void handle(StringBuffer)\l}" ] 
+    HelloWorldInterjectionHandler [ label = "{HelloWorldInterjectionHandler | + public void handle(StringBuffer)\l}" ] 
+  }
+  HelloWorldHandler -> HelloWorldHandler [ dir=back arrowtail=odiamond color=slategray];
+  HelloWorldObjectHandler -> HelloWorldHandler [arrowhead=empty color=slategray];
+  HelloWorldInterjectionHandler -> HelloWorldHandler [arrowhead=empty color=slategray];
+}

@@ -1,0 +1,14 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.structural.bridge";
+    HelloWorldBridge [ label = "{HelloWorldBridge | + public String helloWorld()\l}" ] 
+    DesignPatternWorldImpl [ label = "{DesignPatternWorldImpl | + public String generate()\l}" ] 
+    JavaHelloWorldImpl [ label = "{JavaHelloWorldImpl | + public String generate()\l}" ] 
+    HelloWorldImpl [ label = "{HelloWorldImpl | + public abstract String generate()\l}" ] 
+  }
+  HelloWorldBridge -> HelloWorldImpl [ dir=back arrowtail=odiamond color=slategray];
+  DesignPatternWorldImpl -> HelloWorldImpl [arrowhead=empty color=slategray];
+  JavaHelloWorldImpl -> HelloWorldImpl [arrowhead=empty color=slategray];
+}

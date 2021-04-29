@@ -1,0 +1,11 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.structural.flyweight";
+    HelloWorldFactoryHolder [ label = "{HelloWorldFactoryHolder | }" ] 
+    HelloWorldFlyWeight [ label = "{HelloWorldFlyWeight | + public String helloWorld()\l}" ] 
+    HelloWorldFlyWeightFactory [ label = "{HelloWorldFlyWeightFactory | + public HelloWorld createHelloWorld(String)\l+ public static HelloWorldFlyWeightFactory instance()\l}" ] 
+  }
+  HelloWorldFactoryHolder -> HelloWorldFlyWeightFactory [ dir=back arrowtail=odiamond color=slategray];
+}

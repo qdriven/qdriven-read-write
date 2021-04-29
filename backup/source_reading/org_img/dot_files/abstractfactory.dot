@@ -1,0 +1,17 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.creational.abstractfactory";
+    JavaSplitHelloWorldFactory [ label = "{JavaSplitHelloWorldFactory | + public HelloWorldInterjection createHelloWorldInterjection()\l+ public HelloWorldObject createHelloWorldObject()\l}" ] 
+    AbstractFactory [ label = "{AbstractFactory | + public static SplitHelloWorldFactory select(Type) throws java.lang.IllegalAccessException,java.lang.InstantiationException\l}" ] 
+    DesignPatternHelloWorldObject [ label = "{DesignPatternHelloWorldObject | }" ] 
+    JavaHelloWorldObject [ label = "{JavaHelloWorldObject | }" ] 
+    SplitHelloWorldFactory [ label = "{SplitHelloWorldFactory | + public abstract HelloWorldInterjection createHelloWorldInterjection()\l+ public abstract HelloWorldObject createHelloWorldObject()\l}" ] 
+    DesignPatternSplitHelloWorldFactory [ label = "{DesignPatternSplitHelloWorldFactory | + public HelloWorldInterjection createHelloWorldInterjection()\l+ public HelloWorldObject createHelloWorldObject()\l}" ] 
+  }
+  JavaHelloWorldObject -> JavaSplitHelloWorldFactory [ dir=forward arrowhead=odiamond color=slategray];
+  DesignPatternHelloWorldObject -> DesignPatternSplitHelloWorldFactory [ dir=forward arrowhead=odiamond color=slategray];
+  JavaSplitHelloWorldFactory -> SplitHelloWorldFactory [arrowhead=empty color=slategray];
+  DesignPatternSplitHelloWorldFactory -> SplitHelloWorldFactory [arrowhead=empty color=slategray];
+}

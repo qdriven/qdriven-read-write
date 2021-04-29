@@ -1,0 +1,11 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.interpreter";
+    Function [ label = "{Function | }" ] 
+    HelloWorldInterpreter [ label = "{HelloWorldInterpreter | + public void interpret(String)\l+ public void registerFunction(String,Function)\l}" ] 
+    PrintlnFunction [ label = "{PrintlnFunction | }" ] 
+  }
+  PrintlnFunction -> Function [arrowhead=empty color=slategray];
+}

@@ -1,0 +1,52 @@
+site_name: tester-in-hardway
+site_author: The Chaos Toolkit Team
+site_description: Chaos Toolkit
+copyright: '&copy; 2017-2018 allroundtester team'
+theme:
+  name: material
+  favicon: "static/images/favicon.ico"
+  logo: "static/images/logo.png"
+  palette:
+    primary: "white"
+    accent: "yellow"
+extra_css:
+  - 'static/css/extra.css'
+docs_dir: docs
+# google_analytics:
+  # - auto
+repo_name: tester-in-hardway
+repo_url: https://github.com/evenhumble/tester-in-hardway.git
+markdown_extensions:
+  - markdown_include.include:
+      base_path: "sources/shared"
+  - admonition
+  - codehilite:
+      guess_lang: False
+      linenums: False
+  - def_list
+  - footnotes
+  - meta
+  - smarty
+  - toc:
+      permalink: True
+  - pymdownx.betterem:
+      smart_enable: "all"
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: True
+  - pymdownx.tilde
+extra:
+  social:
+    - type: github
+      link: https://github.com/evenhumble
+nav:
+# - Folders
+# - Resources:
+#     - Logos: resources/logos.md
+#     - Slides: resources/slides.md

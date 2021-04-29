@@ -1,0 +1,8 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.iterator";
+    HelloWorldCharacterIterator [ label = "{HelloWorldCharacterIterator | + public Character next()\l+ public Object next()\l+ public boolean hasNext()\l+ public void remove()\l}" ] 
+  }
+}

@@ -1,0 +1,10 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.structural.adaptor";
+    HelloWorldAdapter [ label = "{HelloWorldAdapter | + public String helloWorld()\l}" ] 
+    HelloAdapterDesignPattern [ label = "{HelloAdapterDesignPattern | + public String helloDesignPattern()\l}" ] 
+  }
+  HelloWorldAdapter -> HelloAdapterDesignPattern [ dir=back arrowtail=odiamond color=slategray];
+}

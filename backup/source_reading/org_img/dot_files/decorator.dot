@@ -1,0 +1,9 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.structural.decorator";
+    HelloWorldDecorator [ label = "{HelloWorldDecorator | + public String helloDecorator()\l+ public String helloWorld()\l}" ] 
+    DefaultHelloWorld [ label = "{DefaultHelloWorld | }" ] 
+  }
+}

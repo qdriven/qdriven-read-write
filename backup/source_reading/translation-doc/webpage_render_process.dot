@@ -1,0 +1,29 @@
+digraph web_perform {
+  node [ fontname = "Consolas", fontsize = 12, shape = "Mrecord" ];
+  edge [ fontname = "Consolas", fontsize = 12 ];
+  node [style="filled", color="#eeeeee"];
+  edge [color="red"]
+
+  networking[label="networking"]
+  HTML[label="HTML"]
+  CSS[label="CSS"]
+  Collections[label="Collections"]
+  Javascript[label="Javascript"]
+  Marshalling[label="Marshalling"]
+  DOM[label="DOM"]
+  Formatting[label="Formatting"]
+  BlockBuilding[label="BlockBuilding"]
+  Layout[label="Layout"]
+  Rendering[label="Rendering"]
+
+  networking->HTML
+  HTML->CSS
+  CSS->Collections
+  Collections->Javascript
+  Javascript->Marshalling
+  Marshalling->DOM
+  DOM->Formatting
+  Formatting->BlockBuilding
+  BlockBuilding->Layout
+  Layout->Rendering  
+}

@@ -1,0 +1,12 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.behavioral.mediator";
+    HelloWorldInterjection [ label = "{HelloWorldInterjection | + public String helloWorld()\l+ public String interjection()\l+ public void setHelloWorldMediator(HelloWorldMediator)\l}" ] 
+    HelloWorldObject [ label = "{HelloWorldObject | + public String helloWorld()\l+ public String object()\l+ public void setHelloWorldMediator(HelloWorldMediator)\l}" ] 
+    HelloWorldMediator [ label = "{HelloWorldMediator | + public String interjection()\l+ public String object()\l}" ] 
+  }
+  HelloWorldObject -> HelloWorldMediator [ dir=back arrowtail=odiamond color=slategray];
+  HelloWorldInterjection -> HelloWorldMediator [ dir=back arrowtail=odiamond color=slategray];
+}

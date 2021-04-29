@@ -1,0 +1,10 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.creational.singleton";
+    HelloWorldSingleton [ label = "{HelloWorldSingleton | + public String helloWorld()\l+ public static HelloWorldSingleton instance()\l}" ] 
+    HelloWorldSingletonHolder [ label = "{HelloWorldSingletonHolder | }" ] 
+  }
+  HelloWorldSingletonHolder -> HelloWorldSingleton [ dir=back arrowtail=odiamond color=slategray];
+}

@@ -1,0 +1,9 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.structural.composite";
+    DefaultHelloWorld [ label = "{DefaultHelloWorld | }" ] 
+    CompositeHelloWorld [ label = "{CompositeHelloWorld | + public String helloWorld()\l}" ] 
+  }
+}

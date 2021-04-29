@@ -1,0 +1,27 @@
+- name: Print out the host name
+  hosts: all
+  tasks: 
+    - name: echo host name 
+      script: echo "{{ansible_hostname}}"
+      when: ansible_os_family == 'linux'
+
+    - name: On Debian hosts, make sure the telnet client is installed
+      apt:
+        name: telnet
+      when: ansible_os_family == 'Debian'
+    
+    - name: regist variable
+      script: echo "test" > text.txt
+      register: echo_result
+    
+    - name: Print something
+      debug:
+        msg: 'echo is not executed'
+      when: echo_result.changed==False
+    
+    - name: install something
+      apt:
+        install: {{item}}
+      with_items:
+        - vim
+        - bash

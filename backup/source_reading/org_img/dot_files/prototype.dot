@@ -1,0 +1,9 @@
+digraph domain {
+  edge [ fontsize = 11 ];
+  node [ shape=record ];
+  subgraph cluster_0 {
+    label = "io.hedwig.hellodesignpattern.creational.prototype";
+    HelloWorldPrototype [ label = "{HelloWorldPrototype | + public HelloWorld clone()\l+ public Object clone() throws java.lang.CloneNotSupportedException\l+ public String helloWorld()\l}" ] 
+  }
+  HelloWorldPrototype -> HelloWorldPrototype [ dir=back arrowtail=odiamond color=slategray];
+}
