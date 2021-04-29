@@ -40,7 +40,7 @@ There is no such thing as perfection, but to improve over the time!
     identifier = "blog"
     url = "/blog"
 [[menu.main]]
-    name="api测试-英文"
+    name="英文文章"
     weight = 100
     identifier="english"
     url="/tags/english/"
@@ -50,10 +50,15 @@ There is no such thing as perfection, but to improve over the time!
     identifier="python-tips"
     url="/tags/python/"
  [[menu.main]]
-    name="tips"
+    name="qa-tips"
     weight = 100
     identifier="tips"
     url="/tags/tips/"
+ [[menu.main]]
+    name="blockchain"
+    weight = 100
+    identifier="blockchain"
+    url="/tags/blockchain/" 
  [[menu.main]]
     name="shell"
     weight = 100
