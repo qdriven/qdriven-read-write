@@ -7,3 +7,6 @@ TestingTools:
 Monitoring:
   - AI: 
     - https://github.com/lab-ml/labml/
+
+Release:
+  - https://github.com/jreleaser/jreleaser.git
