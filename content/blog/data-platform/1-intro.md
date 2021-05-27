@@ -42,3 +42,20 @@ tags: [DataPlatform]
   - 第三范式：确保每列都和主键列直接相关，而不是间接相关
 
 ![img](https://i2.wp.com/img-blog.csdnimg.cn/20200629174843500.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlbGxvX2phdmFfbGNs,size_16,color_FFFFFF,t_70)
+
+![img](https://i2.wp.com/img-blog.csdnimg.cn/20200630104907949.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlbGxvX2phdmFfbGNs,size_16,color_FFFFFF,t_70)
+![img](https://i2.wp.com/img-blog.csdnimg.cn/20200630152135408.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hlbGxvX2phdmFfbGNs,size_16,color_FFFFFF,t_70)
+
+
+## Hadoop/Spark/Flink
+
+![img](https://pic4.zhimg.com/80/v2-852cb3069eb5f88cf68a7386f7d86fbf_720w.jpg)
+![img](https://pic2.zhimg.com/80/v2-2093e7b71deb4f2c6de82cf1095c3bed_720w.jpg)
+![img](https://pic1.zhimg.com/80/v2-004fbf11fabf89d097cbdd5c42f0c3ec_720w.jpg)
+![img](https://pic4.zhimg.com/80/v2-0bc9afeb560dc9f5cd6ca36bdb4f6a6b_720w.jpg)
+
+![img](https://pic4.zhimg.com/80/v2-4c5e9fc9bb344a707e2f8bd4aa463b47_720w.jpg)
+
+![img](https://pic1.zhimg.com/80/v2-113f19ec5452ef2b85ce548027c5a9b0_720w.jpg)
+
+![img](https://pic2.zhimg.com/80/v2-3d24fd1b242e0ef68efe431eed47d031_720w.jpg)
