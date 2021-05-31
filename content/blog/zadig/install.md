@@ -24,3 +24,4 @@ chmod +x ./install.sh
 curl -LO https://github.com/koderover/zadig/releases/latest/download/install_with_k8s.sh
 chmod +x ./install_with_k8s.sh
 ```
+
